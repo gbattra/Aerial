@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8887304094099108262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 500, y: 500, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,10 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb41c05c5e38fa4f9027c195c688f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnFrequency: 0
-  spawnDistanceZ: 1300
-  shouldSpawn: 0
-  screenBounds: {x: 0, y: 0, z: 0}
+  respawnFrequency: 1
   player: {fileID: 0}
   asteroids:
   - {fileID: 8415396036136245703, guid: 3bed3302ac37ab74fbc3ee569bad9f8e, type: 3}
@@ -120,3 +117,9 @@ MonoBehaviour:
   - {fileID: 6404240641319096502, guid: f92a684428138804bb37a2a95ffe0d9a, type: 3}
   - {fileID: 2529536285278257546, guid: 11720faed6f99e2449ffc6ef9e822e87, type: 3}
   - {fileID: 8461792848390521893, guid: 9e86e6a154154a94baa9ce1d6fa0a7c5, type: 3}
+  currentObstacleVelocity: 200
+  spawnInterval: 1
+  spawnDecay: 0.1
+  currentSpawnTime: 0
+  bigCountdown: 10
+  currentBigTime: 0

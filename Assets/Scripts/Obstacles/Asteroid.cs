@@ -5,9 +5,10 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     public float velocity;
+    public float velocityFactor;
     public Rigidbody rigidbody;
 
-    private const float BUFFER = 200f;
+    private const float BUFFER = 0f;
     
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,8 @@ public class Asteroid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidbody.velocity = Vector3.back * velocity;
-        if (transform.position.z < -BUFFER)
+        rigidbody.velocity = Vector3.back * (velocity * velocityFactor);
+        if (transform.position.z < BUFFER)
             Destroy(gameObject);
     }
 }
