@@ -11,18 +11,23 @@ public class PlayerEditor : Editor
         base.OnInspectorGUI();
         var player = (Player) target;
         EditorGUILayout.LabelField("Controller Inputs");
-        EditorGUILayout.FloatField("LeftStickHorizontal", player.Controller.LeftStickHorizontal);
-        EditorGUILayout.FloatField("LeftStickVertical", player.Controller.LeftStickVertical);
-        EditorGUILayout.FloatField("RightStickHorizontal", player.Controller.RightStickHorizontal);
-        EditorGUILayout.FloatField("RightStickVertical", player.Controller.RightStickVertical);
-        EditorGUILayout.FloatField("LeftTrigger", player.Controller.LeftTrigger);
-        EditorGUILayout.FloatField("RightTrigger", player.Controller.RightTrigger);
-        EditorGUILayout.Toggle("LeftBumper", player.Controller.LeftBumper);
-        EditorGUILayout.Toggle("RightBumper", player.Controller.RightBumper);
-        EditorGUILayout.Toggle("A", player.Controller.A);
-        EditorGUILayout.Toggle("B", player.Controller.B);
-        EditorGUILayout.Toggle("Y", player.Controller.Y);
-        EditorGUILayout.Toggle("X", player.Controller.X);
+        EditorGUILayout.FloatField("LeftStickHorizontal", player.controller.leftStickHorizontal);
+        EditorGUILayout.FloatField("LeftStickVertical", player.controller.leftStickVertical);
+        EditorGUILayout.FloatField("RightStickHorizontal", player.controller.rightStickHorizontal);
+        EditorGUILayout.FloatField("RightStickVertical", player.controller.rightStickVertical);
+        EditorGUILayout.FloatField("LeftTrigger", player.controller.leftTrigger);
+        EditorGUILayout.FloatField("RightTrigger", player.controller.rightTrigger);
+        EditorGUILayout.Toggle("LeftBumper", player.controller.leftBumper);
+        EditorGUILayout.Toggle("RightBumper", player.controller.rightBumper);
+        EditorGUILayout.Toggle("A", player.controller.a);
+        EditorGUILayout.Toggle("B", player.controller.b);
+        EditorGUILayout.Toggle("Y", player.controller.y);
+        EditorGUILayout.Toggle("X", player.controller.x);
+        
+        EditorGUILayout.LabelField("Transform");
+        EditorGUILayout.Vector3Field("Rotation", player.ComputeRotation());
+        EditorGUILayout.Vector3Field("Force", player.ComputeForce());
+        EditorGUILayout.FloatField("Velocity", player._rigidbody.velocity.magnitude);
         Repaint();
     }
 }
