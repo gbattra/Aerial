@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3543796585775804508
+--- !u!1 &1338534495111010230
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3543796585775804509}
-  - component: {fileID: 3543796585775804507}
-  - component: {fileID: 3543796585775804506}
-  - component: {fileID: 2840942243954481758}
-  - component: {fileID: 5104529748474103616}
+  - component: {fileID: 1338534495111010235}
+  - component: {fileID: 1338534495111010234}
+  - component: {fileID: 1338534495111010229}
+  - component: {fileID: 1338534495111010228}
+  - component: {fileID: 1338534495111010231}
   m_Layer: 0
-  m_Name: Asteroid_Large_C
+  m_Name: LargeSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3543796585775804509
+--- !u!4 &1338534495111010235
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3543796585775804508}
+  m_GameObject: {fileID: 1338534495111010230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3543796585775804507
+--- !u!33 &1338534495111010234
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3543796585775804508}
-  m_Mesh: {fileID: 4300004, guid: 87e52e99609fdfc4eac57bfbb458a3f1, type: 3}
---- !u!23 &3543796585775804506
+  m_GameObject: {fileID: 1338534495111010230}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1338534495111010229
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3543796585775804508}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1338534495111010230}
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ae6b1b942d3b8f24ea1fa32214f5521b, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,34 +81,46 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &2840942243954481758
-Rigidbody:
+--- !u!65 &1338534495111010228
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3543796585775804508}
+  m_GameObject: {fileID: 1338534495111010230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &5104529748474103616
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1338534495111010231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3543796585775804508}
+  m_GameObject: {fileID: 1338534495111010230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367f81ccdbfb24844a8868f0e8b2ed52, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bb41c05c5e38fa4f9027c195c688f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0
-  velocityFactor: 1
-  rigidbody: {fileID: 2840942243954481758}
+  respawnFrequency: 1
+  player: {fileID: 0}
+  asteroids:
+  - {fileID: 8415396036136245703, guid: 3bed3302ac37ab74fbc3ee569bad9f8e, type: 3}
+  - {fileID: 2998084075907781445, guid: 1939faf201cd70f459f4f2eafa1fd2c7, type: 3}
+  - {fileID: 5104529748474103616, guid: ff671359152a4334eb20d1b0105fc638, type: 3}
+  - {fileID: 8043126168435668080, guid: 719b65d357df9f3459ab740979480b53, type: 3}
+  - {fileID: 4026625971896886179, guid: 745872dd5d27da94db87dae395605778, type: 3}
+  - {fileID: 6404240641319096502, guid: f92a684428138804bb37a2a95ffe0d9a, type: 3}
+  - {fileID: 2529536285278257546, guid: 11720faed6f99e2449ffc6ef9e822e87, type: 3}
+  - {fileID: 8461792848390521893, guid: 9e86e6a154154a94baa9ce1d6fa0a7c5, type: 3}
+  currentObstacleVelocity: 50
+  spawnBounds: {x: 250, y: 250, z: 0}
+  spawnInterval: 0.1
+  spawnDecay: 0
+  currentSpawnTime: 0
+  bigCountdown: 10
+  currentBigTime: 0

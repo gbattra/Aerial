@@ -9,7 +9,7 @@ public class BaseSpawner : MonoBehaviour
     public float respawnFrequency;
     public Player player;
     public List<Asteroid> asteroids;
-    public float currentObstacleVelocity;
+    public float distanceFromPlayer;
 
     public Vector3 spawnBounds;
 
@@ -18,19 +18,22 @@ public class BaseSpawner : MonoBehaviour
     public float currentSpawnTime;
     public float bigCountdown;
     public float currentBigTime;
+    public int randomSeed;
 
     public Random _rand;
 
     public void Awake()
     {
-        _rand = new Random();
+        _rand = new Random(randomSeed);
         SpawnObstacle();
     }
 
     public void FixedUpdate()
     {
         transform.position = new Vector3(
-            player.transform.position.x, player.transform.position.y, transform.position.z);
+            transform.position.x,
+            transform.position.y,
+            player.transform.position.z + distanceFromPlayer);
         
         currentSpawnTime += Time.deltaTime;
         currentBigTime += Time.deltaTime;
@@ -56,7 +59,7 @@ public class BaseSpawner : MonoBehaviour
             obstacle,
             position,
             Quaternion.identity);
-        clone.velocity = currentObstacleVelocity;
+        clone.player = player;
     }
 
     private Vector3 RandomSpawnPosition()
@@ -65,6 +68,8 @@ public class BaseSpawner : MonoBehaviour
         var y = _rand.Next((int) -spawnBounds.y, (int) spawnBounds.y);
         
         return new Vector3(
-            x, y, transform.position.z);
+            transform.position.x + x,
+            transform.position.y + y,
+            transform.position.z);
     }
 }

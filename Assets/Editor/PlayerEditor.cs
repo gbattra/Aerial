@@ -25,8 +25,6 @@ public class PlayerEditor : Editor
         EditorGUILayout.Toggle("X", player.controller.x);
         
         EditorGUILayout.LabelField("Transform");
-        EditorGUILayout.Vector3Field("Rotation", player.ComputeRotation());
-        EditorGUILayout.Vector3Field("Force", player.ComputeForce());
         EditorGUILayout.FloatField("Velocity", player._rigidbody.velocity.magnitude);
         Repaint();
     }

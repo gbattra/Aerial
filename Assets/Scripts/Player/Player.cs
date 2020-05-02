@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float forwardForce = 10f;
+    public float velocity;
     public float verticalForce = 10f;
     public float horizontalForce = 10f;
     public float maxPitch = 10f;
@@ -30,22 +30,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var force = ComputeForce();
-        _rigidbody.AddForce(force);
+        _rigidbody.velocity = velocity * Vector3.forward;
     }
 
-    public Vector3 ComputeForce()
-    {
-        var lift = transform.up * (verticalForce * _controller.leftStickVertical * Time.deltaTime);
-        var turn = transform.right * (horizontalForce * _controller.Yaw * Time.deltaTime);
-        return lift + turn;
-    }
-
-    public Vector3 ComputeRotation()
-    {
-        var pitch = transform.right * (maxPitch * _controller.leftStickVertical * Time.deltaTime);
-        var roll = transform.forward * (-maxRotation * _controller.Roll * Time.deltaTime);
-        var yaw = transform.up * (maxYaw * _controller.Yaw * Time.deltaTime);
-        return pitch + roll + yaw;
-    }
 }
