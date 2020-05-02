@@ -15,6 +15,7 @@ public class BaseSpawner : MonoBehaviour
 
     public float spawnInterval;
     public float spawnDecay;
+    public int spawnCount;
     public float currentSpawnTime;
     public float bigCountdown;
     public float currentBigTime;
@@ -40,7 +41,8 @@ public class BaseSpawner : MonoBehaviour
 
         if (currentSpawnTime >= spawnInterval)
         {
-            SpawnObstacle();
+            for (var i = 0; i < spawnCount; i++)
+                SpawnObstacle();
             currentSpawnTime = 0;
         }
 

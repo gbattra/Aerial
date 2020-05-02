@@ -4,8 +4,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float velocity;
-    public float verticalForce = 10f;
-    public float horizontalForce = 10f;
+    public float moveSpeed;
+    public float dodgeSpeed;
     public float maxPitch = 10f;
     public float maxRotation = 10f;
     public float maxYaw = 5f;
@@ -25,12 +25,24 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
+        HandleControls();
         _rigidbody.velocity = velocity * Vector3.forward;
     }
 
+    public void HandleControls()
+    {
+        var x = _controller.leftStickHorizontal * (Time.deltaTime * moveSpeed);
+        var y = _controller.leftStickVertical * (Time.deltaTime * moveSpeed);
+        var horiz = transform.right * (moveSpeed * x);
+        var vert = transform.up * (moveSpeed * y);
+        _rigidbody.AddForce(horiz + vert);
+        
+        if (_controller.a)
+            _rigidbody.AddForce(transform.right * (x * dodgeSpeed)
+                                + transform.up * (y * dodgeSpeed));
+    }
 }
