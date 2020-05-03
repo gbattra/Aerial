@@ -16,7 +16,7 @@ public class ThrustEngine : MonoBehaviour
         Vector3 forward,
         float powerFactor)
     {
-        _thrust = powerFactor * (Time.deltaTime * power);
+        _thrust = power * powerFactor * powerCurve.Evaluate(Time.time);
         return thrust * forward;
     }
 }

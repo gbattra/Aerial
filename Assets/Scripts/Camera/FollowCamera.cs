@@ -7,16 +7,13 @@ public class FollowCamera : MonoBehaviour
     public float smoothSpeed;
     public float distance;
     public Player player;
-
-    private Vector3 smoothVelocity;
     
     private void FixedUpdate()
     {
         var wantedPos = player.transform.position + -player.transform.forward * distance;
-        transform.position = Vector3.SmoothDamp(
+        transform.position = Vector3.Slerp(
             transform.position,
             wantedPos,
-            ref smoothVelocity,
             smoothSpeed);
         transform.LookAt(player.transform.position);
     }
