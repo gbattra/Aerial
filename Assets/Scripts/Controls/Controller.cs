@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Controller
+public class Controller : MonoBehaviour
 {
     public float leftStickHorizontal => Input.GetAxis("LeftStickHorizontal");
     public float leftStickVertical => Input.GetAxis("LeftStickVertical");

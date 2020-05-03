@@ -21,15 +21,15 @@ public class BaseSpawner : MonoBehaviour
     public float currentBigTime;
     public int randomSeed;
     
-    public bool shouldSpawn => player._rigidbody.velocity.magnitude > 0
+    public bool shouldSpawn => player.rigidbody.velocity.magnitude > 0
                             && currentSpawnTime >= 
-                               spawnInterval * (player.maxSpeed / player._rigidbody.velocity.magnitude);
+                               spawnInterval * (player.maxSpeed / player.rigidbody.velocity.magnitude);
 
-    public Random _rand;
+    public Random rand;
 
     public void Awake()
     {
-        _rand = new Random(randomSeed);
+        rand = new Random(randomSeed);
         SpawnObstacle();
     }
 
@@ -59,7 +59,7 @@ public class BaseSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        var obstacle = asteroids[_rand.Next(asteroids.Count)];
+        var obstacle = asteroids[rand.Next(asteroids.Count)];
         var position = RandomSpawnPosition();
         var clone = Instantiate(
             obstacle,
@@ -70,8 +70,8 @@ public class BaseSpawner : MonoBehaviour
 
     private Vector3 RandomSpawnPosition()
     {
-        var x = _rand.Next((int) -spawnBounds.x, (int) spawnBounds.x);
-        var y = _rand.Next((int) -spawnBounds.y, (int) spawnBounds.y);
+        var x = rand.Next((int) -spawnBounds.x, (int) spawnBounds.x);
+        var y = rand.Next((int) -spawnBounds.y, (int) spawnBounds.y);
         
         return new Vector3(
             transform.position.x + x,
