@@ -10,7 +10,7 @@ public class ControllerEditor : Editor
     {
         base.OnInspectorGUI();
         var controller = (Controller) target;
-        EditorGUILayout.LabelField("Controller Inputs");
+        EditorGUILayout.LabelField("Editor");
         EditorGUILayout.FloatField("LeftStickHorizontal", controller.leftStickHorizontal);
         EditorGUILayout.FloatField("LeftStickVertical", controller.leftStickVertical);
         EditorGUILayout.FloatField("RightStickHorizontal", controller.rightStickHorizontal);

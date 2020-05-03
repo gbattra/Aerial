@@ -10,8 +10,6 @@ public class PlayerEditor : Editor
     {
         base.OnInspectorGUI();
         var player = (Player) target;
-        EditorGUILayout.LabelField("Vehicle");
-        EditorGUILayout.FloatField("Velocity", player.rigidbody.velocity.magnitude);
         Repaint();
     }
 }

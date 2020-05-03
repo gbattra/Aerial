@@ -5,6 +5,7 @@ using UnityEngine;
 public class Vehicle : MonoBehaviour
 {
     public ThrustEngine thrustEngine;
+    public Rigidbody rigidbody;
 
     public float forwardSpeed;
     public float maxSpeed;
@@ -19,6 +20,8 @@ public class Vehicle : MonoBehaviour
     private float startDrag;
     private float startAngularDrag;
     
+    private const float MPS_TO_MPH = 2.23604f;
+    
     // Start is called before the first frame update
     public void Init(
         float drag,
@@ -28,20 +31,26 @@ public class Vehicle : MonoBehaviour
         startAngularDrag = angularDrag;
     }
 
-    public void ComputeForwardSpeed(Vector3 velocity)
+    public void HandleInputs(Controller controller)
+    {
+        var thrust = thrustEngine.ComputeThrust(
+            transform.forward,
+            -controller.rightTrigger);
+        rigidbody.AddForce(thrust);
+        rigidbody.velocity = CapVelocity(
+            rigidbody.velocity);
+        
+        ComputeForwardSpeed(rigidbody.velocity);
+    }
+
+    private void ComputeForwardSpeed(Vector3 velocity)
     {
         var localVelocity = transform.InverseTransformDirection(velocity);
         forwardSpeed = localVelocity.z;
-    }
-
-    public Vector3 ComputeThrust(
-        Vector3 forward,
-        float powerFactor)
-    {
-        return thrustEngine.ComputeThrust(forward, powerFactor);
+        Debug.DrawRay(transform.position, transform.position + localVelocity, Color.cyan);
     }
     
-    public Vector3 CapVelocity(Vector3 velocity)
+    private Vector3 CapVelocity(Vector3 velocity)
     {
         if (!(velocity.magnitude > maxSpeed)) return velocity;
         

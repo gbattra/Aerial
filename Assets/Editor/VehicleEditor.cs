@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(ThrustEngine))]
-public class ThrustEngineEditor : Editor
+[CustomEditor(typeof(Vehicle))]
+public class VehicleEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        var thrustEngine = (ThrustEngine) target;
+        var vehicle = (Vehicle) target;
         EditorGUILayout.LabelField("Editor");
-        EditorGUILayout.FloatField("Thrust", thrustEngine.thrust);
+        EditorGUILayout.FloatField("Forward Speed", vehicle.forwardSpeed);
         Repaint();
     }
 }
