@@ -4,34 +4,22 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    public bool lookAt = true;
-    public float cameraSpeed;
-    public Vector3 lookOffset = new Vector3(0, 1, 0);
-    public Vector3 offsetPositionWorld;
-    public Vector3 offsetPositionSelf;
-    public Space offsetPositionSpace = Space.Self;
+    public float smoothSpeed;
+    public float distance;
     public Player player;
 
-    // private bool lookAt => player.controller.rightTrigger > 0;
+    private Vector3 smoothVelocity;
     
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        Refresh();
-    }
-
-    public void Refresh()
-    {
-        transform.position = player.transform.TransformPoint(offsetPositionSelf);
-
-        // compute rotation
-        if (lookAt)
-        {
-            transform.LookAt(player.transform.position + lookOffset);
-        } 
-        else
-        {
-            transform.rotation = player.transform.rotation;
-        }
+        var wantedPos = player.transform.position + -player.transform.forward * distance;
+        Debug.DrawLine(player.transform.position, wantedPos, Color.green);
+        transform.position = Vector3.SmoothDamp(
+            transform.position,
+            wantedPos,
+            ref smoothVelocity,
+            smoothSpeed);
+        transform.LookAt(player.transform.position);
     }
     
 }

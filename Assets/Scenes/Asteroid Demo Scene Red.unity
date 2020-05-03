@@ -543,10 +543,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeedSmoothFactor: 10
-  maxSpeed: 200
-  forwardForce: 30000
-  moveSpeed: 200
-  dodgeSpeed: 800
+  maxSpeed: 125
+  forwardForce: 10000
+  moveSpeed: 100
+  dodgeSpeed: 400
   maxPitch: 200
   maxRotation: 200
   maxYaw: 150
@@ -1029,10 +1029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c966bbd10f9fe448963a72d9d59c6f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: 1
-  cameraSpeed: 0
-  lookOffset: {x: 0, y: 1, z: 100}
-  offsetPositionWorld: {x: 0, y: 0, z: 0}
-  offsetPositionSelf: {x: 0, y: 0, z: -40}
-  offsetPositionSpace: 1
+  smoothSpeed: 0.05
+  distance: 20
   player: {fileID: 561116715}
