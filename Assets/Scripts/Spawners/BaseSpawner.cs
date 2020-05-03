@@ -20,6 +20,10 @@ public class BaseSpawner : MonoBehaviour
     public float bigCountdown;
     public float currentBigTime;
     public int randomSeed;
+    
+    public bool shouldSpawn => player._rigidbody.velocity.magnitude > 0
+                            && currentSpawnTime >= 
+                               spawnInterval * (player.maxSpeed / player._rigidbody.velocity.magnitude);
 
     public Random _rand;
 
@@ -39,7 +43,7 @@ public class BaseSpawner : MonoBehaviour
         currentSpawnTime += Time.deltaTime;
         currentBigTime += Time.deltaTime;
 
-        if (currentSpawnTime >= spawnInterval)
+        if (shouldSpawn)
         {
             for (var i = 0; i < spawnCount; i++)
                 SpawnObstacle();
