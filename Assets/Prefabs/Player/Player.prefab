@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2483587264196678091}
   - component: {fileID: 2483587264196678090}
   - component: {fileID: 5474987938147915322}
-  - component: {fileID: 7926644742632197423}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -63,16 +62,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acab5c844408204eb5f0bea19e20d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeedSmoothFactor: 10
-  maxSpeed: 125
-  moveSpeed: 100
-  dodgeSpeed: 400
-  maxPitch: 200
-  maxRotation: 200
-  maxYaw: 150
   rigidbody: {fileID: 2483587264196678091}
-  thrustEngine: {fileID: 7926644742632197423}
   controller: {fileID: 5474987938147915322}
+  vehicle: {fileID: 2637236153400536027}
 --- !u!114 &5474987938147915322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,13 +77,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80af9ec7ed27d24f8fef8fbd08a29a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7926644742632197423
+--- !u!114 &2637236153400536027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2483587264196678088}
+  m_GameObject: {fileID: 6575218148267971972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b981219f317476e45bd600e383b2dca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrustEngine: {fileID: 6701576861535689001}
+  forwardSpeed: 0
+  maxSpeed: 300
+  maxSpeedSmoothFactor: 0.125
+  moveSpeed: 100
+  dodgeSpeed: 1000
+  maxPitch: 10
+  maxRotation: 10
+  maxYaw: 5
+--- !u!114 &6701576861535689001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6575218148267971972}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1d16d1b664e42246a58a2bdb1db1951, type: 3}
@@ -99,6 +112,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 10000
   smoothFactor: 2.34
+  powerCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &2483587264776870822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -170,6 +207,12 @@ PrefabInstance:
     - {fileID: 918975410, guid: 85e49d6b2dc58fe49bcfc40b16cd09d5, type: 3}
     - {fileID: 918975411, guid: 85e49d6b2dc58fe49bcfc40b16cd09d5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 85e49d6b2dc58fe49bcfc40b16cd09d5, type: 3}
+--- !u!1 &6575218148267971972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8739419128298950178, guid: 85e49d6b2dc58fe49bcfc40b16cd09d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2483587264776870822}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7882574546499282839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5698178037532965937, guid: 85e49d6b2dc58fe49bcfc40b16cd09d5,

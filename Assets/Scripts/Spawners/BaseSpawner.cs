@@ -23,7 +23,7 @@ public class BaseSpawner : MonoBehaviour
     
     public bool shouldSpawn => player.rigidbody.velocity.magnitude > 0
                             && currentSpawnTime >= 
-                               spawnInterval * (player.maxSpeed / player.rigidbody.velocity.magnitude);
+                               spawnInterval * (player.vehicle.maxSpeed / player.rigidbody.velocity.magnitude);
 
     public Random rand;
 
