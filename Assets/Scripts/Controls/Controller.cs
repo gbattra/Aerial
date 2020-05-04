@@ -15,8 +15,6 @@ public class Controller : MonoBehaviour
     public bool b => Input.GetButton("B");
     public bool y => Input.GetButton("Y");
     public bool x => Input.GetButton("X");
-
-    public float Roll => leftTrigger < 0 ? leftStickHorizontal : 0;
-    public float Yaw => leftTrigger < 0 ? 0 : leftStickHorizontal;
-    public bool accelerating => rightTrigger < 0;
+    
+    public bool braking => leftTrigger < 0;
 }

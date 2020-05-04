@@ -49,12 +49,14 @@ public class Vehicle : MonoBehaviour
     {
         var thrust = thrustEngine.ComputeThrust(
             transform.forward,
-            -controller.rightTrigger);
+            -controller.rightTrigger) * (controller.braking ? 0 : 1);
         var lift = liftEngine.ComputeLift(
             transform.up,
             forwardSpeed,
-            -controller.leftStickVertical);
-        rigidbody.AddForce(thrust + lift);
+            -controller.leftStickVertical) * (controller.braking ? 0 : 1);
+        
+        var totalForce = thrust + lift;
+        rigidbody.AddForce(totalForce);
 
         var roll = ComputeRoll(-controller.leftStickHorizontal);
         var pitch = ComputePitch(controller.leftStickVertical);
