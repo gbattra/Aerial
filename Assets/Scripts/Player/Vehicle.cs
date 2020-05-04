@@ -7,6 +7,7 @@ public class Vehicle : MonoBehaviour
 {
     public ThrustEngine thrustEngine;
     public LiftEngine liftEngine;
+    public DragHelper dragHelper;
     public Rigidbody rigidbody;
 
     public float forwardSpeed;
@@ -26,23 +27,19 @@ public class Vehicle : MonoBehaviour
 
     public Vector3 maxEulers;
 
-    private float startDrag;
-    private float startAngularDrag;
-
     // Start is called before the first frame update
-    public void Init(
-        float drag,
-        float angularDrag)
+    public void Awake()
     {
-        startDrag = drag;
-        startAngularDrag = angularDrag;
+        dragHelper.Init(rigidbody.drag, rigidbody.angularDrag);
     }
 
     public void FixedUpdate()
     {
-        rigidbody.velocity = CapVelocity(rigidbody.velocity);
+        rigidbody.velocity = ComputeVelocity(rigidbody.velocity);
         // transform.eulerAngles = CapRotation(transform.eulerAngles);
-        forwardSpeed = ComputeForwardSpeed(rigidbody.velocity);
+        forwardSpeed = rigidbody.velocity.magnitude;
+        rigidbody.drag = dragHelper.ComputeDrag(forwardSpeed);
+        rigidbody.angularDrag = dragHelper.ComputeAngularDrag(forwardSpeed);
     }
 
     public void HandleInputs(Controller controller)
@@ -64,15 +61,8 @@ public class Vehicle : MonoBehaviour
         var pitch = ComputePitch(controller.leftStickVertical);
         transform.Rotate(roll + pitch, Space.World);
     }
-
-    private float ComputeForwardSpeed(Vector3 velocity)
-    {
-        var localVelocity = transform.InverseTransformDirection(velocity);
-        var maxVelocity = Mathf.Max(0f, localVelocity.z);
-        return Mathf.Clamp(0f, maxVelocity, maxSpeed);
-    }
     
-    private Vector3 CapVelocity(Vector3 velocity)
+    private Vector3 ComputeVelocity(Vector3 velocity)
     {
         if (!(velocity.magnitude > maxSpeed)) return velocity;
         
