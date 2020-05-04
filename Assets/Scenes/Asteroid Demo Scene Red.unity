@@ -230,17 +230,17 @@ PrefabInstance:
     - target: {fileID: 5093073613992962386, guid: bcdcf2a6e07109442a105e24a49036e5,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 750
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5093073613992962386, guid: bcdcf2a6e07109442a105e24a49036e5,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1500
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 5093073613992962386, guid: bcdcf2a6e07109442a105e24a49036e5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1500
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 5093073613992962387, guid: bcdcf2a6e07109442a105e24a49036e5,
         type: 3}
@@ -369,7 +369,7 @@ PrefabInstance:
     - target: {fileID: 1338534495111010230, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -379,12 +379,12 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: spawnBounds.x
-      value: 800
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: spawnBounds.y
-      value: 800
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -404,7 +404,12 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: spawnCount
-      value: 8
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: spawnBounds.z
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010235, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -966,12 +971,12 @@ PrefabInstance:
     - target: {fileID: 463473872192900962, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
       propertyPath: spawnBounds.x
-      value: 800
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 463473872192900962, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
       propertyPath: spawnBounds.y
-      value: 800
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 463473872192900962, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
@@ -991,7 +996,12 @@ PrefabInstance:
     - target: {fileID: 463473872192900962, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
       propertyPath: spawnCount
-      value: 20
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 463473872192900962, guid: d89c73aa65456c14189f3b1f5e4fd179,
+        type: 3}
+      propertyPath: spawnBounds.z
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 463473872192900963, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
@@ -1001,7 +1011,7 @@ PrefabInstance:
     - target: {fileID: 463473872192900963, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 463473872192900974, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
@@ -1246,13 +1256,33 @@ PrefabInstance:
       propertyPath: m_Drag
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 929457267, guid: 400cbde852f5b7c46bcd45d0809ac9b5, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 929457267, guid: 400cbde852f5b7c46bcd45d0809ac9b5, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 929457268, guid: 400cbde852f5b7c46bcd45d0809ac9b5, type: 3}
       propertyPath: smoothFactor
-      value: 0
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 929457268, guid: 400cbde852f5b7c46bcd45d0809ac9b5, type: 3}
       propertyPath: power
-      value: 500
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 929457268, guid: 400cbde852f5b7c46bcd45d0809ac9b5, type: 3}
+      propertyPath: powerCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 929457268, guid: 400cbde852f5b7c46bcd45d0809ac9b5, type: 3}
+      propertyPath: powerCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 929457268, guid: 400cbde852f5b7c46bcd45d0809ac9b5, type: 3}
+      propertyPath: powerCurve.m_Curve.Array.data[1].inSlope
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 730732689825680201, guid: 400cbde852f5b7c46bcd45d0809ac9b5,
         type: 3}
@@ -1317,12 +1347,27 @@ PrefabInstance:
     - target: {fileID: 8026505017644251146, guid: 400cbde852f5b7c46bcd45d0809ac9b5,
         type: 3}
       propertyPath: power
-      value: 250
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8026505017644251146, guid: 400cbde852f5b7c46bcd45d0809ac9b5,
         type: 3}
       propertyPath: smoothFactor
       value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026505017644251146, guid: 400cbde852f5b7c46bcd45d0809ac9b5,
+        type: 3}
+      propertyPath: powerCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026505017644251146, guid: 400cbde852f5b7c46bcd45d0809ac9b5,
+        type: 3}
+      propertyPath: powerCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026505017644251146, guid: 400cbde852f5b7c46bcd45d0809ac9b5,
+        type: 3}
+      propertyPath: powerCurve.m_Curve.Array.data[1].outSlope
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 400cbde852f5b7c46bcd45d0809ac9b5, type: 3}

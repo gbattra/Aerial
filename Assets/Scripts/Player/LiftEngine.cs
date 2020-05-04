@@ -5,8 +5,6 @@ using UnityEngine;
 public class LiftEngine : MonoBehaviour
 {
     public float power;
-    public float smoothFactor;
-    
     public AnimationCurve powerCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
     private float _lift { get; set; }
@@ -17,7 +15,7 @@ public class LiftEngine : MonoBehaviour
         float forwardSpeed,
         float powerFactor)
     {
-        _lift = powerFactor * power * powerCurve.Evaluate(Time.time);
+        _lift = powerFactor * power * powerCurve.Evaluate(forwardSpeed);
         return lift * up;
     }
 }

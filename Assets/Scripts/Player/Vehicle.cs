@@ -50,9 +50,11 @@ public class Vehicle : MonoBehaviour
         var thrust = thrustEngine.ComputeThrust(
             transform.forward,
             -controller.rightTrigger) * (controller.braking ? 0 : 1);
+
+        var normSpeed = Mathf.InverseLerp(0f, maxSpeed, forwardSpeed);
         var lift = liftEngine.ComputeLift(
             transform.up,
-            forwardSpeed,
+            normSpeed,
             -controller.leftStickVertical) * (controller.braking ? 0 : 1);
         
         var totalForce = thrust + lift;
@@ -66,7 +68,8 @@ public class Vehicle : MonoBehaviour
     private float ComputeForwardSpeed(Vector3 velocity)
     {
         var localVelocity = transform.InverseTransformDirection(velocity);
-        return localVelocity.z;
+        var maxVelocity = Mathf.Max(0f, localVelocity.z);
+        return Mathf.Clamp(0f, maxVelocity, maxSpeed);
     }
     
     private Vector3 CapVelocity(Vector3 velocity)
@@ -79,15 +82,9 @@ public class Vehicle : MonoBehaviour
 
     private Vector3 CapRotation(Vector3 rotation)
     {
-        var x = rotation.x > 0
-            ? rotation.x > maxEulers.x ? maxEulers.x : rotation.x
-            : rotation.x < -maxEulers.x ? -maxEulers.x : rotation.x;
-        var y = rotation.y > 0
-            ? rotation.y > maxEulers.y ? maxEulers.y : rotation.y
-            : rotation.y < -maxEulers.y ? -maxEulers.y : rotation.y;
-        var z = rotation.z > 0
-            ? rotation.z > maxEulers.z ? maxEulers.z : rotation.z
-            : rotation.z < -maxEulers.z ? -maxEulers.z : rotation.z;
+        var x = Mathf.Clamp(-maxEulers.x, rotation.x, maxEulers.x);
+        var y = Mathf.Clamp(-maxEulers.y, rotation.y, maxEulers.y);
+        var z = Mathf.Clamp(-maxEulers.z, rotation.z, maxEulers.z);
         return new Vector3(x, y, z);
     }
 
