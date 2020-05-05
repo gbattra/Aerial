@@ -44,22 +44,33 @@ public class Vehicle : MonoBehaviour
 
     public void HandleInputs(Controller controller)
     {
-        var thrust = thrustEngine.ComputeThrust(
-            transform.forward,
-            -controller.rightTrigger) * (controller.braking ? 0 : 1);
+        HandleForces(controller);
+        // HandleRotations(controller);
+    }
 
-        var normSpeed = Mathf.InverseLerp(0f, maxSpeed, forwardSpeed);
-        var lift = liftEngine.ComputeLift(
-            transform.up,
-            normSpeed,
-            -controller.leftStickVertical) * (controller.braking ? 0 : 1);
-        
-        var totalForce = thrust + lift;
-        rigidbody.AddForce(totalForce);
-
+    private void HandleRotations(Controller controller)
+    {
         var roll = ComputeRoll(-controller.leftStickHorizontal);
         var pitch = ComputePitch(controller.leftStickVertical);
         transform.Rotate(roll + pitch, Space.World);
+    }
+
+    private void HandleForces(Controller controller)
+    {
+        var thrust = thrustEngine.ComputeThrust(
+                         transform.forward,
+                         -controller.rightTrigger) * (controller.braking ? 0 : 1);
+
+        var normSpeed = Mathf.InverseLerp(0f, maxSpeed, forwardSpeed);
+        var angleOfAttack = ComputeAngleOfAttack();
+        var lift = liftEngine.ComputeLift(
+                       transform.up,
+                       normSpeed,
+                       angleOfAttack,
+                       -controller.leftStickVertical) * (controller.braking ? 0 : 1);
+        
+        var totalForce = thrust + lift;
+        rigidbody.AddForce(totalForce);
     }
     
     private Vector3 ComputeVelocity(Vector3 velocity)
@@ -88,5 +99,11 @@ public class Vehicle : MonoBehaviour
     {
         var pitch = pitchFactor * pitchPower * pitchCurve.Evaluate(Time.time);
         return transform.right * pitch;
+    }
+
+    private float ComputeAngleOfAttack()
+    {
+        var angleOfAttack = Vector3.Dot(rigidbody.velocity.normalized, transform.forward);
+        return angleOfAttack * angleOfAttack;
     }
 }
