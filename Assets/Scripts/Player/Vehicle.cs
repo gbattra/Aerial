@@ -108,6 +108,6 @@ public class Vehicle : MonoBehaviour
     private float ComputeAngleOfAttack()
     {
         var angleOfAttack = Vector3.Dot(rigidbody.velocity.normalized, transform.forward);
-        return Mathf.Clamp(0.1f, angleOfAttack * angleOfAttack, 1f);
+        return Mathf.Clamp(0.0f, angleOfAttack * angleOfAttack, 1f);
     }
 }
