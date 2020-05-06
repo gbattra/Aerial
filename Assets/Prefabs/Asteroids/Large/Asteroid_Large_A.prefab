@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8045117542571418049}
   - component: {fileID: 2489116820817419920}
   - component: {fileID: 8415396036136245703}
+  - component: {fileID: 7890848624062661490}
   m_Layer: 0
   m_Name: Asteroid_Large_A
   m_TagString: Untagged
@@ -113,3 +114,17 @@ MonoBehaviour:
   velocityFactor: 1
   player: {fileID: 0}
   rigidbody: {fileID: 2489116820817419920}
+--- !u!136 &7890848624062661490
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8045117542571418063}
+  m_Material: {fileID: 13400000, guid: d233ff6be3bd390409a36e3ecfa697e8, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.9841094
+  m_Height: 11.701022
+  m_Direction: 0
+  m_Center: {x: 0.16827011, y: -0.10143814, z: 0.17407799}

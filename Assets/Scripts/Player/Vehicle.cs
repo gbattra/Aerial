@@ -45,32 +45,36 @@ public class Vehicle : MonoBehaviour
     public void HandleInputs(Controller controller)
     {
         HandleForces(controller);
-        // HandleRotations(controller);
+        HandleRotations(controller);
     }
 
     private void HandleRotations(Controller controller)
     {
-        var roll = ComputeRoll(-controller.leftStickHorizontal);
-        var pitch = ComputePitch(controller.leftStickVertical);
-        transform.Rotate(roll + pitch, Space.World);
+        // var roll = ComputeRoll(-controller.leftStickHorizontal);
+        // var pitch = ComputePitch(controller.leftStickVertical);
+        // transform.Rotate(roll + pitch);
+        var roll = controller.leftStickHorizontal * rollPower; // * rollCurve.Evaluate(Time.time);
+        var pitch = controller.leftStickVertical * pitchPower; // * pitchCurve.Evaluate(Time.time);
+        rigidbody.AddRelativeTorque(Vector3.back * roll);
+        rigidbody.AddRelativeTorque(Vector3.right * pitch);
     }
 
     private void HandleForces(Controller controller)
     {
         var thrust = thrustEngine.ComputeThrust(
-                         transform.forward,
+                         Vector3.forward,
                          -controller.rightTrigger) * (controller.braking ? 0 : 1);
 
         var normSpeed = Mathf.InverseLerp(0f, maxSpeed, forwardSpeed);
         var angleOfAttack = ComputeAngleOfAttack();
         var lift = liftEngine.ComputeLift(
-                       transform.up,
+                       Vector3.up, 
                        normSpeed,
                        angleOfAttack,
                        -controller.leftStickVertical) * (controller.braking ? 0 : 1);
         
         var totalForce = thrust + lift;
-        rigidbody.AddForce(totalForce);
+        rigidbody.AddRelativeForce(totalForce);
     }
     
     private Vector3 ComputeVelocity(Vector3 velocity)
@@ -104,6 +108,6 @@ public class Vehicle : MonoBehaviour
     private float ComputeAngleOfAttack()
     {
         var angleOfAttack = Vector3.Dot(rigidbody.velocity.normalized, transform.forward);
-        return angleOfAttack * angleOfAttack;
+        return Mathf.Clamp(0.1f, angleOfAttack * angleOfAttack, 1f);
     }
 }

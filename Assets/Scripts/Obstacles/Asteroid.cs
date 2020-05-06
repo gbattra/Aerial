@@ -9,7 +9,7 @@ public class Asteroid : MonoBehaviour
     public Player player;
     public Rigidbody rigidbody;
 
-    private const float BUFFER = 0f;
+    private const float BUFFER = -500f;
     
     // Start is called before the first frame update
     void Start()
