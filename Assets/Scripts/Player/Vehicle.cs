@@ -8,6 +8,7 @@ public class Vehicle : MonoBehaviour
     public ThrustEngine thrustEngine;
     public LiftEngine liftEngine;
     public DragHelper dragHelper;
+    public DodgeThruster dodgeThruster;
     public Rigidbody rigidbody;
 
     public float forwardSpeed;
@@ -46,6 +47,20 @@ public class Vehicle : MonoBehaviour
     {
         HandleForces(controller);
         HandleRotations(controller);
+        HandlePowerMoves(controller);
+    }
+
+    private void HandlePowerMoves(Controller controller)
+    {
+        if (controller.a)
+        {
+            var dodge = dodgeThruster.ComputeDodge(
+                controller.leftStickHorizontal, controller.leftStickVertical);
+            var torque = dodgeThruster.ComputeTorque(
+                controller.leftStickHorizontal, controller.leftStickVertical);
+            // rigidbody.AddForce(dodge);
+            rigidbody.AddTorque(torque);
+        }
     }
 
     private void HandleRotations(Controller controller)
@@ -83,14 +98,6 @@ public class Vehicle : MonoBehaviour
         
         var curVel = velocity;
         return curVel.normalized * maxSpeed;
-    }
-
-    private Vector3 CapRotation(Vector3 rotation)
-    {
-        var x = Mathf.Clamp(-maxEulers.x, rotation.x, maxEulers.x);
-        var y = Mathf.Clamp(-maxEulers.y, rotation.y, maxEulers.y);
-        var z = Mathf.Clamp(-maxEulers.z, rotation.z, maxEulers.z);
-        return new Vector3(x, y, z);
     }
 
     private Vector3 ComputeRoll(float rollFactor)

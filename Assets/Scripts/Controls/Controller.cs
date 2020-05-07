@@ -11,10 +11,10 @@ public class Controller : MonoBehaviour
     
     public bool leftBumper => Input.GetButton("LeftBumper");
     public bool rightBumper => Input.GetButton("RightBumper");
-    public bool a => Input.GetButton("A");
-    public bool b => Input.GetButton("B");
-    public bool y => Input.GetButton("Y");
-    public bool x => Input.GetButton("X");
+    public bool a => Input.GetButtonDown("A");
+    public bool b => Input.GetButtonDown("B");
+    public bool y => Input.GetButtonDown("Y");
+    public bool x => Input.GetButtonDown("X");
     
     public bool braking => leftTrigger < 0;
 }

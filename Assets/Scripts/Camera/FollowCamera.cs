@@ -15,11 +15,7 @@ public class FollowCamera : MonoBehaviour
     private void FixedUpdate()
     {
     
-        var playerToCam = (transform.position - player.transform.position).normalized;
-        var wantedPos = player.transform.position + -player.transform.forward * maxDistance;
-        wantedPos = player.controller.braking
-            ? player.transform.position + playerToCam * maxDistance
-            : player.transform.position + positionOffset;
+        var wantedPos = player.transform.position + positionOffset;
         var tooClose = Vector3.Distance(transform.position, player.transform.position) < minDistance;
         transform.position = Vector3.Slerp(
             transform.position,
