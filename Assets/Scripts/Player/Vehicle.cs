@@ -55,9 +55,9 @@ public class Vehicle : MonoBehaviour
         if (controller.a)
         {
             var dodge = dodgeThruster.ComputeDodge(
-                controller.leftStickHorizontal, controller.leftStickVertical);
+                controller.leftStickHorizontal, controller.leftStickVertical, forwardSpeed);
             var torque = dodgeThruster.ComputeTorque(
-                controller.leftStickHorizontal, controller.leftStickVertical);
+                controller.leftStickHorizontal, controller.leftStickVertical, forwardSpeed);
             // rigidbody.AddForce(dodge);
             rigidbody.AddTorque(torque);
         }
