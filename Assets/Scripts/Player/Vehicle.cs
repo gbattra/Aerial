@@ -6,6 +6,7 @@ using UnityEngine;
 public class Vehicle : MonoBehaviour
 {
     public RollEngine rollEngine;
+    public ThrustEngine thrustEngine;
     public LiftEngine liftEngine;
     public DragHelper dragHelper;
     public DodgeThruster dodgeThruster;
@@ -13,18 +14,9 @@ public class Vehicle : MonoBehaviour
 
     public float forwardSpeed;
     public float maxSpeed;
-    public float moveSpeed;
-    public float dodgeSpeed;
-
     public float maxPitch;
-    public float pitchSpeed;
     public float maxRoll;
-    public float rollSpeed;
     public float resetRotationSpeed;
-    
-    public float maxYaw = 5f;
-
-    public Vector3 maxEulers;
 
     // Start is called before the first frame update
     public void Awake()
@@ -38,7 +30,7 @@ public class Vehicle : MonoBehaviour
 
     public void FixedUpdate()
     {
-        // rigidbody.velocity = ComputeVelocity(rigidbody.velocity);
+        rigidbody.velocity = ComputeVelocity(rigidbody.velocity);
         rigidbody.velocity = new Vector3(
             rigidbody.velocity.x,
             rigidbody.velocity.y,
@@ -95,16 +87,13 @@ public class Vehicle : MonoBehaviour
     {
         var roll = rollEngine.ComputeRoll(controller.leftStickHorizontal);
         var lift = liftEngine.ComputeLift(controller.leftStickVertical);
-        
         rigidbody.AddRelativeForce(lift + roll);
     }
     
     private Vector3 ComputeVelocity(Vector3 velocity)
     {
-        if (!(velocity.magnitude > maxSpeed)) return velocity;
-        
-        var curVel = velocity;
-        return curVel.normalized * maxSpeed;
+        return new Vector3(
+            velocity.x, velocity.y, maxSpeed);
     }
 
     private float ComputeAngleOfAttack()
