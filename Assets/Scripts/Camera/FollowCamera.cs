@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    public float distancingSpeed;
-    public float catchingUpSpeed;
-    public float minDistance;
-    public float maxDistance;
+    public float smoothSpeed;
     public Vector3 positionOffset;
     public Vector3 lookOffset;
     public Player player;
     
     private void FixedUpdate()
     {
-    
-        var wantedPos = player.transform.position + positionOffset;
-        var tooClose = Vector3.Distance(transform.position, player.transform.position) < minDistance;
-        transform.position = Vector3.Slerp(
-            transform.position,
-            wantedPos + positionOffset,
-            tooClose ? distancingSpeed : catchingUpSpeed);
-        transform.LookAt(player.transform.position + lookOffset);
+        var targetPos = player.transform.position + positionOffset;
+        var smoothPos = Vector3.Lerp(transform.position, targetPos, smoothSpeed);
+        transform.position = smoothPos;
+        
+        // transform.LookAt(player.transform.position + lookOffset);
     }
     
 }
