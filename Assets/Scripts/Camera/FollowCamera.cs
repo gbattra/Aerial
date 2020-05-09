@@ -8,7 +8,9 @@ public class FollowCamera : MonoBehaviour
     public float maxDistance;
     public Vector3 positionOffset;
     public Vector3 lookOffset;
+    
     public Player player;
+    public Border border;
     
     private void FixedUpdate()
     {
@@ -20,5 +22,5 @@ public class FollowCamera : MonoBehaviour
         
         // transform.LookAt(player.transform.position + lookOffset);
     }
-    
+
 }

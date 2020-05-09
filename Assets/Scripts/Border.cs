@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class Border : MonoBehaviour
 {
+    public GameObject top;
+    public GameObject bottom;
+    public GameObject left;
+    public GameObject right;
+    
     public Player player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    public bool tooFarLeft =>
+        player.transform.position.x < left.transform.position.x;
+    public bool tooFarRight =>
+        player.transform.position.x > right.transform.position.x;
+    public bool tooFarUp =>
+        player.transform.position.y > top.transform.position.y;
+    public bool tooFarDown =>
+        player.transform.position.y < bottom.transform.position.y;
+
+    public bool playerOutOfBounds => tooFarLeft || tooFarRight || tooFarUp || tooFarDown;
 
     // Update is called once per frame
     void Update()
