@@ -13,18 +13,15 @@ public class BaseSpawner : MonoBehaviour
 
     public Vector3 spawnBounds;
 
-    public float spawnInterval;
+    public float spawnDistanceInterval;
+    public float lastSpawnLocation;
     public float spawnDecay;
     public int spawnCount;
-    public float currentSpawnTime;
     public float bigCountdown;
     public float currentBigTime;
     public int randomSeed;
-    
-    public bool shouldSpawn => player.vehicle.rigidbody.velocity.magnitude > 0
-                            && currentSpawnTime >= 
-                               spawnInterval *
-                               (player.vehicle.maxSpeed / player.vehicle.rigidbody.velocity.magnitude);
+
+    public bool shouldSpawn => transform.position.z - lastSpawnLocation > spawnDistanceInterval;
 
     public Random rand;
 
@@ -41,19 +38,18 @@ public class BaseSpawner : MonoBehaviour
             transform.position.y,
             player.transform.position.z + distanceFromPlayer);
         
-        currentSpawnTime += Time.deltaTime;
         currentBigTime += Time.deltaTime;
 
         if (shouldSpawn)
         {
             for (var i = 0; i < spawnCount; i++)
                 SpawnObstacle();
-            currentSpawnTime = 0;
+            lastSpawnLocation = transform.position.z;
         }
 
         if (currentBigTime >= bigCountdown)
         {
-            spawnInterval -= spawnDecay;
+            spawnDistanceInterval -= spawnDecay;
             currentBigTime = 0;
         }
     }

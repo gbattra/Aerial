@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
+    public Player player;
     public RollEngine rollEngine;
     public ThrustEngine thrustEngine;
     public LiftEngine liftEngine;
     public DragHelper dragHelper;
     public DodgeThruster dodgeThruster;
+    public Boost boost;
     public Rigidbody rigidbody;
 
     public float forwardSpeed;
@@ -31,21 +33,17 @@ public class Vehicle : MonoBehaviour
     public void FixedUpdate()
     {
         rigidbody.velocity = ComputeVelocity(rigidbody.velocity);
-        rigidbody.velocity = new Vector3(
-            rigidbody.velocity.x,
-            rigidbody.velocity.y,
-            maxSpeed);
+        // rigidbody.velocity = new Vector3(
+        //     rigidbody.velocity.x,
+        //     rigidbody.velocity.y,
+        //     maxSpeed + (player.controller.b ? boost.boostSpeed : 0f));
         // transform.eulerAngles = CapRotation(transform.eulerAngles);
         forwardSpeed = rigidbody.velocity.magnitude;
-        rigidbody.drag = dragHelper.ComputeDrag(forwardSpeed);
-        rigidbody.angularDrag = dragHelper.ComputeAngularDrag(forwardSpeed);
-    }
+        // rigidbody.drag = dragHelper.ComputeDrag(forwardSpeed);
+        // rigidbody.angularDrag = dragHelper.ComputeAngularDrag(forwardSpeed);
 
-    public void HandleInputs(Controller controller)
-    {
-        HandleForces(controller);
-        HandleRotations(controller);
-        // HandlePowerMoves(controller);
+        HandleForces(player.controller);
+        HandleRotations(player.controller);
     }
 
     private void HandlePowerMoves(Controller controller)
@@ -53,11 +51,16 @@ public class Vehicle : MonoBehaviour
         if (controller.a)
         {
             var dodge = dodgeThruster.ComputeDodge(
-                controller.leftStickHorizontal, controller.leftStickVertical, forwardSpeed);
+                controller.leftStickHorizontal, controller.leftStickVertical);
             var torque = dodgeThruster.ComputeTorque(
-                controller.leftStickHorizontal, controller.leftStickVertical, forwardSpeed);
-            // rigidbody.AddForce(dodge);
-            rigidbody.AddTorque(torque);
+                controller.leftStickHorizontal, controller.leftStickVertical);
+            rigidbody.AddForce(dodge);
+            // rigidbody.AddTorque(torque);
+        }
+
+        if (controller.b)
+        {
+            rigidbody.AddForce(boost.Engage());
         }
     }
 
@@ -75,8 +78,8 @@ public class Vehicle : MonoBehaviour
 
     private Quaternion ComputeRotation(float leftStickHorizontal, float leftStickVertical)
     {
-        var roll = maxRoll * leftStickHorizontal;
-        var pitch = maxPitch * leftStickVertical;
+        var roll = (maxRoll + (player.controller.b ? boost.rollBuffer : 0f)) * leftStickHorizontal;
+        var pitch = (maxPitch + (player.controller.b ? boost.pitchBuffer : 0f)) * leftStickVertical;
         var targetEulers = (Vector3.back * roll) + (Vector3.right * pitch);
         var targetQ = Quaternion.Euler(targetEulers);
         return Quaternion.Lerp(
@@ -85,20 +88,20 @@ public class Vehicle : MonoBehaviour
 
     private void HandleForces(Controller controller)
     {
-        var roll = rollEngine.ComputeRoll(controller.leftStickHorizontal);
-        var lift = liftEngine.ComputeLift(controller.leftStickVertical);
-        rigidbody.AddRelativeForce(lift + roll);
+        var thrust = thrustEngine.ComputeThrust(controller.b ? boost.boostThrust : 0f);
+        var roll = rollEngine.ComputeRoll(
+            controller.leftStickHorizontal,
+            controller.b ? boost.boostRoll : 0f);
+        var lift = liftEngine.ComputeLift(
+            controller.leftStickVertical,
+            controller.b ? boost.boostLift : 0f);
+        rigidbody.AddForce(lift + roll + thrust);
     }
     
     private Vector3 ComputeVelocity(Vector3 velocity)
     {
-        return new Vector3(
-            velocity.x, velocity.y, maxSpeed);
-    }
-
-    private float ComputeAngleOfAttack()
-    {
-        var angleOfAttack = Vector3.Dot(rigidbody.velocity.normalized, transform.forward);
-        return Mathf.Clamp(0.0f, angleOfAttack * angleOfAttack, 1f);
+        var z = Mathf.Clamp(
+            0f, velocity.z, maxSpeed + (player.controller.b ? boost.boostSpeed : 0f));
+        return new Vector3(velocity.x, velocity.y, z);
     }
 }

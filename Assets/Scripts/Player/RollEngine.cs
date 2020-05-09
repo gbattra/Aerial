@@ -10,9 +10,9 @@ public class RollEngine : MonoBehaviour
     private float _roll { get; set; }
     public float roll => _roll;
 
-    public Vector3 ComputeRoll(float powerFactor)
+    public Vector3 ComputeRoll(float powerFactor, float boost)
     {
-        _roll = power * powerFactor * powerCurve.Evaluate(Time.time);
+        _roll = (power + boost) * powerFactor * powerCurve.Evaluate(Time.time);
         return -Vector3.left * roll;
     }
 }

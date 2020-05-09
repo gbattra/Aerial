@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour
     public bool leftBumper => Input.GetButton("LeftBumper");
     public bool rightBumper => Input.GetButton("RightBumper");
     public bool a => Input.GetButtonDown("A");
-    public bool b => Input.GetButtonDown("B");
+    public bool b => Input.GetButton("B");
     public bool y => Input.GetButtonDown("Y");
     public bool x => Input.GetButtonDown("X");
     

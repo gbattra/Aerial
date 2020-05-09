@@ -11,23 +11,21 @@ public class DodgeThruster : MonoBehaviour
 
     public Vector3 ComputeDodge(
         float horizontal,
-        float vertical,
-        float forwardSpeed)
+        float vertical)
     {
         var horizontalDoge = Vector3.left * -horizontal;
         // var horizontalDoge = transform.right * horizontal;
-        var forwardDodge = Vector3.up * vertical;
+        var verticalDodge = Vector3.up * vertical;
         // var forwardDodge = transform.forward * vertical;
-        return (horizontalDoge + forwardDodge) * (dodgePower * 1 * Time.deltaTime);
+        return (horizontalDoge + verticalDodge) * (dodgePower * Time.deltaTime);
     }
 
     public Vector3 ComputeTorque(
         float horizontal,
-        float vertical,
-        float forwardSpeed)
+        float vertical)
     {
-        var roll = transform.forward * (-horizontal * sideTorque * 1 * Time.deltaTime);
-        var pitch = transform.right * (vertical * forwardTorque * 1 * Time.deltaTime);
+        var roll = transform.forward * (-horizontal * sideTorque * Time.deltaTime);
+        var pitch = transform.right * (vertical * forwardTorque * Time.deltaTime);
 
         return roll + pitch;
     }

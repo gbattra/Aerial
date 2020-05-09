@@ -10,9 +10,12 @@ public class ThrustEngine : MonoBehaviour
     private float _thrust { get; set; }
     public float thrust => _thrust;
 
-    public Vector3 ComputeThrust(float leftTrigger, float rightTrigger)
+    public Vector3 ComputeThrust(float boost)
     {
-        _thrust = power * (leftTrigger + -rightTrigger) * powerCurve.Evaluate(Time.time);
-        return Vector3.forward * thrust;
+        _thrust = power  * powerCurve.Evaluate(Time.time);
+        var worldForward = Vector3.forward * thrust;
+        var localForward = transform.forward * boost;
+
+        return worldForward + localForward;
     }
 }

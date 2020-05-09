@@ -14,17 +14,14 @@ public class FollowCamera : MonoBehaviour
     
     private void FixedUpdate()
     {
-        transform.position = new Vector3(
+        var targetPos = new Vector3(
             transform.position.x, transform.position.y, player.transform.position.z + maxDistance);
-        // var targetPos = player.transform.position + positionOffset;
-        // var smoothPos = Vector3.Lerp(
-        //     transform.position,
-        //     targetPos,
-        //     border.playerOutOfBounds ? smoothSpeed / 2 : smoothSpeed);
-        // transform.position = new Vector3(
-        //     smoothPos.x, smoothPos.y,
-        //     smoothPos.z > maxDistance ? player.transform.position.z + maxDistance : smoothPos.y);
-
+        var smoothPos = Vector3.Lerp(
+            transform.position,
+            targetPos,
+            smoothSpeed);
+        transform.position = smoothPos;
+        
         // transform.LookAt(border.playerOutOfBounds ?
         //     player.transform.position + lookOffset : new Vector3(
         //         transform.position.x,
