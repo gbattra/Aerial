@@ -23,6 +23,8 @@ public class ControllerEditor : Editor
         EditorGUILayout.Toggle("B", controller.b);
         EditorGUILayout.Toggle("Y", controller.y);
         EditorGUILayout.Toggle("X", controller.x);
+        EditorGUILayout.Toggle("Braking", controller.braking);
+        EditorGUILayout.Toggle("No Inputs", controller.noInputs);
         Repaint();
     }
 }

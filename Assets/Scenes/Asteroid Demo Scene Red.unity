@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dodgePower: 500000
-  forwardTorque: 300000000
-  sideTorque: 300000000
+  forwardTorque: 600000000
+  sideTorque: 600000000
   dodgeCooldown: 0
 --- !u!1001 &160200633
 PrefabInstance:
@@ -471,7 +471,7 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: spawnInterval
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -1050,7 +1050,7 @@ PrefabInstance:
     - target: {fileID: 5863134406272332302, guid: 9b1d77f1448e3cf498e31b8fcfa3cab1,
         type: 3}
       propertyPath: power
-      value: 500000
+      value: 750000
       objectReference: {fileID: 0}
     - target: {fileID: 6591611993093741875, guid: 9b1d77f1448e3cf498e31b8fcfa3cab1,
         type: 3}
