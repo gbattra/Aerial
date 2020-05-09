@@ -71,8 +71,8 @@ public class Vehicle : MonoBehaviour
             transform.rotation = Quaternion.Lerp(
                 transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
         }
-        var roll = controller.leftStickHorizontal * rollPower; // * rollCurve.Evaluate(Time.time);
-        var pitch = controller.leftStickVertical * pitchPower; // * pitchCurve.Evaluate(Time.time);
+        var roll = ComputeRoll(controller.leftStickHorizontal);
+        var pitch = ComputePitch(controller.leftStickVertical);
         rigidbody.AddRelativeTorque(Vector3.back * roll);
         rigidbody.AddRelativeTorque(Vector3.right * pitch);
     }
@@ -103,16 +103,25 @@ public class Vehicle : MonoBehaviour
         return curVel.normalized * maxSpeed;
     }
 
-    private Vector3 ComputeRoll(float rollFactor)
+    private float ComputeRoll(float rollFactor)
     {
-        var roll = rollFactor * rollPower * rollCurve.Evaluate(Time.time);
-        return transform.forward * roll;
+        var localEulers = transform.localEulerAngles;
+        if (localEulers.z > maxRoll && localEulers.z < 180 && rollFactor < 0)
+            return 0;
+        if (localEulers.z < 360-maxRoll && localEulers.z > 180 && rollFactor > 0)
+            return 0;
+        return rollFactor * rollPower * rollCurve.Evaluate(Time.time);
     }
 
-    private Vector3 ComputePitch(float pitchFactor)
+    private float ComputePitch(float pitchFactor)
     {
-        var pitch = pitchFactor * pitchPower * pitchCurve.Evaluate(Time.time);
-        return transform.right * pitch;
+        Debug.Log(transform.localEulerAngles);
+        var localEulers = transform.localEulerAngles;
+        if (localEulers.x > maxPitch && localEulers.z < 180 && pitchFactor > 0)
+            return 0;
+        if (localEulers.x < 360-maxPitch && localEulers.z > 180 && pitchFactor < 0)
+            return 0;
+        return pitchFactor * pitchPower * pitchCurve.Evaluate(Time.time);
     }
 
     private float ComputeAngleOfAttack()

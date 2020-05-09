@@ -1032,6 +1032,26 @@ PrefabInstance:
       propertyPath: dodgeThruster
       value: 
       objectReference: {fileID: 76825478}
+    - target: {fileID: 5863134406272332296, guid: 9b1d77f1448e3cf498e31b8fcfa3cab1,
+        type: 3}
+      propertyPath: rollPower
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863134406272332296, guid: 9b1d77f1448e3cf498e31b8fcfa3cab1,
+        type: 3}
+      propertyPath: maxRoll
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863134406272332296, guid: 9b1d77f1448e3cf498e31b8fcfa3cab1,
+        type: 3}
+      propertyPath: maxPitch
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863134406272332296, guid: 9b1d77f1448e3cf498e31b8fcfa3cab1,
+        type: 3}
+      propertyPath: pitchPower
+      value: 50000
+      objectReference: {fileID: 0}
     - target: {fileID: 5863134406272332297, guid: 9b1d77f1448e3cf498e31b8fcfa3cab1,
         type: 3}
       propertyPath: m_Drag
@@ -1040,7 +1060,7 @@ PrefabInstance:
     - target: {fileID: 5863134406272332297, guid: 9b1d77f1448e3cf498e31b8fcfa3cab1,
         type: 3}
       propertyPath: m_AngularDrag
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5863134406272332297, guid: 9b1d77f1448e3cf498e31b8fcfa3cab1,
         type: 3}
