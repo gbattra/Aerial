@@ -11,13 +11,10 @@ public class LiftEngine : MonoBehaviour
     public float lift => _lift;
 
     public Vector3 ComputeLift(
-        Vector3 up,
-        float forwardSpeed,
-        float angleOfAttack,
-        float powerFactor)
+        float leftStickVertical)
     {
         
-        _lift = powerFactor * power * powerCurve.Evaluate(forwardSpeed) * angleOfAttack;
-        return lift * up;
+        _lift = leftStickVertical * power * powerCurve.Evaluate(Time.time);
+        return Vector3.up * lift;
     }
 }

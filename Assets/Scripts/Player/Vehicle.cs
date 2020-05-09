@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
-    public ThrustEngine thrustEngine;
+    public RollEngine rollEngine;
     public LiftEngine liftEngine;
     public DragHelper dragHelper;
     public DodgeThruster dodgeThruster;
@@ -51,7 +51,7 @@ public class Vehicle : MonoBehaviour
 
     public void HandleInputs(Controller controller)
     {
-        // HandleForces(controller);
+        HandleForces(controller);
         HandleRotations(controller);
         // HandlePowerMoves(controller);
     }
@@ -77,42 +77,26 @@ public class Vehicle : MonoBehaviour
             transform.rotation = Quaternion.Lerp(
                 transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
         }
-        // var roll = ComputeRoll(-controller.leftStickHorizontal);
-        // var pitch = ComputePitch(controller.leftStickVertical);
-        // transform.Rotate(roll + pitch);
-        var roll = ComputeRoll(-controller.leftStickHorizontal);
-        var pitch = controller.leftStickVertical * maxPitch;
-        transform.Rotate(roll);
-        // rigidbody.AddRelativeTorque(Vector3.back * roll);
-        // rigidbody.AddRelativeTorque(Vector3.right * pitch);
+        transform.rotation = ComputeRotation(
+            controller.leftStickHorizontal, -controller.leftStickVertical);
     }
 
-    private Vector3 ComputeRoll(float leftStickHorizontal)
+    private Quaternion ComputeRotation(float leftStickHorizontal, float leftStickVertical)
     {
-        Debug.Log(transform.rotation.z);
-        // if (transform.eulerAngles.z < -maxRoll || transform.eulerAngles.z > maxRoll)
-        //     return Vector3.zero;
-
-        var rollForce = leftStickHorizontal * rollSpeed * Time.deltaTime;
-        return Vector3.forward * rollForce;
+        var roll = maxRoll * leftStickHorizontal;
+        var pitch = maxPitch * leftStickVertical;
+        var targetEulers = (Vector3.back * roll) + (Vector3.right * pitch);
+        var targetQ = Quaternion.Euler(targetEulers);
+        return Quaternion.Lerp(
+            transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
     }
 
     private void HandleForces(Controller controller)
     {
-        // var thrust = thrustEngine.ComputeThrust(
-        //                  Vector3.forward,
-        //                  -controller.rightTrigger) * (controller.braking ? 0 : 1);
-
-        var normSpeed = Mathf.InverseLerp(0f, maxSpeed, forwardSpeed);
-        var angleOfAttack = ComputeAngleOfAttack();
-        var lift = liftEngine.ComputeLift(
-                       Vector3.up, 
-                       normSpeed,
-                       angleOfAttack,
-                       -controller.leftStickVertical) * (controller.braking ? 0 : 1);
+        var roll = rollEngine.ComputeRoll(controller.leftStickHorizontal);
+        var lift = liftEngine.ComputeLift(controller.leftStickVertical);
         
-        // var totalForce = thrust + lift;
-        rigidbody.AddRelativeForce(lift);
+        rigidbody.AddRelativeForce(lift + roll);
     }
     
     private Vector3 ComputeVelocity(Vector3 velocity)
