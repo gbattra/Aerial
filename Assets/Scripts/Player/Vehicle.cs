@@ -15,18 +15,18 @@ public class Vehicle : MonoBehaviour
     public float maxSpeed;
     public float moveSpeed;
     public float dodgeSpeed;
-    
+
+    public float maxPitch;
     public float pitchPower = 10f;
     public float pitchSmoothFactor;
     public AnimationCurve pitchCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
+    public float maxRoll;
     public float rollPower = 10f;
     public float rotationSmoothFactor;
     public AnimationCurve rollCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
     
-    public float maxYaw = 5f;
-
-    public Vector3 maxEulers;
+    public float resetRotationSpeed;
 
     // Start is called before the first frame update
     public void Awake()
@@ -65,9 +65,12 @@ public class Vehicle : MonoBehaviour
 
     private void HandleRotations(Controller controller)
     {
-        // var roll = ComputeRoll(-controller.leftStickHorizontal);
-        // var pitch = ComputePitch(controller.leftStickVertical);
-        // transform.Rotate(roll + pitch);
+        if (controller.noInputs)
+        {
+            var targetQ = Quaternion.Euler(Vector3.zero);
+            transform.rotation = Quaternion.Lerp(
+                transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
+        }
         var roll = controller.leftStickHorizontal * rollPower; // * rollCurve.Evaluate(Time.time);
         var pitch = controller.leftStickVertical * pitchPower; // * pitchCurve.Evaluate(Time.time);
         rigidbody.AddRelativeTorque(Vector3.back * roll);

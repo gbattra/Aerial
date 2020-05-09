@@ -16,5 +16,19 @@ public class Controller : MonoBehaviour
     public bool y => Input.GetButtonDown("Y");
     public bool x => Input.GetButtonDown("X");
     
-    public bool braking => leftTrigger < 0;
+    public bool braking => leftTrigger < 0f;
+
+    public bool noInputs =>
+        leftStickHorizontal == 0f &&
+        leftStickVertical == 0f &&
+        rightStickHorizontal == 0f &&
+        rightStickVertical == 0f &&
+        leftTrigger == 0f &&
+        rightTrigger == 0f &&
+        !leftBumper &&
+        !rightBumper &&
+        !a &&
+        !b &&
+        !y &&
+        !x;
 }
