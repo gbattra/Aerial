@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class Border : MonoBehaviour
     public GameObject bottom;
     public GameObject left;
     public GameObject right;
+
+    public float offset;
     
     public Player player;
 
@@ -28,6 +31,6 @@ public class Border : MonoBehaviour
         transform.position = new Vector3(
             transform.position.x,
             transform.position.y,
-            player.transform.position.z);
+            player.transform.position.z + offset);
     }
 }
