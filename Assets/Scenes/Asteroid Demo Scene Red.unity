@@ -234,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: spawnDistanceInterval
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010235, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -606,7 +606,7 @@ PrefabInstance:
     - target: {fileID: 463473872192900962, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
       propertyPath: spawnDistanceInterval
-      value: 75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 463473872192900963, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
@@ -875,6 +875,11 @@ PrefabInstance:
       propertyPath: dodgeMove
       value: 
       objectReference: {fileID: 8739419128311054240}
+    - target: {fileID: 7474922963692099274, guid: d4b11298aab194f41b923d0117cd4f7c,
+        type: 3}
+      propertyPath: resetRotationSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7474922963692099275, guid: d4b11298aab194f41b923d0117cd4f7c,
         type: 3}
       propertyPath: m_Drag
@@ -920,11 +925,29 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1088245583091153033, guid: 094d11fd7c2665443b143eb2bb71289b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: d233ff6be3bd390409a36e3ecfa697e8,
+        type: 2}
+    - target: {fileID: 1088245583590628296, guid: 094d11fd7c2665443b143eb2bb71289b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: d233ff6be3bd390409a36e3ecfa697e8,
+        type: 2}
     - target: {fileID: 1088245583590628299, guid: 094d11fd7c2665443b143eb2bb71289b,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1088245583596065060, guid: 094d11fd7c2665443b143eb2bb71289b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: d233ff6be3bd390409a36e3ecfa697e8,
+        type: 2}
     - target: {fileID: 1088245583596065063, guid: 094d11fd7c2665443b143eb2bb71289b,
         type: 3}
       propertyPath: m_Enabled
@@ -935,6 +958,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1088245584447481973, guid: 094d11fd7c2665443b143eb2bb71289b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: d233ff6be3bd390409a36e3ecfa697e8,
+        type: 2}
     - target: {fileID: 1088245584543130392, guid: 094d11fd7c2665443b143eb2bb71289b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -948,7 +977,7 @@ PrefabInstance:
     - target: {fileID: 1088245584543130392, guid: 094d11fd7c2665443b143eb2bb71289b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.099998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1088245584543130392, guid: 094d11fd7c2665443b143eb2bb71289b,
         type: 3}
@@ -1089,6 +1118,6 @@ MonoBehaviour:
   dodgePower: 150
   dodgeTime: 0
   startDodgeTime: 0.15
-  rollTorque: 100000000
-  pitchTorque: 100000000
+  rollTorque: 30000
+  pitchTorque: 30000
   dodgeCooldown: 0
