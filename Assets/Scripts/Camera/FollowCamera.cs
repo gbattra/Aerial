@@ -6,6 +6,7 @@ public class FollowCamera : MonoBehaviour
 {
     public float smoothSpeed;
     public float maxDistance;
+    public float boostReduction;
     public Vector3 positionOffset;
     public Vector3 lookOffset;
     
@@ -19,7 +20,7 @@ public class FollowCamera : MonoBehaviour
         var smoothPos = Vector3.Lerp(
             transform.position,
             targetPos,
-            smoothSpeed);
+            smoothSpeed + (player.controller.b ? boostReduction : 0f));
         transform.position = smoothPos;
         
         // transform.LookAt(border.playerOutOfBounds ?

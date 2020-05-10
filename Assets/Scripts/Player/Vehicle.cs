@@ -10,7 +10,7 @@ public class Vehicle : MonoBehaviour
     public ThrustEngine thrustEngine;
     public LiftEngine liftEngine;
     public DragHelper dragHelper;
-    public DodgeThruster dodgeThruster;
+    public DodgeMove dodgeMove;
     public Boost boost;
     public Rigidbody rigidbody;
 
@@ -32,7 +32,6 @@ public class Vehicle : MonoBehaviour
 
     public void FixedUpdate()
     {
-        rigidbody.velocity = ComputeVelocity(rigidbody.velocity);
         // rigidbody.velocity = new Vector3(
         //     rigidbody.velocity.x,
         //     rigidbody.velocity.y,
@@ -44,24 +43,6 @@ public class Vehicle : MonoBehaviour
 
         HandleForces(player.controller);
         HandleRotations(player.controller);
-    }
-
-    private void HandlePowerMoves(Controller controller)
-    {
-        if (controller.a)
-        {
-            var dodge = dodgeThruster.ComputeDodge(
-                controller.leftStickHorizontal, controller.leftStickVertical);
-            var torque = dodgeThruster.ComputeTorque(
-                controller.leftStickHorizontal, controller.leftStickVertical);
-            rigidbody.AddForce(dodge);
-            // rigidbody.AddTorque(torque);
-        }
-
-        if (controller.b)
-        {
-            rigidbody.AddForce(boost.Engage());
-        }
     }
 
     private void HandleRotations(Controller controller)
@@ -95,13 +76,7 @@ public class Vehicle : MonoBehaviour
         var lift = liftEngine.ComputeLift(
             controller.leftStickVertical,
             controller.b ? boost.boostLift : 0f);
-        rigidbody.AddForce(lift + roll + thrust);
-    }
-    
-    private Vector3 ComputeVelocity(Vector3 velocity)
-    {
-        var z = Mathf.Clamp(
-            0f, velocity.z, maxSpeed + (player.controller.b ? boost.boostSpeed : 0f));
-        return new Vector3(velocity.x, velocity.y, z);
+        var finalForce = dodgeMove.isDodging ? thrust : thrust + roll + lift;
+        rigidbody.AddForce(finalForce);
     }
 }

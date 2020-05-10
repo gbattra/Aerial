@@ -827,10 +827,9 @@ GameObject:
   - component: {fileID: 639402421561461426}
   - component: {fileID: 7474922963692099277}
   - component: {fileID: 1499962776902226874}
-  - component: {fileID: 1499962776026449385}
   - component: {fileID: 1499962776026449384}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -881,7 +880,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7474922963692099277}
-  vehicle: {fileID: 7474922963692099274}
 --- !u!114 &7474922963692099274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,11 +892,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b981219f317476e45bd600e383b2dca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 7474922963692099273}
   rollEngine: {fileID: 7474922963692099276}
   thrustEngine: {fileID: 1499962776026449384}
   liftEngine: {fileID: 639402421561461426}
   dragHelper: {fileID: 1499962776902226874}
-  dodgeThruster: {fileID: 1499962776026449385}
+  dodgeThruster: {fileID: 0}
+  boost: {fileID: 0}
   rigidbody: {fileID: 7474922963692099275}
   forwardSpeed: 0
   maxSpeed: 300
@@ -1005,22 +1005,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragFactor: 0.001
   angularDragFactor: 0.001
---- !u!114 &1499962776026449385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7897157974881352177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 820d3b07fd134094c8235c3ee7204f1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dodgePower: 500000
-  forwardTorque: 600000000
-  sideTorque: 600000000
-  dodgeCooldown: 0
 --- !u!114 &1499962776026449384
 MonoBehaviour:
   m_ObjectHideFlags: 0
