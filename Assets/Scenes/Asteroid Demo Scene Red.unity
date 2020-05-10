@@ -740,7 +740,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1500
+  far clip plane: 1000
   field of view: 75
   orthographic: 0
   orthographic size: 5
@@ -775,7 +775,7 @@ MonoBehaviour:
   maxDistance: -60
   boostReduction: -0.2
   positionOffset: {x: 0, y: 1.5, z: -35}
-  lookOffset: {x: 0, y: 0.76, z: 0}
+  moveableRange: {x: 0, y: 0, z: 0}
   player: {fileID: 8317219314831642790}
   border: {fileID: 6264088351331865946}
 --- !u!1001 &1499962776100652655
@@ -879,6 +879,21 @@ PrefabInstance:
         type: 3}
       propertyPath: resetRotationSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474922963692099274, guid: d4b11298aab194f41b923d0117cd4f7c,
+        type: 3}
+      propertyPath: maxPitch
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474922963692099274, guid: d4b11298aab194f41b923d0117cd4f7c,
+        type: 3}
+      propertyPath: maxRoll
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474922963692099274, guid: d4b11298aab194f41b923d0117cd4f7c,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7474922963692099275, guid: d4b11298aab194f41b923d0117cd4f7c,
         type: 3}
@@ -1118,6 +1133,6 @@ MonoBehaviour:
   dodgePower: 150
   dodgeTime: 0
   startDodgeTime: 0.15
-  rollTorque: 30000
-  pitchTorque: 30000
+  rollTorque: 10000
+  pitchTorque: 10000
   dodgeCooldown: 0
