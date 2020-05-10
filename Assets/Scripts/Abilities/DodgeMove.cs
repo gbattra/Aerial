@@ -20,7 +20,7 @@ public class DodgeMove : MonoBehaviour
     private Vector3 dodgeDirection;
 
 
-    public void FixedUpdate()
+    public void Update()
     {
         if (!isDodging && player.controller.a)
         {
@@ -39,7 +39,7 @@ public class DodgeMove : MonoBehaviour
         
         var horizontalDodge = Vector3.left * -player.controller.leftStickHorizontal;
         var verticalDodge = Vector3.up * player.controller.leftStickVertical;
-        var dodge = (horizontalDodge + verticalDodge) * (dodgePower * Time.deltaTime);
+        var dodge = (horizontalDodge + verticalDodge) * dodgePower;
         rigidbody.velocity = new Vector3(dodge.x, dodge.y, rigidbody.velocity.z);
         
         var roll = transform.forward * (-player.controller.leftStickHorizontal * rollTorque);

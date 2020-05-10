@@ -1086,9 +1086,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8317219314831642790}
   rigidbody: {fileID: 8317219314831642788}
-  dodgePower: 7500
+  dodgePower: 150
   dodgeTime: 0
   startDodgeTime: 0.15
-  forwardTorque: 0
-  sideTorque: 0
+  rollTorque: 100000000
+  pitchTorque: 100000000
   dodgeCooldown: 0
