@@ -8,26 +8,44 @@ public class FollowCamera : MonoBehaviour
     public float maxDistance;
     public float boostReduction;
     public Vector3 positionOffset;
-    public Vector3 lookOffset;
+    public Vector3 moveableRange;
     
     public Player player;
     public Border border;
     
     private void FixedUpdate()
     {
-        var targetPos = new Vector3(
-            transform.position.x, transform.position.y, player.transform.position.z + maxDistance);
+        var x = TargetX();
+        var y = TargetY();
+        var targetPos = new Vector3(x, y, player.transform.position.z + maxDistance);
         var smoothPos = Vector3.Lerp(
             transform.position,
             targetPos,
             smoothSpeed + (player.controller.b ? boostReduction : 0f));
         transform.position = smoothPos;
-        
-        // transform.LookAt(border.playerOutOfBounds ?
-        //     player.transform.position + lookOffset : new Vector3(
-        //         transform.position.x,
-        //         transform.position.y,
-        //         transform.position.z + 10));
     }
 
+    public float TargetX()
+    {
+        var playerX = player.transform.position.x;
+        var targetX = playerX;
+        if (playerX > moveableRange.x)
+            targetX = moveableRange.x;
+        if (playerX < -moveableRange.x)
+            targetX = -moveableRange.x;
+
+        return targetX;
+    }
+    
+    public float TargetY()
+    {
+        var playerY = player.transform.position.y;
+        var targetY = playerY;
+        if (playerY > moveableRange.y)
+            targetY = moveableRange.y;
+        if (playerY < -moveableRange.y)
+            targetY = -moveableRange.y;
+
+        return targetY;
+    }
 }

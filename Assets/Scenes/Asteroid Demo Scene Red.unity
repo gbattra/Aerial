@@ -151,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: spawnBounds.y
-      value: 60
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -234,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: spawnDistanceInterval
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010235, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -571,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 463473872192900962, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
       propertyPath: spawnBounds.y
-      value: 60
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 463473872192900962, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
@@ -606,7 +606,7 @@ PrefabInstance:
     - target: {fileID: 463473872192900962, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
       propertyPath: spawnDistanceInterval
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 463473872192900963, guid: d89c73aa65456c14189f3b1f5e4fd179,
         type: 3}
