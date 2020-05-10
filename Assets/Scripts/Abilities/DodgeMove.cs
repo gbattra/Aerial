@@ -10,15 +10,15 @@ public class DodgeMove : MonoBehaviour
     public float dodgePower;
     public float dodgeTime;
     public float startDodgeTime;
-
+    public float rollTorque;
+    public float pitchTorque;
+    public float dodgeCooldown;
+    
     private bool _isDodging;
     public bool isDodging => _isDodging;
     
     private Vector3 dodgeDirection;
-    
-    public float forwardTorque;
-    public float sideTorque;
-    public float dodgeCooldown;
+
 
     public void FixedUpdate()
     {
@@ -40,17 +40,11 @@ public class DodgeMove : MonoBehaviour
         var horizontalDodge = Vector3.left * -player.controller.leftStickHorizontal;
         var verticalDodge = Vector3.up * player.controller.leftStickVertical;
         var dodge = (horizontalDodge + verticalDodge) * (dodgePower * Time.deltaTime);
-        
         rigidbody.velocity = new Vector3(dodge.x, dodge.y, rigidbody.velocity.z);
-    }
-
-    public Vector3 ComputeTorque(
-        float horizontal,
-        float vertical)
-    {
-        var roll = transform.forward * (-horizontal * sideTorque);
-        var pitch = transform.right * (vertical * forwardTorque);
-
-        return roll + pitch;
+        
+        var roll = transform.forward * (-player.controller.leftStickHorizontal * rollTorque);
+        var pitch = transform.right * (player.controller.leftStickVertical * pitchTorque);
+        var torque = pitch + roll;
+        rigidbody.AddRelativeTorque(torque);
     }
 }
