@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 0
-  velocityFactor: 1
   rotateSpeed: 0.1
   player: {fileID: 0}
   rigidbody: {fileID: 1238378408122257715}

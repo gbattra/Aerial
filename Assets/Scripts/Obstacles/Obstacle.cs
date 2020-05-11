@@ -7,7 +7,6 @@ using Random = System.Random;
 public class Obstacle : MonoBehaviour
 {
     public float velocity;
-    public float velocityFactor;
     public float rotateSpeed;
     public Player player;
     public Rigidbody rigidbody;
@@ -26,17 +25,11 @@ public class Obstacle : MonoBehaviour
 
     private const float BUFFER = -500f;
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        rigidbody.velocity = Vector3.back * (velocity * velocityFactor);
-        if (transform.position.z < player.transform.position.z + BUFFER)
-            Destroy(gameObject);
-    }
-
     public void FixedUpdate()
     {
+        rigidbody.velocity = Vector3.back * velocity;
+        if (transform.position.z < player.transform.position.z + BUFFER)
+            Destroy(gameObject);
         transform.Rotate(rotation);
     }
 }

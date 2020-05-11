@@ -16,8 +16,8 @@ public class BaseSpawner : MonoBehaviour
 
     public Vector3 spawnBounds;
 
-    public float spawnDistanceInterval;
-    public float lastSpawnLocation;
+    public float spawnTimeInterval;
+    public float lastSpawnTime;
     public float spawnDecay;
     public int spawnCount;
     public float bigCountdown;
@@ -25,7 +25,7 @@ public class BaseSpawner : MonoBehaviour
     public int randomSeed;
     public float obstacleVelocity;
 
-    public bool shouldSpawn => transform.position.z - lastSpawnLocation > spawnDistanceInterval;
+    public bool shouldSpawn => Time.time - lastSpawnTime > spawnTimeInterval;
 
     public Random rand;
 
@@ -48,12 +48,12 @@ public class BaseSpawner : MonoBehaviour
         {
             for (var i = 0; i < spawnCount; i++)
                 SpawnObstacle();
-            lastSpawnLocation = transform.position.z;
+            lastSpawnTime = Time.time;
         }
 
         if (currentBigTime >= bigCountdown)
         {
-            spawnDistanceInterval -= spawnDecay;
+            spawnTimeInterval -= spawnDecay;
             currentBigTime = 0;
         }
     }
@@ -75,10 +75,11 @@ public class BaseSpawner : MonoBehaviour
     {
         var x = rand.Next((int) -spawnBounds.x, (int) spawnBounds.x);
         var y = rand.Next((int) -spawnBounds.y, (int) spawnBounds.y);
+        var z = rand.Next((int) -spawnBounds.z, (int) spawnBounds.z);
         
         return new Vector3(
             transform.position.x + x,
             transform.position.y + y,
-            transform.position.z);
+            transform.position.z + z);
     }
 }

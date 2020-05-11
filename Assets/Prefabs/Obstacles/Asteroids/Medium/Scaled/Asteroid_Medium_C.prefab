@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6024123061131198197}
   - component: {fileID: 5876047802594072050}
   - component: {fileID: 3329728701887530738}
+  - component: {fileID: -8086167390476932326}
   m_Layer: 0
   m_Name: Asteroid_Medium_C
   m_TagString: Untagged
@@ -91,9 +92,9 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -110,8 +111,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 0
-  velocityFactor: 1
   rotateSpeed: 0.1
   player: {fileID: 0}
   rigidbody: {fileID: 5876047802594072050}
   rotation: {x: 0, y: 0, z: 0}
+--- !u!136 &-8086167390476932326
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626471190668535226}
+  m_Material: {fileID: 13400000, guid: d233ff6be3bd390409a36e3ecfa697e8, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.30007
+  m_Height: 2.5353572
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.0000023841858, z: 0}
