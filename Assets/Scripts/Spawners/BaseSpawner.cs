@@ -8,8 +8,11 @@ public class BaseSpawner : MonoBehaviour
 {
     public float respawnFrequency;
     public Player player;
-    public List<Asteroid> asteroids;
+    public List<Obstacle> obstacles;
     public float distanceFromPlayer;
+
+    public int obstacleScaleMin;
+    public int obstacleScaleMax;
 
     public Vector3 spawnBounds;
 
@@ -56,12 +59,13 @@ public class BaseSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        var obstacle = asteroids[rand.Next(asteroids.Count)];
+        var obstacle = obstacles[rand.Next(obstacles.Count)];
         var position = RandomSpawnPosition();
         var clone = Instantiate(
             obstacle,
             position,
             Quaternion.identity);
+        clone.transform.localScale *= rand.Next(obstacleScaleMin, obstacleScaleMax);
         clone.player = player;
     }
 

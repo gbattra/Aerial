@@ -7,12 +7,18 @@ public class FollowCamera : MonoBehaviour
     public float smoothSpeed;
     public float maxDistance;
     public float boostReduction;
+    public float boostFOV;
+    public float normalFOV;
+    
     public Vector3 positionOffset;
     public Vector3 moveableRange;
     
+    public AnimationCurve fovCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+    
     public Player player;
     public Border border;
-    
+    public Camera camera;
+
     private void FixedUpdate()
     {
         var x = TargetX();
@@ -23,6 +29,8 @@ public class FollowCamera : MonoBehaviour
             targetPos,
             smoothSpeed + (player.controller.b ? boostReduction : 0f));
         transform.position = smoothPos;
+        var fov = player.controller.b ? boostFOV : normalFOV;
+        camera.fieldOfView = fov * fovCurve.Evaluate(Time.time);
     }
 
     public float TargetX()
