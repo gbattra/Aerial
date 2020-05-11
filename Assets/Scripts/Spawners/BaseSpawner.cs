@@ -23,6 +23,7 @@ public class BaseSpawner : MonoBehaviour
     public float bigCountdown;
     public float currentBigTime;
     public int randomSeed;
+    public float obstacleVelocity;
 
     public bool shouldSpawn => transform.position.z - lastSpawnLocation > spawnDistanceInterval;
 
@@ -67,6 +68,7 @@ public class BaseSpawner : MonoBehaviour
             Quaternion.identity);
         clone.transform.localScale *= rand.Next(obstacleScaleMin, obstacleScaleMax);
         clone.player = player;
+        clone.velocity = obstacleVelocity;
     }
 
     private Vector3 RandomSpawnPosition()
