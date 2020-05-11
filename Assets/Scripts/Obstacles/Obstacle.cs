@@ -14,6 +14,8 @@ public class Obstacle : MonoBehaviour
     private Random _rand;
     public Vector3 rotation;
 
+    private const float BUFFER = -500f;
+    
     public void Awake()
     {
         _rand = new Random();
@@ -22,15 +24,18 @@ public class Obstacle : MonoBehaviour
             _rand.Next(0, 10),
             _rand.Next(0, 10)) * rotateSpeed;
     }
-
-    private const float BUFFER = -500f;
-
+    
     public void FixedUpdate()
     {
         rigidbody.velocity = Vector3.back * velocity;
         if (transform.position.z < player.transform.position.z + BUFFER)
             Destroy(gameObject);
         transform.Rotate(rotation);
+    }
+
+    public void OnParticleCollision(GameObject other)
+    {
+        // Destroy(gameObject);
     }
 }
   
