@@ -10,7 +10,6 @@ public class Vehicle : MonoBehaviour
     public RollEngine rollEngine;
     public ThrustEngine thrustEngine;
     public LiftEngine liftEngine;
-    public DragHelper dragHelper;
     public DodgeMove dodgeMove;
     public Boost boost;
     public IFX_Minigun minigun;
@@ -20,13 +19,8 @@ public class Vehicle : MonoBehaviour
     public float maxSpeed;
     public float maxPitch;
     public float maxRoll;
+    public float maxYaw;
     public float resetRotationSpeed;
-
-    // Start is called before the first frame update
-    public void Awake()
-    {
-        dragHelper.Init(rigidbody.drag, rigidbody.angularDrag);
-    }
 
     public void Update()
     {
@@ -34,11 +28,6 @@ public class Vehicle : MonoBehaviour
 
     public void FixedUpdate()
     {
-        // rigidbody.velocity = new Vector3(
-        //     rigidbody.velocity.x,
-        //     rigidbody.velocity.y,
-        //     maxSpeed + (player.controller.b ? boost.boostSpeed : 0f));
-        // transform.eulerAngles = CapRotation(transform.eulerAngles);
         forwardSpeed = rigidbody.velocity.magnitude;
         // rigidbody.drag = dragHelper.ComputeDrag(forwardSpeed);
         // rigidbody.angularDrag = dragHelper.ComputeAngularDrag(forwardSpeed);
@@ -60,9 +49,12 @@ public class Vehicle : MonoBehaviour
 
     private Quaternion ComputeRotation()
     {
+        var yaw = maxYaw * Controller.rightStickHorizontal;
+        var aimPitch = maxYaw * -Controller.rightStickVertical;
         var roll = (maxRoll + (Controller.b ? boost.rollBuffer : 0f)) * Controller.leftStickHorizontal;
         var pitch = (maxPitch + (Controller.b ? boost.pitchBuffer : 0f)) * -Controller.leftStickVertical;
-        var targetEulers = (Vector3.back * roll) + (Vector3.right * pitch);
+        var targetEulers =
+            (Vector3.up * yaw) + (Vector3.back * roll) + (Vector3.right * (pitch + aimPitch));
         var targetQ = Quaternion.Euler(targetEulers);
         return Quaternion.Lerp(
             transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
