@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.105882354, g: 0.02745098, b: 0.02745098, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.025
+  m_FogDensity: 0.005
   m_LinearFogStart: 34.62
   m_LinearFogEnd: 248.95
   m_AmbientSkyColor: {r: 1, g: 0.8365737, b: 0, a: 1}
@@ -393,7 +393,7 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: obstacleScaleMax
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -934,7 +934,7 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: obstacleScaleMax
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -1226,7 +1226,7 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: obstacleScaleMin
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -1701,6 +1701,7 @@ MonoBehaviour:
     type: 3}
   dodgeMove: {fileID: 992818361}
   boost: {fileID: 992818362}
+  minigun: {fileID: 0}
   rigidbody: {fileID: 992818360}
   forwardSpeed: 0
   maxSpeed: 100
@@ -1719,7 +1720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acab5c844408204eb5f0bea19e20d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 992818364}
 --- !u!1 &1277219419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,13 +1889,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 992818357}
     m_Modifications:
+    - target: {fileID: 1786614695018552, guid: 7e7feb07a270a0443a3e9f4e80ce3027, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1993337186773548, guid: 7e7feb07a270a0443a3e9f4e80ce3027, type: 3}
       propertyPath: m_Name
       value: GO_Minigun
       objectReference: {fileID: 0}
     - target: {fileID: 1993337186773548, guid: 7e7feb07a270a0443a3e9f4e80ce3027, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4621594785493912, guid: 7e7feb07a270a0443a3e9f4e80ce3027, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1903,11 +1907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4621594785493912, guid: 7e7feb07a270a0443a3e9f4e80ce3027, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.126
+      value: 0.248
       objectReference: {fileID: 0}
     - target: {fileID: 4621594785493912, guid: 7e7feb07a270a0443a3e9f4e80ce3027, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.308
+      value: 0.172
       objectReference: {fileID: 0}
     - target: {fileID: 4621594785493912, guid: 7e7feb07a270a0443a3e9f4e80ce3027, type: 3}
       propertyPath: m_LocalRotation.x

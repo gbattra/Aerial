@@ -27,9 +27,9 @@ public class FollowCamera : MonoBehaviour
         var smoothPos = Vector3.Lerp(
             transform.position,
             targetPos,
-            smoothSpeed + (player.controller.b ? boostReduction : 0f));
+            smoothSpeed + (Controller.b ? boostReduction : 0f));
         transform.position = smoothPos;
-        var fov = player.controller.b ? boostFOV : normalFOV;
+        var fov = Controller.b ? boostFOV : normalFOV;
         camera.fieldOfView = fov * fovCurve.Evaluate(Time.time);
     }
 

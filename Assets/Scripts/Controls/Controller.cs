@@ -1,24 +1,24 @@
 ﻿using UnityEngine;
 
-public class Controller : MonoBehaviour
+public static class Controller
 {
-    public float leftStickHorizontal => Input.GetAxis("LeftStickHorizontal");
-    public float leftStickVertical => Input.GetAxis("LeftStickVertical");
-    public float rightStickHorizontal => Input.GetAxis("RightStickHorizontal");
-    public float rightStickVertical => Input.GetAxis("RightStickVertical");
-    public float leftTrigger => Input.GetAxis("LeftTrigger");
-    public float rightTrigger => Input.GetAxis("RightTrigger");
+    public static float leftStickHorizontal => Input.GetAxis("LeftStickHorizontal");
+    public static float leftStickVertical => Input.GetAxis("LeftStickVertical");
+    public static float rightStickHorizontal => Input.GetAxis("RightStickHorizontal");
+    public static float rightStickVertical => Input.GetAxis("RightStickVertical");
+    public static float leftTrigger => Input.GetAxis("LeftTrigger");
+    public static float rightTrigger => Input.GetAxis("RightTrigger");
     
-    public bool leftBumper => Input.GetButton("LeftBumper");
-    public bool rightBumper => Input.GetButton("RightBumper");
-    public bool a => Input.GetButtonDown("A");
-    public bool b => Input.GetButton("B");
-    public bool y => Input.GetButtonDown("Y");
-    public bool x => Input.GetButtonDown("X");
+    public static bool leftBumper => Input.GetButton("LeftBumper");
+    public static bool rightBumper => Input.GetButton("RightBumper");
+    public static bool a => Input.GetButtonDown("A");
+    public static bool b => Input.GetButton("B");
+    public static bool y => Input.GetButtonDown("Y");
+    public static bool x => Input.GetButtonDown("X");
     
-    public bool braking => leftTrigger < 0f;
+    public static bool braking => leftTrigger < 0f;
 
-    public bool noInputs =>
+    public static bool noInputs =>
         leftStickHorizontal == 0f &&
         leftStickVertical == 0f &&
         rightStickHorizontal == 0f &&

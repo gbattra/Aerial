@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using QFX.IFX;
 using UnityEngine;
 
 public class Vehicle : MonoBehaviour
@@ -12,6 +13,7 @@ public class Vehicle : MonoBehaviour
     public DragHelper dragHelper;
     public DodgeMove dodgeMove;
     public Boost boost;
+    public IFX_Minigun minigun;
     public Rigidbody rigidbody;
 
     public float forwardSpeed;
@@ -41,41 +43,40 @@ public class Vehicle : MonoBehaviour
         // rigidbody.drag = dragHelper.ComputeDrag(forwardSpeed);
         // rigidbody.angularDrag = dragHelper.ComputeAngularDrag(forwardSpeed);
 
-        HandleForces(player.controller);
-        HandleRotations(player.controller);
+        HandleForces();
+        HandleRotations();
     }
 
-    private void HandleRotations(Controller controller)
+    private void HandleRotations()
     {
-        if (controller.noInputs)
+        if (Controller.noInputs)
         {
             var targetQ = Quaternion.Euler(Vector3.zero);
             transform.rotation = Quaternion.Lerp(
                 transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
         }
-        transform.rotation = ComputeRotation(
-            controller.leftStickHorizontal, -controller.leftStickVertical);
+        transform.rotation = ComputeRotation();
     }
 
-    private Quaternion ComputeRotation(float leftStickHorizontal, float leftStickVertical)
+    private Quaternion ComputeRotation()
     {
-        var roll = (maxRoll + (player.controller.b ? boost.rollBuffer : 0f)) * leftStickHorizontal;
-        var pitch = (maxPitch + (player.controller.b ? boost.pitchBuffer : 0f)) * leftStickVertical;
+        var roll = (maxRoll + (Controller.b ? boost.rollBuffer : 0f)) * Controller.leftStickHorizontal;
+        var pitch = (maxPitch + (Controller.b ? boost.pitchBuffer : 0f)) * -Controller.leftStickVertical;
         var targetEulers = (Vector3.back * roll) + (Vector3.right * pitch);
         var targetQ = Quaternion.Euler(targetEulers);
         return Quaternion.Lerp(
             transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
     }
 
-    private void HandleForces(Controller controller)
+    private void HandleForces()
     {
-        var thrust = thrustEngine.ComputeThrust(controller.b ? boost.boostThrust : 0f);
+        var thrust = thrustEngine.ComputeThrust(Controller.b ? boost.boostThrust : 0f);
         var roll = rollEngine.ComputeRoll(
-            controller.leftStickHorizontal,
-            controller.b ? boost.boostRoll : 0f);
+            Controller.leftStickHorizontal,
+            Controller.b ? boost.boostRoll : 0f);
         var lift = liftEngine.ComputeLift(
-            controller.leftStickVertical,
-            controller.b ? boost.boostLift : 0f);
+            Controller.leftStickVertical,
+            Controller.b ? boost.boostLift : 0f);
         var finalForce = dodgeMove.isDodging ? thrust : thrust + roll + lift;
         rigidbody.AddForce(finalForce);
     }

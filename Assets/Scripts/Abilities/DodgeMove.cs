@@ -22,7 +22,7 @@ public class DodgeMove : MonoBehaviour
 
     public void Update()
     {
-        if (!isDodging && player.controller.a)
+        if (!isDodging && Controller.a)
         {
             dodgeTime = startDodgeTime;
             _isDodging = true;
@@ -37,13 +37,13 @@ public class DodgeMove : MonoBehaviour
         
         if (!isDodging) return;
         
-        var horizontalDodge = Vector3.left * -player.controller.leftStickHorizontal;
-        var verticalDodge = Vector3.up * player.controller.leftStickVertical;
+        var horizontalDodge = Vector3.left * -Controller.leftStickHorizontal;
+        var verticalDodge = Vector3.up * Controller.leftStickVertical;
         var dodge = (horizontalDodge + verticalDodge) * dodgePower;
         rigidbody.velocity = new Vector3(dodge.x, dodge.y, rigidbody.velocity.z);
         
-        var roll = transform.forward * (-player.controller.leftStickHorizontal * rollTorque);
-        var pitch = transform.right * (player.controller.leftStickVertical * pitchTorque);
+        var roll = transform.forward * (-Controller.leftStickHorizontal * rollTorque);
+        var pitch = transform.right * (Controller.leftStickVertical * pitchTorque);
         var torque = pitch + roll;
         rigidbody.AddRelativeTorque(torque);
     }
