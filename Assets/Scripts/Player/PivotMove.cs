@@ -24,7 +24,6 @@ public class PivotMove : MonoBehaviour
         var rightBumper = Controller.rightBumper;
         if (!isPivoting && (leftBumper || rightBumper))
         {
-            Debug.Log("PIVOTING");
             isPivoting = true;
             pivotStartTime = Time.time;
             pivotDirection = leftBumper ? LEFT : RIGHT;
