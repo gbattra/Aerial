@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db268b8b0512aaa4a8e3a0eae0b910f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0
+  power: 500
   powerCurve:
     serializedVersion: 2
     m_Curve:
@@ -1641,48 +1641,6 @@ MonoBehaviour:
   thrustPower: 100000
   pivotTime: 0.13
   rigidbody: {fileID: 992818360}
-  pivotCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.9495239
-      inSlope: 0.34816682
-      outSlope: 0.34816682
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.14151204
-      value: 0.9987937
-      inSlope: 0.06242953
-      outSlope: 0.06242953
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.06917027
-    - serializedVersion: 3
-      time: 0.8537213
-      value: 1.0013891
-      inSlope: -0.041674063
-      outSlope: -0.041674063
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.299019
-    - serializedVersion: 3
-      time: 1.0030518
-      value: 0.94740295
-      inSlope: -0.3615217
-      outSlope: -0.3615217
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &992818365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,7 +1653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cedf041452f1d340b7f36e8da19acdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 1000
+  power: 500
   powerCurve:
     serializedVersion: 2
     m_Curve:
@@ -1774,6 +1732,7 @@ MonoBehaviour:
   thrustEngine: {fileID: 992818363}
   liftEngine: {fileID: 992818365}
   dodgeMove: {fileID: 992818361}
+  pivotMove: {fileID: 992818364}
   boost: {fileID: 992818362}
   minigun: {fileID: 114087878420726213}
   rigidbody: {fileID: 992818360}
@@ -4598,7 +4557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042590503505103}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.028}
+  m_LocalPosition: {x: 0, y: 0, z: -2.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4340517006974057}
@@ -4797,7 +4756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570031158822089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 1.34, z: 0.46}
+  m_LocalPosition: {x: -0.01, y: 1.34, z: 3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4160784886114655}
@@ -8822,6 +8781,8 @@ MonoBehaviour:
   MuzzleFlashPs: {fileID: 198728105672139255}
   SleevesPs: {fileID: 198011992590551507}
   FireRate: 0.06
+  vehicleSpeed: 0
+  projectileSpeed: 0
   AudioClip: {fileID: 8300000, guid: 5530a2bff6e96f94696f262406420fc2, type: 3}
   AudioSource: {fileID: 82683133594935467}
 --- !u!114 &114431121951115851
@@ -27235,7 +27196,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570031158822089}
   serializedVersion: 6
-  lengthInSec: 10
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -27310,7 +27271,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2

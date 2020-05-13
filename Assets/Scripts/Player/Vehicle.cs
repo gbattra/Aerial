@@ -11,6 +11,7 @@ public class Vehicle : MonoBehaviour
     public ThrustEngine thrustEngine;
     public LiftEngine liftEngine;
     public DodgeMove dodgeMove;
+    public PivotMove pivotMove;
     public Boost boost;
     public IFX_Minigun minigun;
     public Rigidbody rigidbody;
@@ -45,6 +46,10 @@ public class Vehicle : MonoBehaviour
             transform.rotation = Quaternion.Lerp(
                 transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
         }
+
+        if (pivotMove.isPivoting)
+            return;
+        
         transform.rotation = ComputeRotation();
     }
 

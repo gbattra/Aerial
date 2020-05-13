@@ -10,7 +10,8 @@ public class PivotMove : MonoBehaviour
     public float pivotTime;
     public Rigidbody rigidbody;
 
-    private bool isPivoting;
+    public bool isPivoting => _isPivoting;
+    private bool _isPivoting;
     private int pivotDirection;
     private float pivotStartTime;
 
@@ -24,12 +25,12 @@ public class PivotMove : MonoBehaviour
         var rightBumper = Controller.rightBumper;
         if (!isPivoting && (leftBumper || rightBumper))
         {
-            isPivoting = true;
+            _isPivoting = true;
             pivotStartTime = Time.time;
             pivotDirection = leftBumper ? LEFT : RIGHT;
         }
         
-        isPivoting &= Time.time - pivotStartTime < pivotTime;
+        _isPivoting &= Time.time - pivotStartTime < pivotTime;
         if (isPivoting) return;
         
         pivotDirection = NONE;
