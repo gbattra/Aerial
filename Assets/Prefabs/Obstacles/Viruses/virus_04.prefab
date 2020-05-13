@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7726548360497198763}
   - component: {fileID: 7718697570376805399}
   - component: {fileID: -3015072550436039388}
-  - component: {fileID: 2902917700898040278}
   - component: {fileID: 3326684837684610298}
+  - component: {fileID: 6437280813412052383}
   m_Layer: 0
   m_Name: virus_04
   m_TagString: Untagged
@@ -99,23 +99,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2902917700898040278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7732305002213796823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367f81ccdbfb24844a8868f0e8b2ed52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 0
-  rotateSpeed: 0.1
-  player: {fileID: 0}
-  rigidbody: {fileID: -3015072550436039388}
-  rotation: {x: 0, y: 0, z: 0}
 --- !u!135 &3326684837684610298
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -129,3 +112,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5719744
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6437280813412052383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732305002213796823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633a94e0c0aaaa54a8d671187260080f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 0
+  rotateSpeed: 0.1
+  player: {fileID: 0}
+  rigidbody: {fileID: -3015072550436039388}
+  rotation: {x: 0, y: 0, z: 0}

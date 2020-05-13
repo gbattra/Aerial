@@ -20,6 +20,7 @@ public class Vehicle : MonoBehaviour
     public float maxPitch;
     public float maxRoll;
     public float maxYaw;
+    
     public float resetRotationSpeed;
 
     public void Update()

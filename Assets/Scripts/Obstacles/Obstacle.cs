@@ -32,10 +32,5 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
         transform.Rotate(rotation);
     }
-
-    public void OnParticleCollision(GameObject other)
-    {
-        // Destroy(gameObject);
-    }
 }
   

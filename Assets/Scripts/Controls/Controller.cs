@@ -9,8 +9,8 @@ public static class Controller
     public static float leftTrigger => Input.GetAxis("LeftTrigger");
     public static float rightTrigger => Input.GetAxis("RightTrigger");
     
-    public static bool leftBumper => Input.GetButton("LeftBumper");
-    public static bool rightBumper => Input.GetButton("RightBumper");
+    public static bool leftBumper => Input.GetButtonDown("LeftBumper");
+    public static bool rightBumper => Input.GetButtonDown("RightBumper");
     public static bool a => Input.GetButtonDown("A");
     public static bool b => Input.GetButton("B");
     public static bool y => Input.GetButtonDown("Y");
