@@ -13,6 +13,7 @@ public class Vehicle : MonoBehaviour
     public DodgeMove dodgeMove;
     public PivotMove pivotMove;
     public Boost boost;
+    public ShieldAbility shieldAbility;
     public IFX_Minigun minigun;
     public Rigidbody rigidbody;
 

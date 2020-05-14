@@ -68,7 +68,6 @@ public class BaseSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        Debug.Log("Spawning");
         var obstacle = obstacles[rand.Next(obstacles.Count)];
         var position = RandomSpawnPosition();
         var clone = Instantiate(
