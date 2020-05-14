@@ -388,12 +388,12 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: obstacleScaleMin
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: obstacleScaleMax
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -454,6 +454,26 @@ PrefabInstance:
         type: 3}
       propertyPath: velocityGain
       value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: decayAmount
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: decayInterval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: startSpawnTimeInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: finalSpawnTimeInterval
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010235, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -939,12 +959,12 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: obstacleScaleMin
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: obstacleScaleMax
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -1005,6 +1025,26 @@ PrefabInstance:
         type: 3}
       propertyPath: velocityGain
       value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: decayAmount
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: decayInterval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: startSpawnTimeInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: finalSpawnTimeInterval
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010235, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -1251,7 +1291,7 @@ PrefabInstance:
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: obstacleScaleMax
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
@@ -1343,6 +1383,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3933061808345101490, guid: 3e2328de6e302f841a59d105b7b9060e,
         type: 3}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: decayAmount
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: decayInterval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: startSpawnTimeInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338534495111010231, guid: 861c7b508b965474d8af794cd117e5c6,
+        type: 3}
+      propertyPath: finalSpawnTimeInterval
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 1338534495111010235, guid: 861c7b508b965474d8af794cd117e5c6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1507,8 +1567,8 @@ GameObject:
   - component: {fileID: 992818368}
   - component: {fileID: 992818367}
   - component: {fileID: 992818366}
-  - component: {fileID: 992818363}
   - component: {fileID: 992818365}
+  - component: {fileID: 992818363}
   - component: {fileID: 992818362}
   - component: {fileID: 992818361}
   - component: {fileID: 992818364}
@@ -1529,7 +1589,7 @@ Transform:
   m_GameObject: {fileID: 992818356}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4791268, y: 1.4791268, z: 1.4791268}
+  m_LocalScale: {x: 1.2981409, y: 1.2981409, z: 1.2981409}
   m_Children:
   - {fileID: 1990612913}
   - {fileID: 4621594019522351}
@@ -1598,7 +1658,7 @@ Rigidbody:
   m_GameObject: {fileID: 992818356}
   serializedVersion: 2
   m_Mass: 150
-  m_Drag: 1.7
+  m_Drag: 2.7
   m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -1619,11 +1679,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 992818368}
   rigidbody: {fileID: 992818360}
-  dodgePower: 10
+  dodgePower: 7
   dodgeTime: 0
   startDodgeTime: 0.15
-  rollTorque: 50
-  pitchTorque: 50
+  rollTorque: 5
+  pitchTorque: 5
   dodgeCooldown: 0
 --- !u!114 &992818362
 MonoBehaviour:
@@ -1638,7 +1698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostSpeed: 100
-  boostThrust: 400
+  boostThrust: 50
   boostRoll: 500
   boostLift: 500
   rollBuffer: 30
@@ -1656,7 +1716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db268b8b0512aaa4a8e3a0eae0b910f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 500
+  power: 50
   powerCurve:
     serializedVersion: 2
     m_Curve:
@@ -1693,8 +1753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6442fed2dbfc1f48a5d3721e70deaf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustPower: 100000
-  pivotTime: 0.13
+  thrustPower: 100000000
+  pivotTime: 0.15
   rigidbody: {fileID: 992818360}
 --- !u!114 &992818365
 MonoBehaviour:
@@ -1708,7 +1768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cedf041452f1d340b7f36e8da19acdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 500
+  power: 1000
   powerCurve:
     serializedVersion: 2
     m_Curve:
@@ -1796,7 +1856,7 @@ MonoBehaviour:
   maxSpeed: 100
   maxPitch: 40
   maxRoll: 50
-  maxYaw: 20
+  maxYaw: 30
   resetRotationSpeed: 2
 --- !u!114 &992818368
 MonoBehaviour:

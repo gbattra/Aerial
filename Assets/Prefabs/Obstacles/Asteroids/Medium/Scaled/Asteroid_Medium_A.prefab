@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7775743973051636505}
   - component: {fileID: 268229515442602893}
   - component: {fileID: 4020466694721682017}
-  - component: {fileID: 3542126055951736227}
+  - component: {fileID: -121843745357738831}
   m_Layer: 0
   m_Name: Asteroid_Medium_A
   m_TagString: Untagged
@@ -115,8 +115,8 @@ MonoBehaviour:
   player: {fileID: 0}
   rigidbody: {fileID: 268229515442602893}
   rotation: {x: 0, y: 0, z: 0}
---- !u!136 &3542126055951736227
-CapsuleCollider:
+--- !u!64 &-121843745357738831
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,7 +125,7 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: d233ff6be3bd390409a36e3ecfa697e8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.770798
-  m_Height: 2.512372
-  m_Direction: 1
-  m_Center: {x: -0.000000059604645, y: -0.014784694, z: -0.018342555}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: b46884e3fb180a04381425d300fe7b0e, type: 3}

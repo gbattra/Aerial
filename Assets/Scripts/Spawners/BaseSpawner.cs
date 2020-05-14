@@ -6,35 +6,32 @@ using Random = System.Random;
 
 public class BaseSpawner : MonoBehaviour
 {
-    public float respawnFrequency;
     public Player player;
     public List<Obstacle> obstacles;
     public float distanceFromPlayer;
-
-    public int obstacleScaleMin;
-    public int obstacleScaleMax;
-
+    public float obstacleScaleMin;
+    public float obstacleScaleMax;
     public Vector3 spawnBounds;
-
-    public float spawnTimeInterval;
-    public float lastSpawnTime;
-    public float spawnDecay;
     public int spawnCount;
-    public float bigCountdown;
-    public float currentBigTime;
     public int randomSeed;
+    
+    // difficulty settings
+    public float decayAmount;
+    public float decayInterval;
+    public float startSpawnTimeInterval;
+    public float finalSpawnTimeInterval;
+    public float currentSpawnTimeInterval;
     public float obstacleVelocity;
-    public float roundEndInterval;
-    public float velocityGain;
-    public bool shouldSpawn => Time.time > 10f && Time.time - lastSpawnTime > spawnTimeInterval;
-
-    public Random rand;
-
-    private float initialSpawnTimeInterval;
+    
+    private bool shouldSpawn => Time.time - lastSpawnTime > currentSpawnTimeInterval;
+    private float lastSpawnTime;
+    private float currentTimeInterval;
+    
+    private Random rand;
 
     public void Awake()
     {
-        initialSpawnTimeInterval = spawnTimeInterval;
+        currentSpawnTimeInterval = startSpawnTimeInterval;
         rand = new Random(randomSeed);
         SpawnObstacle();
     }
@@ -46,7 +43,7 @@ public class BaseSpawner : MonoBehaviour
             transform.position.y,
             player.transform.position.z + distanceFromPlayer);
         
-        currentBigTime += Time.deltaTime;
+        currentTimeInterval += Time.deltaTime;
 
         if (shouldSpawn)
         {
@@ -55,15 +52,26 @@ public class BaseSpawner : MonoBehaviour
             lastSpawnTime = Time.time;
         }
 
-        if (currentBigTime >= bigCountdown)
+        if (currentTimeInterval >= decayInterval && currentSpawnTimeInterval > finalSpawnTimeInterval)
         {
-            spawnTimeInterval -= spawnDecay;
-            currentBigTime = 0;
-            obstacleVelocity *= 1 + velocityGain;
+            currentSpawnTimeInterval -= decayAmount;
+            currentTimeInterval = 0;
         }
+    }
 
-        if (spawnTimeInterval < roundEndInterval)
-            spawnTimeInterval = initialSpawnTimeInterval;
+    public void ResetSpawner(
+        float _startSpawnTimeInterval,
+        float _decayAmount,
+        float _decayInterval,
+        float _finalSpawnTimeInterval,
+        float _obstacleVelocity)
+    {
+        decayAmount = _decayAmount;
+        decayInterval = _decayInterval;
+        finalSpawnTimeInterval = _finalSpawnTimeInterval;
+        obstacleVelocity = _obstacleVelocity;
+        startSpawnTimeInterval = _startSpawnTimeInterval;
+        currentTimeInterval = startSpawnTimeInterval;
     }
 
     private void SpawnObstacle()
@@ -74,7 +82,8 @@ public class BaseSpawner : MonoBehaviour
             obstacle,
             position,
             Quaternion.identity);
-        clone.transform.localScale *= rand.Next(obstacleScaleMin, obstacleScaleMax);
+        clone.transform.localScale *= (float) rand.NextDouble() *
+                                      (obstacleScaleMax - obstacleScaleMin) + obstacleScaleMin;
         clone.player = player;
         clone.velocity = obstacleVelocity;
     }

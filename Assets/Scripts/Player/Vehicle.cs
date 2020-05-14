@@ -41,21 +41,20 @@ public class Vehicle : MonoBehaviour
 
     private void HandleRotations()
     {
-        if (Controller.noInputs)
-        {
-            var targetQ = Quaternion.Euler(Vector3.zero);
-            transform.rotation = Quaternion.Lerp(
-                transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
-        }
-
         if (pivotMove.isPivoting)
             return;
-        
         transform.rotation = ComputeRotation();
     }
 
     private Quaternion ComputeRotation()
     {
+        if (Controller.noInputs)
+        {
+            return Quaternion.Lerp(
+                transform.rotation, 
+                Quaternion.Euler(Vector3.zero),
+                resetRotationSpeed * Time.deltaTime);
+        }
         var yaw = maxYaw * Controller.rightStickHorizontal;
         var aimPitch = maxYaw * -Controller.rightStickVertical;
         var roll = (maxRoll + (Controller.b ? boost.rollBuffer : 0f)) * Controller.leftStickHorizontal;
