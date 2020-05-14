@@ -26,7 +26,7 @@ public class BaseSpawner : MonoBehaviour
     public float obstacleVelocity;
     public float roundEndInterval;
     public float velocityGain;
-    public bool shouldSpawn => Time.time - lastSpawnTime > spawnTimeInterval;
+    public bool shouldSpawn => Time.time > 10f && Time.time - lastSpawnTime > spawnTimeInterval;
 
     public Random rand;
 
@@ -34,13 +34,9 @@ public class BaseSpawner : MonoBehaviour
 
     public void Awake()
     {
+        initialSpawnTimeInterval = spawnTimeInterval;
         rand = new Random(randomSeed);
         SpawnObstacle();
-    }
-
-    public void Start()
-    {
-        initialSpawnTimeInterval = spawnTimeInterval;
     }
 
     public void FixedUpdate()
@@ -72,6 +68,7 @@ public class BaseSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
+        Debug.Log("Spawning");
         var obstacle = obstacles[rand.Next(obstacles.Count)];
         var position = RandomSpawnPosition();
         var clone = Instantiate(
