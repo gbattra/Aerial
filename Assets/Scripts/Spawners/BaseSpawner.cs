@@ -16,14 +16,14 @@ public class BaseSpawner : MonoBehaviour
     public int randomSeed;
     
     // difficulty settings
-    private float decayAmount;
-    private float decayInterval;
-    private float startSpawnTimeInterval;
-    private float finalSpawnTimeInterval;
+    public float decayAmount;
+    public float decayInterval;
+    public float startSpawnTimeInterval;
+    public float finalSpawnTimeInterval;
     public float currentSpawnTimeInterval;
-    private float obstacleVelocity;
-
+    public float obstacleVelocity;
     public bool isMaxed => currentSpawnTimeInterval <= finalSpawnTimeInterval;
+    
     private bool shouldSpawn => Time.time - lastSpawnTime > currentSpawnTimeInterval;
     private float lastSpawnTime;
     private float currentTimeInterval;

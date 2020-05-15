@@ -449,6 +449,98 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276836171}
   m_Mesh: {fileID: 4300056, guid: a3d7782c381940049be951d0b6219ec5, type: 3}
+--- !u!1 &824536543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824536545}
+  - component: {fileID: 824536544}
+  m_Layer: 0
+  m_Name: AmbienceSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &824536544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824536543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb41c05c5e38fa4f9027c195c688f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 992818368}
+  obstacles:
+  - {fileID: 1032436843184177425, guid: e05a493e8abcb8e4a8ae377104bf4a06, type: 3}
+  - {fileID: 1556806649547804980, guid: 07c2f3b2f6984b544b293afabf0c2017, type: 3}
+  - {fileID: 1443822729856558783, guid: 97791c1667f34d54abbe4d371d267379, type: 3}
+  - {fileID: 5435673869978220161, guid: 353aa24835bf085478b6e0f864c7cc55, type: 3}
+  - {fileID: 3910236556403656131, guid: 417b91c5a211d194481a8ecfd3b67bce, type: 3}
+  - {fileID: 8342720747989447687, guid: 24a7c5600ba401741a82a5e0963af12d, type: 3}
+  - {fileID: 5177457336418783430, guid: 94b5c5ee803bc6a48bab5ff0005eff08, type: 3}
+  - {fileID: 415857795670145560, guid: ed5dc037d7e38ff4d98d610083ac2e12, type: 3}
+  - {fileID: 439192704220191195, guid: 58b6a98bcc83ac5439bf09fb85a49fee, type: 3}
+  - {fileID: 1047187315185968242, guid: bdbe3dc8ebf2640449fa23cd30b1251d, type: 3}
+  - {fileID: 7477442312361731457, guid: 8f65c1786647d764ab043556cc2191ac, type: 3}
+  - {fileID: 5428811385106650076, guid: c5ad60bd9d0bf1342bedfc26a17132de, type: 3}
+  - {fileID: 6463773930041788645, guid: f7c6bf8dec212a446828076006ce6415, type: 3}
+  - {fileID: 3988712004045567222, guid: 3b936b1e6793f73429d66995a3702487, type: 3}
+  - {fileID: 6437280813412052383, guid: ec536b043488cea488e6081787ee10d2, type: 3}
+  - {fileID: 3453891234658928990, guid: ca2b68196c6cb7d42bf7a02e9a71b0ae, type: 3}
+  - {fileID: 1828167601912487112, guid: 9f84b438eda0306459f1377c01c028e9, type: 3}
+  - {fileID: 2269829885088812457, guid: 5431ec9bacc539c48a9969cbec05b03e, type: 3}
+  - {fileID: -2738193609050495941, guid: 1f5fb15d496eed0468c9340bf86581cb, type: 3}
+  - {fileID: 3441938033140420488, guid: 43f44785e05f2324c87176db50c0729f, type: 3}
+  - {fileID: -5291768642536962282, guid: c9aaa6907c8d09045b082218adc0930f, type: 3}
+  - {fileID: 8323856573645914440, guid: 1a75e9dbe4c2021478129538b2a69a75, type: 3}
+  - {fileID: 6731155387456969551, guid: 6055a3b4ab8f7dd4b97ca64fd070850d, type: 3}
+  - {fileID: 5002442914593826922, guid: f99a0c9a81527fe44a251e63d8cff5ff, type: 3}
+  - {fileID: -8174441699995416052, guid: 9820d6bcea5386c48816dca345b682a1, type: 3}
+  - {fileID: 2576810836976049803, guid: 89326ae06ecdc1d40ae0f24ed9b9c156, type: 3}
+  - {fileID: -3933061808345101490, guid: 3e2328de6e302f841a59d105b7b9060e, type: 3}
+  - {fileID: 8995785179351239308, guid: 108f610ee2e691744bb77e71984a42b2, type: 3}
+  - {fileID: 4020466694721682017, guid: 765dfe3cf0b842c47a019af98b40d7d8, type: 3}
+  - {fileID: 7426072050709158426, guid: 318c26c5737fd804d9988ab0a469da84, type: 3}
+  - {fileID: 3329728701887530738, guid: 55ac97edcb3b2af4aa3362f0391c5b67, type: 3}
+  - {fileID: 5921282001054599379, guid: 516d01e73da12124b8bb5103d9ee2416, type: 3}
+  - {fileID: 1760442732310708392, guid: 8a2485ac712b87741bac7931f78e1b36, type: 3}
+  - {fileID: 2688921859017199803, guid: a550cfcb26b5a4b4c9ad05f68e4db979, type: 3}
+  - {fileID: 4681534998892127235, guid: 0dc1d020382cf7d458fca6c12cd380d0, type: 3}
+  distanceFromPlayer: 100
+  obstacleScaleMin: 1
+  obstacleScaleMax: 2
+  spawnBounds: {x: 50, y: 25, z: 5}
+  spawnCount: 4
+  randomSeed: 65
+  decayAmount: 0
+  decayInterval: 0
+  startSpawnTimeInterval: 1
+  finalSpawnTimeInterval: 1
+  currentSpawnTimeInterval: 1
+  obstacleVelocity: 30
+--- !u!4 &824536545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824536543}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1353448, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942169877
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +615,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.07e-42, y: 1.01e-43, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1956,7 +2048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1998385422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1975,11 +2067,11 @@ MonoBehaviour:
   - {fileID: 1338534495393626992}
   - {fileID: 1338534495427246926}
   secondsAtMax: 10
-  decayAmount: 0.025
+  decayAmount: 0.005
   decayInterval: 1
   startSpawnTimeInterval: 1
   finalSpawnTimeInterval: 0.1
-  obstacleVelocity: 40
+  obstacleVelocity: 45
 --- !u!4 &1998385423
 Transform:
   m_ObjectHideFlags: 0
@@ -36375,6 +36467,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 992818368}
+    - target: {fileID: 617714693148769383, guid: 44096493b1c5afb4e85985935505275f,
+        type: 3}
+      propertyPath: distanceFromPlayer
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 617714693148769387, guid: 44096493b1c5afb4e85985935505275f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36449,6 +36546,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 992818368}
+    - target: {fileID: 3770119072840768423, guid: 8cb8f180e148c784c8a9f33153e2689c,
+        type: 3}
+      propertyPath: distanceFromPlayer
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3770119072840768427, guid: 8cb8f180e148c784c8a9f33153e2689c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36518,6 +36620,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 992818368}
+    - target: {fileID: 8209054099058518514, guid: 8251016d09e5daa459a598337f5cf02c,
+        type: 3}
+      propertyPath: distanceFromPlayer
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8209054099058518515, guid: 8251016d09e5daa459a598337f5cf02c,
         type: 3}
       propertyPath: m_Name
