@@ -42,6 +42,7 @@ public class LevelManager : MonoBehaviour
         
         if (spawnersMaxed && !isCountingDown)
         {
+            Debug.Log("Counting down");
             isCountingDown = true;
             countdownStartTime = Time.time;
         }
@@ -57,6 +58,7 @@ public class LevelManager : MonoBehaviour
                 decayInterval,
                 finalSpawnTimeInterval,
                 obstacleVelocity);
+            Debug.Log("New Level Started");
         }
     }
 }

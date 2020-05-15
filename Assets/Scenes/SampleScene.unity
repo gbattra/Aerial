@@ -1975,10 +1975,10 @@ MonoBehaviour:
   - {fileID: 1338534495393626992}
   - {fileID: 1338534495427246926}
   secondsAtMax: 10
-  decayAmount: 0.0025
+  decayAmount: 0.025
   decayInterval: 1
   startSpawnTimeInterval: 1
-  finalSpawnTimeInterval: 0.2
+  finalSpawnTimeInterval: 0.1
   obstacleVelocity: 40
 --- !u!4 &1998385423
 Transform:

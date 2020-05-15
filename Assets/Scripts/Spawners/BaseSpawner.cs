@@ -72,7 +72,7 @@ public class BaseSpawner : MonoBehaviour
         finalSpawnTimeInterval = _finalSpawnTimeInterval;
         obstacleVelocity = _obstacleVelocity;
         startSpawnTimeInterval = _startSpawnTimeInterval;
-        currentTimeInterval = startSpawnTimeInterval;
+        currentSpawnTimeInterval = startSpawnTimeInterval;
     }
 
     private void SpawnObstacle()
