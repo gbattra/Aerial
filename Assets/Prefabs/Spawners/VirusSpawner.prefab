@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8209054099058518515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8209054099058518526}
+  - component: {fileID: 8209054099058518527}
+  - component: {fileID: 8209054099058518512}
+  - component: {fileID: 8209054099058518513}
+  - component: {fileID: 8209054099058518514}
+  m_Layer: 0
+  m_Name: VirusSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8209054099058518526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209054099058518515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8209054099058518527
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209054099058518515}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &8209054099058518512
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209054099058518515}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &8209054099058518513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209054099058518515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8209054099058518514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209054099058518515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb41c05c5e38fa4f9027c195c688f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  obstacles:
+  - {fileID: 439192704220191195, guid: 58b6a98bcc83ac5439bf09fb85a49fee, type: 3}
+  - {fileID: 7477442312361731457, guid: 8f65c1786647d764ab043556cc2191ac, type: 3}
+  - {fileID: 6463773930041788645, guid: f7c6bf8dec212a446828076006ce6415, type: 3}
+  - {fileID: 6437280813412052383, guid: ec536b043488cea488e6081787ee10d2, type: 3}
+  - {fileID: 1828167601912487112, guid: 9f84b438eda0306459f1377c01c028e9, type: 3}
+  - {fileID: -2738193609050495941, guid: 1f5fb15d496eed0468c9340bf86581cb, type: 3}
+  - {fileID: -5291768642536962282, guid: c9aaa6907c8d09045b082218adc0930f, type: 3}
+  - {fileID: 6731155387456969551, guid: 6055a3b4ab8f7dd4b97ca64fd070850d, type: 3}
+  - {fileID: -8174441699995416052, guid: 9820d6bcea5386c48816dca345b682a1, type: 3}
+  - {fileID: 1047187315185968242, guid: bdbe3dc8ebf2640449fa23cd30b1251d, type: 3}
+  - {fileID: 5428811385106650076, guid: c5ad60bd9d0bf1342bedfc26a17132de, type: 3}
+  - {fileID: 3988712004045567222, guid: 3b936b1e6793f73429d66995a3702487, type: 3}
+  - {fileID: 3453891234658928990, guid: ca2b68196c6cb7d42bf7a02e9a71b0ae, type: 3}
+  - {fileID: 2269829885088812457, guid: 5431ec9bacc539c48a9969cbec05b03e, type: 3}
+  - {fileID: 3441938033140420488, guid: 43f44785e05f2324c87176db50c0729f, type: 3}
+  - {fileID: 8323856573645914440, guid: 1a75e9dbe4c2021478129538b2a69a75, type: 3}
+  - {fileID: 5002442914593826922, guid: f99a0c9a81527fe44a251e63d8cff5ff, type: 3}
+  - {fileID: 2576810836976049803, guid: 89326ae06ecdc1d40ae0f24ed9b9c156, type: 3}
+  - {fileID: 8995785179351239308, guid: 108f610ee2e691744bb77e71984a42b2, type: 3}
+  - {fileID: -3933061808345101490, guid: 3e2328de6e302f841a59d105b7b9060e, type: 3}
+  distanceFromPlayer: 150
+  obstacleScaleMin: 2
+  obstacleScaleMax: 3.5
+  spawnBounds: {x: 5, y: 5, z: 5}
+  spawnCount: 1
+  randomSeed: 17
+  decayAmount: 0.0025
+  decayInterval: 1
+  startSpawnTimeInterval: 1
+  finalSpawnTimeInterval: 0.2
+  currentSpawnTimeInterval: 0
+  obstacleVelocity: 50
