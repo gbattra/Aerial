@@ -14,7 +14,7 @@ public class Obstacle : MonoBehaviour
     private Random _rand;
     public Vector3 rotation;
 
-    private const float BUFFER = -100f;
+    private const float BUFFER = -25f;
     
     public void Awake()
     {
