@@ -59,8 +59,7 @@ public class Vehicle : MonoBehaviour
         var aimPitch = maxYaw * -Controller.rightStickVertical;
         var roll = (maxRoll + (Controller.b ? boost.rollBuffer : 0f)) * Controller.leftStickHorizontal;
         var pitch = (maxPitch + (Controller.b ? boost.pitchBuffer : 0f)) * -Controller.leftStickVertical;
-        var targetEulers =
-            (Vector3.up * yaw) + (Vector3.back * roll) + (Vector3.right * (pitch + aimPitch));
+        var targetEulers = Vector3.up * yaw + Vector3.back * roll + Vector3.right * (pitch + aimPitch);
         var targetQ = Quaternion.Euler(targetEulers);
         return Quaternion.Lerp(
             transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
