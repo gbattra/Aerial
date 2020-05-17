@@ -14,7 +14,7 @@ public class Vehicle : MonoBehaviour
     public PivotMove pivotMove;
     public Boost boost;
     public ShieldAbility shieldAbility;
-    public IFX_Minigun minigun;
+    public Minigun minigun;
     public Rigidbody rigidbody;
 
     public float forwardSpeed;
@@ -24,6 +24,7 @@ public class Vehicle : MonoBehaviour
     public float maxYaw;
     
     public float resetRotationSpeed;
+    public float rotationSpeed;
 
     public void Update()
     {
@@ -62,7 +63,7 @@ public class Vehicle : MonoBehaviour
         var targetEulers = Vector3.up * yaw + Vector3.back * roll + Vector3.right * (pitch + aimPitch);
         var targetQ = Quaternion.Euler(targetEulers);
         return Quaternion.Lerp(
-            transform.rotation, targetQ, resetRotationSpeed * Time.deltaTime);
+            transform.rotation, targetQ, rotationSpeed * Time.deltaTime);
     }
 
     private void HandleForces()

@@ -48267,7 +48267,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0.0000008142067, y: 6.323129e-19, z: 6337696, w: NaN}
+  m_BoundingSphereOverride: {x: NaN, y: 0, z: NaN, w: 1.6855e-41}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -48583,14 +48583,15 @@ MonoBehaviour:
   pivotMove: {fileID: 992818364}
   boost: {fileID: 992818362}
   shieldAbility: {fileID: 992818369}
-  minigun: {fileID: 114087878420726213}
+  minigun: {fileID: 0}
   rigidbody: {fileID: 992818360}
   forwardSpeed: 0
   maxSpeed: 100
-  maxPitch: 60
+  maxPitch: 30
   maxRoll: 40
-  maxYaw: 30
-  resetRotationSpeed: 1
+  maxYaw: 20
+  resetRotationSpeed: 2
+  rotationSpeed: 3
 --- !u!114 &992818368
 MonoBehaviour:
   m_ObjectHideFlags: 0
