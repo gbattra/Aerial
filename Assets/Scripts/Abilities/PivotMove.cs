@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PivotMove : MonoBehaviour
 {
-    public float thrustPower;
+    public float power;
     public float pivotTime;
     public Rigidbody rigidbody;
 
@@ -42,7 +42,7 @@ public class PivotMove : MonoBehaviour
             return;
         
         rigidbody.AddTorque(pivotDirection == LEFT
-                            ? transform.forward * (thrustPower * Time.deltaTime)
-                            : -transform.forward * (thrustPower * Time.deltaTime));
+                            ? transform.forward * (power * Time.deltaTime)
+                            : -transform.forward * (power * Time.deltaTime));
     }
 }
