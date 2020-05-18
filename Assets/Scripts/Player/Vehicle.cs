@@ -14,6 +14,7 @@ public class Vehicle : MonoBehaviour
     public PivotMove pivotMove;
     public Boost boost;
     public ShieldAbility shieldAbility;
+    public HealthUpAbility healthUpAbility;
     public Minigun minigun;
     public Rigidbody rigidbody;
 
@@ -50,6 +51,11 @@ public class Vehicle : MonoBehaviour
         if (shieldAbility.isShielding)
             return;
         _health = Mathf.Clamp(health - damage, 0, 1);
+    }
+
+    public void IncreaseHealth(float amount)
+    {
+        _health = Mathf.Clamp(health + amount, 0, 1);
     }
 
     private void HandleRotations()

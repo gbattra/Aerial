@@ -31,10 +31,13 @@ public class HUD : MonoBehaviour
         boostCharge.fillAmount = 1f;
         boostChargeText.text = $"{(int) (boostCharge.fillAmount * 100)}%";
 
-        for (var i = 0; i < vehicle.shieldAbility.shieldCount; i++)
-        {
-            shields[i].SetActive(true);
-        }
+        shields[0].SetActive(true);
+        shields[1].SetActive(true);
+        shields[2].SetActive(true);
+        
+        healthUps[0].SetActive(true);
+        healthUps[1].SetActive(true);
+        healthUps[2].SetActive(true);
     }
 
     public void LateUpdate()
@@ -51,9 +54,18 @@ public class HUD : MonoBehaviour
         shields[0].SetActive(false);
         shields[1].SetActive(false);
         shields[2].SetActive(false);
+        healthUps[0].SetActive(false);
+        healthUps[1].SetActive(false);
+        healthUps[2].SetActive(false);
+        
         for (var i = 0; i < vehicle.shieldAbility.shieldCount; i++)
         {
             shields[i].SetActive(true);
+        }
+        
+        for (var i = 0; i < vehicle.healthUpAbility.healthUpCount; i++)
+        {
+            healthUps[i].SetActive(true);
         }
     }
 }
