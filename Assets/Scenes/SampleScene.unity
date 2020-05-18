@@ -29712,7 +29712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd518ec723896f84aba62ffae6c63bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1200211173}
+  vehicle: {fileID: 1200211172}
   healthRadialBar: {fileID: 114000015206112036}
   minigunCharge: {fileID: 2491998553893807756}
   boostCharge: {fileID: 114000011406067252}
@@ -83005,7 +83005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 523549085}
-  shieldTime: 1
+  shieldTime: 3
 --- !u!114 &1200211166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83054,11 +83054,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostSpeed: 100
-  boostThrust: 1000
-  boostRoll: 3000
-  boostLift: 3000
-  rollBuffer: 30
-  pitchBuffer: 30
+  boostThrust: 2000
+  boostRoll: 5000
+  boostLift: 5000
+  rollBuffer: 25
+  pitchBuffer: 25
   boostEnergy: 0
 --- !u!114 &1200211169
 MonoBehaviour:
@@ -83191,7 +83191,7 @@ MonoBehaviour:
   pivotMove: {fileID: 1200211166}
   boost: {fileID: 1200211168}
   shieldAbility: {fileID: 1200211165}
-  minigun: {fileID: 0}
+  minigun: {fileID: 1498805095}
   rigidbody: {fileID: 1200211174}
   forwardSpeed: 1.7516826
   maxSpeed: 100
@@ -84833,8 +84833,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1498805092}
-  - component: {fileID: 1498805094}
   - component: {fileID: 1498805093}
+  - component: {fileID: 1498805095}
   m_Layer: 0
   m_Name: GO_Minigun
   m_TagString: Untagged
@@ -84955,7 +84955,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1498805094
+--- !u!114 &1498805095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84964,7 +84964,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1498805091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb2205fc6c4d3624bbd9817f10a5f469, type: 3}
+  m_Script: {fileID: 11500000, guid: 375329b3f6dc6084ea5cb57a1a816b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vehicle: {fileID: 1200211172}
@@ -84972,8 +84972,12 @@ MonoBehaviour:
   MuzzleFlashPs: {fileID: 55758420}
   SleevesPs: {fileID: 1653909604}
   FireRate: 0.06
-  AudioClip: {fileID: 8300000, guid: 5530a2bff6e96f94696f262406420fc2, type: 3}
-  AudioSource: {fileID: 1498805093}
+  consumptionRate: 20
+  chargeRate: 20
+  isFiring: 0
+  isCharging: 0
+  AudioClip: {fileID: 0}
+  AudioSource: {fileID: 0}
 --- !u!1 &1502250491
 GameObject:
   m_ObjectHideFlags: 0

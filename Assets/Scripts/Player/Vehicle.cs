@@ -22,12 +22,15 @@ public class Vehicle : MonoBehaviour
     public float maxPitch;
     public float maxRoll;
     public float maxYaw;
+    public float health => _health;
+    private float _health;
     
     public float resetRotationSpeed;
     public float rotationSpeed;
 
-    public void Update()
+    public void Start()
     {
+        _health = 1f;
     }
 
     public void FixedUpdate()
