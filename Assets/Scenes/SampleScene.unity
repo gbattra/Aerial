@@ -83061,8 +83061,8 @@ MonoBehaviour:
   pitchBuffer: 25
   isBoosting: 0
   isCharging: 0
-  consumptionRate: 30
-  chargeRate: 30
+  consumptionRate: 40
+  chargeRate: 20
   boostEnergy: 0
 --- !u!114 &1200211169
 MonoBehaviour:
@@ -83978,7 +83978,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  player: {fileID: 1200211173}
+  vehicle: {fileID: 1200211172}
   border: {fileID: 1903523504}
   camera: {fileID: 1277219422}
 --- !u!81 &1277219421
