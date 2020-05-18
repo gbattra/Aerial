@@ -8,6 +8,8 @@ public class Obstacle : MonoBehaviour
 {
     public float velocity;
     public float rotateSpeed;
+    public float damageAmount;
+    
     public Player player;
     public Rigidbody rigidbody;
     public Vector3 rotation;
@@ -40,7 +42,7 @@ public class Obstacle : MonoBehaviour
         if (!other.gameObject.CompareTag("Player") || hasEntered) return;
         
         hasEntered = true;
-        other.gameObject.GetComponent<Vehicle>().DecrementHealth(.15f);
+        other.gameObject.GetComponent<Vehicle>().DecrementHealth(damageAmount);
     }
     
 }

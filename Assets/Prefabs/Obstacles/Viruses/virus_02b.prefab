@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 0
   rotateSpeed: 0
+  damageAmount: 0.025
   player: {fileID: 0}
   rigidbody: {fileID: 5428811385106650079}
   rotation: {x: 0, y: 0, z: 0}
