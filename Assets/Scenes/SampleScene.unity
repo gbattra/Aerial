@@ -29760,6 +29760,11 @@ MonoBehaviour:
   healthRadialBar: {fileID: 114000015206112036}
   minigunCharge: {fileID: 2491998553893807756}
   boostCharge: {fileID: 114000011406067252}
+  shields:
+  - {fileID: 1000011382388002}
+  - {fileID: 1000011058897620}
+  - {fileID: 1000012089001637}
+  healthUps: []
   healthRadialBarText: {fileID: 114000011589135346}
   minigunChargeText: {fileID: 2491998525252593818}
   boostChargeText: {fileID: 114000011703051624}
@@ -84647,7 +84652,7 @@ GameObject:
   - component: {fileID: 1383836204}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Drone-Colliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

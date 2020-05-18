@@ -8,6 +8,7 @@ TagManager:
   - Drone-Nose
   - Drone-Wingtip
   - Drone-Body
+  - Drone-Colliders
   layers:
   - Default
   - TransparentFX

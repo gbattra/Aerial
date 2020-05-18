@@ -45,8 +45,10 @@ public class Vehicle : MonoBehaviour
         HandleRotations();
     }
 
-    public void DecrementHealth(float damage)
+    public void HandleImpact(float damage)
     {
+        if (shieldAbility.isShielding)
+            return;
         _health = Mathf.Clamp(health - damage, 0, 1);
     }
 

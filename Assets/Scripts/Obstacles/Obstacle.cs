@@ -42,7 +42,7 @@ public class Obstacle : MonoBehaviour
         if (!other.gameObject.CompareTag("Player") || hasEntered) return;
         
         hasEntered = true;
-        other.gameObject.GetComponent<Vehicle>().DecrementHealth(damageAmount);
+        other.gameObject.GetComponent<Vehicle>().HandleImpact(damageAmount);
     }
     
 }
