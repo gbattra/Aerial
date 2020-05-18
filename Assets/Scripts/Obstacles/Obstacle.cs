@@ -10,10 +10,11 @@ public class Obstacle : MonoBehaviour
     public float rotateSpeed;
     public Player player;
     public Rigidbody rigidbody;
-
-    private Random _rand;
     public Vector3 rotation;
+    
+    private Random _rand;
 
+    private bool hasEntered;
     private const float BUFFER = -25f;
     
     public void Awake()
@@ -32,5 +33,15 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
         transform.Rotate(rotation);
     }
+    
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (!other.gameObject.CompareTag("Player") || hasEntered) return;
+        
+        hasEntered = true;
+        other.gameObject.GetComponent<Vehicle>().DecrementHealth(.15f);
+    }
+    
 }
   

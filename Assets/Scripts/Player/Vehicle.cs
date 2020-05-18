@@ -22,11 +22,13 @@ public class Vehicle : MonoBehaviour
     public float maxPitch;
     public float maxRoll;
     public float maxYaw;
+    
     public float health => _health;
     private float _health;
     
     public float resetRotationSpeed;
     public float rotationSpeed;
+
 
     public void Start()
     {
@@ -41,6 +43,11 @@ public class Vehicle : MonoBehaviour
 
         HandleForces();
         HandleRotations();
+    }
+
+    public void DecrementHealth(float damage)
+    {
+        _health = Mathf.Clamp(health - damage, 0, 1);
     }
 
     private void HandleRotations()
