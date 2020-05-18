@@ -83059,6 +83059,10 @@ MonoBehaviour:
   boostLift: 5000
   rollBuffer: 25
   pitchBuffer: 25
+  isBoosting: 0
+  isCharging: 0
+  consumptionRate: 30
+  chargeRate: 30
   boostEnergy: 0
 --- !u!114 &1200211169
 MonoBehaviour:

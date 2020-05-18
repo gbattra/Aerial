@@ -10,12 +10,53 @@ public class Boost : MonoBehaviour
     public float boostLift;
     public float rollBuffer;
     public float pitchBuffer;
+
+    public bool isBoosting;
+    public bool isCharging;
+    public float consumptionRate;
+    public float chargeRate;
+
+    public float charge => _charge;
+    private float _charge;
     
     public float boostEnergy;
 
-    public Vector3 Engage()
+    public void Start()
     {
-        var boostPower = boostEnergy > 0 ? boostThrust * Time.deltaTime : 0f;
-        return transform.forward * boostPower;
+        _charge = 1f;
+    }
+
+    private void Update()
+    {
+        if (isBoosting)
+        {
+            var newCharge = _charge * 100 - Time.deltaTime * consumptionRate;
+            _charge = Mathf.Clamp(newCharge, 0, 100) / 100;
+        }
+        if (isCharging)
+        {
+            var newCharge = _charge * 100 + Time.deltaTime * chargeRate;
+            _charge = Mathf.Clamp(newCharge, 0, 100) / 100;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+
+        if (!Controller.b)
+        {
+            isCharging = true;
+            isBoosting = false;
+            return;
+        }
+
+        if (_charge <= 0f)
+        {
+            isBoosting = false;
+            return;
+        }
+
+        isCharging = false;
+        isBoosting = true;
     }
 }

@@ -15,7 +15,7 @@ public class FollowCamera : MonoBehaviour
     
     public AnimationCurve fovCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     
-    public Player player;
+    public Vehicle vehicle;
     public Border border;
     public Camera camera;
 
@@ -23,19 +23,19 @@ public class FollowCamera : MonoBehaviour
     {
         var x = TargetX();
         var y = TargetY();
-        var targetPos = new Vector3(x, y, player.transform.position.z + maxDistance);
+        var targetPos = new Vector3(x, y, vehicle.transform.position.z + maxDistance);
         var smoothPos = Vector3.Lerp(
             transform.position,
             targetPos,
-            smoothSpeed + (Controller.b ? boostReduction : 0f));
+            smoothSpeed + (vehicle.boost.isBoosting ? boostReduction : 0f));
         transform.position = smoothPos;
-        var fov = Controller.b ? boostFOV : normalFOV;
+        var fov = vehicle.boost.isBoosting ? boostFOV : normalFOV;
         camera.fieldOfView = fov * fovCurve.Evaluate(Time.time);
     }
 
     public float TargetX()
     {
-        var playerX = player.transform.position.x;
+        var playerX = vehicle.transform.position.x;
         var targetX = playerX;
         if (playerX > moveableRange.x)
             targetX = moveableRange.x;
@@ -47,7 +47,7 @@ public class FollowCamera : MonoBehaviour
     
     public float TargetY()
     {
-        var playerY = player.transform.position.y;
+        var playerY = vehicle.transform.position.y;
         var targetY = playerY;
         if (playerY > moveableRange.y)
             targetY = moveableRange.y;

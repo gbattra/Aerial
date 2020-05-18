@@ -61,8 +61,8 @@ public class Vehicle : MonoBehaviour
         }
         var yaw = maxYaw * Controller.rightStickHorizontal;
         var aimPitch = maxYaw * -Controller.rightStickVertical;
-        var roll = (maxRoll + (Controller.b ? boost.rollBuffer : 0f)) * Controller.leftStickHorizontal;
-        var pitch = (maxPitch + (Controller.b ? boost.pitchBuffer : 0f)) * -Controller.leftStickVertical;
+        var roll = (maxRoll + (boost.isBoosting ? boost.rollBuffer : 0f)) * Controller.leftStickHorizontal;
+        var pitch = (maxPitch + (boost.isBoosting ? boost.pitchBuffer : 0f)) * -Controller.leftStickVertical;
         var targetEulers = Vector3.up * yaw + Vector3.back * roll + Vector3.right * (pitch + aimPitch);
         var targetQ = Quaternion.Euler(targetEulers);
         return Quaternion.Lerp(
@@ -71,13 +71,13 @@ public class Vehicle : MonoBehaviour
 
     private void HandleForces()
     {
-        var thrust = thrustEngine.ComputeThrust(Controller.b ? boost.boostThrust : 0f);
+        var thrust = thrustEngine.ComputeThrust(boost.isBoosting ? boost.boostThrust : 0f);
         var roll = rollEngine.ComputeRoll(
             Controller.leftStickHorizontal,
-            Controller.b ? boost.boostRoll : 0f);
+            boost.isBoosting ? boost.boostRoll : 0f);
         var lift = liftEngine.ComputeLift(
             Controller.leftStickVertical,
-            Controller.b ? boost.boostLift : 0f);
+            boost.isBoosting ? boost.boostLift : 0f);
         var finalForce = dodgeMove.isDodging ? thrust : thrust + roll + lift;
         rigidbody.AddForce(finalForce);
     }

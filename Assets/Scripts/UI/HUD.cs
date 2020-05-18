@@ -36,7 +36,7 @@ public class HUD : MonoBehaviour
         minigunCharge.fillAmount = vehicle.minigun.charge;
         minigunChargeText.text = $"{(int) (vehicle.minigun.charge * 100)}%";
 
-        // boostCharge.fillAmount = vehicle.boost.charge;
-        // boostChargeText.text = $"{(int) (vehicle.boost.charge * 100)}%";
+        boostCharge.fillAmount = vehicle.boost.charge;
+        boostChargeText.text = $"{(int) (vehicle.boost.charge * 100)}%";
     }
 }
