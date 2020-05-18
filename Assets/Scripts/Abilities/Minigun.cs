@@ -53,6 +53,9 @@ public class Minigun : MonoBehaviour
             return;
         }
 
+        if (_charge <= 0f)
+            return;
+
         isCharging = false;
         isFiring = true;
 
