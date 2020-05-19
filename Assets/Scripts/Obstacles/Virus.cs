@@ -6,6 +6,7 @@ public class Virus : Obstacle
 {
     public void OnParticleCollision(GameObject other)
     {
+        player.score += points;
         Destroy(gameObject);
     }
 }

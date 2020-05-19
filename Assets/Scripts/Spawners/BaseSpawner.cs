@@ -90,6 +90,7 @@ public class BaseSpawner : MonoBehaviour
                                       (obstacleScaleMax - obstacleScaleMin) + obstacleScaleMin;
         clone.player = player;
         clone.velocity = obstacleVelocity;
+        clone.points = 1f;
     }
 
     private Vector3 RandomSpawnPosition()

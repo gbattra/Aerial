@@ -9,6 +9,7 @@ public class Obstacle : MonoBehaviour
     public float velocity;
     public float rotateSpeed;
     public float damageAmount;
+    public float points;
     
     public Player player;
     public Rigidbody rigidbody;

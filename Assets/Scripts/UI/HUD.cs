@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     public Vehicle vehicle;
+    public Player player;
     public LevelManager levelManager;
 
     public UltimateStatusBar levelProgressRadial;
@@ -26,6 +27,7 @@ public class HUD : MonoBehaviour
 
     public TextMeshProUGUI levelNumber;
     public TextMeshProUGUI timeElapsed;
+    public TextMeshProUGUI score;
 
     public void Start()
     {
@@ -49,6 +51,7 @@ public class HUD : MonoBehaviour
         levelProgressRadial.UpdateStatus(1f, 1f);
         levelNumber.text = $"{levelManager.levelNumber}";
         timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
+        score.text = $"{player.score}";
     }
 
     public void LateUpdate()
@@ -82,5 +85,6 @@ public class HUD : MonoBehaviour
         levelProgressRadial.UpdateStatus(levelManager.percentProgress, 1f);
         levelNumber.text = $"{levelManager.levelNumber}";
         timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
+        score.text = $"{player.score}";
     }
 }

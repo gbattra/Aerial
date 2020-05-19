@@ -30257,6 +30257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicle: {fileID: 1200211172}
+  player: {fileID: 1200211173}
   levelManager: {fileID: 1998385422}
   levelProgressRadial: {fileID: 745825205}
   healthRadialBar: {fileID: 114000015206112036}
@@ -30275,6 +30276,7 @@ MonoBehaviour:
   boostChargeText: {fileID: 114000011703051624}
   levelNumber: {fileID: 1585839581}
   timeElapsed: {fileID: 964780601}
+  score: {fileID: 1342252420}
 --- !u!1 &202217918
 GameObject:
   m_ObjectHideFlags: 0
@@ -78041,7 +78043,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.0092666e-36, y: 1.009742e-28, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -84848,6 +84850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acab5c844408204eb5f0bea19e20d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
 --- !u!54 &1200211174
 Rigidbody:
   m_ObjectHideFlags: 0
