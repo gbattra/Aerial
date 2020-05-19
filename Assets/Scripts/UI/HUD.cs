@@ -9,6 +9,9 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     public Vehicle vehicle;
+    public LevelManager levelManager;
+
+    public UltimateStatusBar levelProgressRadial;
     public UIBulletBar healthRadialBar;
     public UIProgressBar minigunCharge;
     public UIProgressBar boostCharge;
@@ -38,6 +41,8 @@ public class HUD : MonoBehaviour
         healthUps[0].SetActive(true);
         healthUps[1].SetActive(true);
         healthUps[2].SetActive(true);
+        
+        levelProgressRadial.UpdateStatus(1f, 1f);
     }
 
     public void LateUpdate()
@@ -67,5 +72,8 @@ public class HUD : MonoBehaviour
         {
             healthUps[i].SetActive(true);
         }
+        
+        levelProgressRadial.UpdateStatus(levelManager.percentProgress, 1f);
+
     }
 }

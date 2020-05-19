@@ -21,6 +21,8 @@ public class LevelManager : MonoBehaviour
     public float finalSpawnTimeInterval;
     public float obstacleVelocity;
 
+    public float percentProgress => spawners.Average(spawner => spawner.percentProgress);
+
     public void Awake()
     {
         foreach (var spawner in spawners)

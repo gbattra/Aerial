@@ -23,6 +23,9 @@ public class BaseSpawner : MonoBehaviour
     public float currentSpawnTimeInterval;
     public float obstacleVelocity;
     public bool isMaxed => currentSpawnTimeInterval <= finalSpawnTimeInterval;
+
+    public float percentProgress =>
+        (currentSpawnTimeInterval - startSpawnTimeInterval) / (finalSpawnTimeInterval - startSpawnTimeInterval);
     
     private bool shouldSpawn => Time.time - lastSpawnTime > currentSpawnTimeInterval;
     private float lastSpawnTime;
