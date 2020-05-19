@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DuloGames.UI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,8 @@ public class HUD : MonoBehaviour
     public Text healthRadialBarText;
     public Text minigunChargeText;
     public Text boostChargeText;
+
+    public TextMeshProUGUI levelNumber; 
 
     public void Start()
     {
@@ -43,6 +46,7 @@ public class HUD : MonoBehaviour
         healthUps[2].SetActive(true);
         
         levelProgressRadial.UpdateStatus(1f, 1f);
+        levelNumber.text = $"{levelManager.levelNumber}";
     }
 
     public void LateUpdate()
@@ -74,6 +78,6 @@ public class HUD : MonoBehaviour
         }
         
         levelProgressRadial.UpdateStatus(levelManager.percentProgress, 1f);
-
+        levelNumber.text = $"{levelManager.levelNumber}";
     }
 }

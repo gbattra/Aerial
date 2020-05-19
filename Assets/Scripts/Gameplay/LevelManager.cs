@@ -22,9 +22,11 @@ public class LevelManager : MonoBehaviour
     public float obstacleVelocity;
 
     public float percentProgress => spawners.Average(spawner => spawner.percentProgress);
+    public float levelNumber { get; private set; }
 
     public void Awake()
     {
+        levelNumber = 1;
         foreach (var spawner in spawners)
         {
             spawner.player = player;
@@ -52,6 +54,7 @@ public class LevelManager : MonoBehaviour
         var secondsLeft = secondsAtMax - (Time.time - countdownStartTime);
         if (!(secondsLeft <= 0)) return;
         isCountingDown = false;
+        levelNumber += 1;
         foreach (var spawner in spawners)
         {
             spawner.ResetSpawner(

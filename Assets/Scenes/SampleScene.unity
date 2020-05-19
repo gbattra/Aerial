@@ -19795,7 +19795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11478472, guid: 3b7dc98ae700cfa4397569cd42312a1f, type: 3}
       propertyPath: m_FillAmount
-      value: 0.774
+      value: 0.536
       objectReference: {fileID: 0}
     - target: {fileID: 11478472, guid: 3b7dc98ae700cfa4397569cd42312a1f, type: 3}
       propertyPath: m_Color.r
@@ -25041,7 +25041,7 @@ GameObject:
   - component: {fileID: 184875489}
   - component: {fileID: 184875488}
   m_Layer: 5
-  m_Name: 25
+  m_Name: Total
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25084,7 +25084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 25
+  m_text: 15
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -30257,6 +30257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicle: {fileID: 1200211172}
+  levelManager: {fileID: 1998385422}
+  levelProgressRadial: {fileID: 745825205}
   healthRadialBar: {fileID: 114000015206112036}
   minigunCharge: {fileID: 2491998553893807756}
   boostCharge: {fileID: 114000011406067252}
@@ -30271,6 +30273,7 @@ MonoBehaviour:
   healthRadialBarText: {fileID: 114000011589135346}
   minigunChargeText: {fileID: 2491998525252593818}
   boostChargeText: {fileID: 114000011703051624}
+  levelNumber: {fileID: 1585839581}
 --- !u!1 &202217918
 GameObject:
   m_ObjectHideFlags: 0
@@ -62840,6 +62843,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743031261}
   m_Mesh: {fileID: 4300042, guid: f73ec254edaee7a459cd1241a1e7c259, type: 3}
+--- !u!114 &745825205 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11437806, guid: 3b7dc98ae700cfa4397569cd42312a1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 138308340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5074157d2ca19604398aaa3ee1558c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &747590001
 GameObject:
   m_ObjectHideFlags: 0
@@ -78025,7 +78040,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.006e-42, y: 1.04e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 3.0092666e-36, y: 1.009742e-28, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -97339,7 +97354,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 19
+  m_text: 6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -97408,7 +97423,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1585839581}
-    characterCount: 2
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
