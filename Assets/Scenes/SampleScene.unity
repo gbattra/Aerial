@@ -30274,6 +30274,7 @@ MonoBehaviour:
   minigunChargeText: {fileID: 2491998525252593818}
   boostChargeText: {fileID: 114000011703051624}
   levelNumber: {fileID: 1585839581}
+  timeElapsed: {fileID: 964780601}
 --- !u!1 &202217918
 GameObject:
   m_ObjectHideFlags: 0

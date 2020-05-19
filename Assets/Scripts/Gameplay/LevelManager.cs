@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class LevelManager : MonoBehaviour
 {
@@ -24,6 +26,9 @@ public class LevelManager : MonoBehaviour
     public float percentProgress => spawners.Average(spawner => spawner.percentProgress);
     public float levelNumber { get; private set; }
 
+    public Stopwatch timer => _timer;
+    private Stopwatch _timer = new Stopwatch();
+
     public void Awake()
     {
         levelNumber = 1;
@@ -37,6 +42,11 @@ public class LevelManager : MonoBehaviour
                 finalSpawnTimeInterval,
                 obstacleVelocity);
         }
+    }
+
+    public void Start()
+    {
+        _timer.Start();
     }
 
     public void Update()

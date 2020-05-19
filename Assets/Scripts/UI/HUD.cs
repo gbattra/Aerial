@@ -24,7 +24,8 @@ public class HUD : MonoBehaviour
     public Text minigunChargeText;
     public Text boostChargeText;
 
-    public TextMeshProUGUI levelNumber; 
+    public TextMeshProUGUI levelNumber;
+    public TextMeshProUGUI timeElapsed;
 
     public void Start()
     {
@@ -47,6 +48,7 @@ public class HUD : MonoBehaviour
         
         levelProgressRadial.UpdateStatus(1f, 1f);
         levelNumber.text = $"{levelManager.levelNumber}";
+        timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
     }
 
     public void LateUpdate()
@@ -79,5 +81,6 @@ public class HUD : MonoBehaviour
         
         levelProgressRadial.UpdateStatus(levelManager.percentProgress, 1f);
         levelNumber.text = $"{levelManager.levelNumber}";
+        timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
     }
 }
