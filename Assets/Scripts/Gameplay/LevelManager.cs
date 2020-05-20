@@ -23,6 +23,9 @@ public class LevelManager : MonoBehaviour
     public float finalSpawnTimeInterval;
     public float obstacleVelocity;
 
+    public int fogColorIndex;
+    public List<Color> fogColors;
+
     public float percentProgress => spawners.Average(spawner => spawner.percentProgress);
     public float levelNumber { get; private set; }
 
@@ -47,6 +50,7 @@ public class LevelManager : MonoBehaviour
     public void Start()
     {
         _timer.Start();
+        RenderSettings.fogColor = fogColors[fogColorIndex];
     }
 
     public void Update()
@@ -57,14 +61,19 @@ public class LevelManager : MonoBehaviour
         if (spawnersMaxed && !isCountingDown)
         {
             Debug.Log("Counting down");
+            
             isCountingDown = true;
             countdownStartTime = Time.time;
         }
-
         var secondsLeft = secondsAtMax - (Time.time - countdownStartTime);
         if (!(secondsLeft <= 0)) return;
+        
+        Debug.Log("New Level Started");
+
         isCountingDown = false;
         levelNumber += 1;
+        fogColorIndex = fogColorIndex < fogColors.Count - 1 ? fogColorIndex + 1 : 0;
+        RenderSettings.fogColor = fogColors[fogColorIndex];
         foreach (var spawner in spawners)
         {
             spawner.ResetSpawner(
@@ -73,7 +82,6 @@ public class LevelManager : MonoBehaviour
                 decayInterval,
                 finalSpawnTimeInterval,
                 obstacleVelocity);
-            Debug.Log("New Level Started");
         }
     }
 }

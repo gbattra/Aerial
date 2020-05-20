@@ -113,9 +113,11 @@ MonoBehaviour:
   velocity: 0
   rotateSpeed: 0.1
   damageAmount: 0.05
+  points: 0
   player: {fileID: 0}
   rigidbody: {fileID: 7012163205577173294}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 1, y: 1, z: 1}
 --- !u!64 &-8782474016128313331
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.16862746, g: 0.20784314, b: 0.20392157, a: 1}
+  m_FogColor: {r: 0.20705768, g: 0.31132078, b: 0.24528751, a: 0}
   m_FogMode: 3
   m_FogDensity: 0.035
   m_LinearFogStart: 0
@@ -392,6 +392,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 32437201}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &32437203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5512,6 +5513,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 56703055}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &56703057
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5768,6 +5770,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 123482971}
   rotation: {x: 0.1, y: 0, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &123482970
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6212,6 +6215,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 160533262}
   rotation: {x: 0.4, y: 0.2, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &160533262
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26879,6 +26883,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 303769419}
   rotation: {x: 0, y: 0.6, z: 0.2}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &303769418
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27338,6 +27343,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 345080989}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &345080991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28352,6 +28358,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 469955056}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &469955058
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28705,6 +28712,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 480324757}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &480324756
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28866,6 +28874,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 483855754}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &483855756
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33884,6 +33893,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 499085462}
   rotation: {x: 0.8, y: 0.7, z: 0.5}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &499085461
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34319,6 +34329,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 516029543}
   rotation: {x: 0.7, y: 0.3, z: 0.1}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &516029542
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34451,6 +34462,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 518473560}
   rotation: {x: 0, y: 0.90000004, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &518473559
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34612,6 +34624,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 523260574}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &523260576
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45572,6 +45585,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 722779761}
   rotation: {x: 0.1, y: 0.8, z: 0.5}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &722779761
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51023,6 +51037,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 775479064}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &775479066
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51219,6 +51234,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 801296399}
   rotation: {x: 0.1, y: 0.90000004, z: 0.5}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &801296399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51336,6 +51352,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 809986128}
   rotation: {x: 0, y: 0.2, z: 0.1}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &809986127
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -51497,6 +51514,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 820779918}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &820779920
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51707,6 +51725,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 826812877}
   rotation: {x: 0, y: 0.2, z: 0.1}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &826812877
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51957,6 +51976,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 849598009}
   rotation: {x: 0.5, y: 0.8, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &849598009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52162,6 +52182,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 862710920}
   rotation: {x: 0.1, y: 0.90000004, z: 0.5}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &862710920
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52387,6 +52408,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 894831417}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &894831419
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67729,6 +67751,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 972436102}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &972436104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67924,6 +67947,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 983086392}
   rotation: {x: 0.5, y: 0.6, z: 0.4}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &983086392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73260,6 +73284,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1061854506}
   rotation: {x: 0, y: 0.90000004, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1061854506
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73470,6 +73495,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1072265126}
   rotation: {x: 0.2, y: 0.3, z: 0.2}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1072265126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -83879,6 +83905,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1179333926}
   rotation: {x: 0.7, y: 0.3, z: 0.1}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &1179333925
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -84011,6 +84038,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1187357035}
   rotation: {x: 0.1, y: 0.8, z: 0.5}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &1187357034
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -88935,6 +88963,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1198248820}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &1198248822
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -89840,6 +89869,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1232267881}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &1232267883
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94792,6 +94822,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1246050320}
   rotation: {x: 0, y: 0.90000004, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1246050320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94923,6 +94954,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1248318149}
   rotation: {x: 0.5, y: 0.8, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1248318149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -95279,6 +95311,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1259175897}
   rotation: {x: 0.8, y: 0.7, z: 0.5}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1259175897
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -100252,6 +100285,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1278369968}
   rotation: {x: 0.90000004, y: 0.90000004, z: 0.6}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1278369968
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -100530,6 +100564,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1297134918}
   rotation: {x: 0, y: 0.90000004, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1297134918
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -100931,8 +100966,8 @@ MonoBehaviour:
   - {fileID: -324995053563396307, guid: 5c308064728308543b7b98b815e68fde, type: 3}
   distanceFromPlayer: 125
   obstacleScaleMin: 0.5
-  obstacleScaleMax: 1.5
-  spawnBounds: {x: 75, y: 50, z: 0}
+  obstacleScaleMax: 1
+  spawnBounds: {x: 50, y: 25, z: 0}
   spawnInnerBounds: {x: 10, y: 10, z: 0}
   spawnCount: 1
   randomSeed: 65
@@ -101098,6 +101133,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1376486215}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1376486215
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -101353,6 +101389,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1408145449}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &1408145451
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101607,6 +101644,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1412804875}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &1412804877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102103,6 +102141,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1461550230}
   rotation: {x: 0.1, y: 0, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1461550230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -102234,6 +102273,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1472286068}
   rotation: {x: 0, y: 0.6, z: 0.2}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1472286068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -102380,6 +102420,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1473510039}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &1473510041
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102497,6 +102538,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1475595371}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1475595371
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -107816,6 +107858,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1521001231}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1521001231
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -107962,6 +108005,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1546796282}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &1546796284
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -108295,6 +108339,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1576221702}
   rotation: {x: 0.1, y: 0, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &1576221701
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -108506,6 +108551,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1581669313}
   rotation: {x: 0.6, y: 0, z: 0.8}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &1581669312
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -108807,6 +108853,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1589801915}
   rotation: {x: 0.1, y: 0.90000004, z: 0.5}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1589801915
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -109243,6 +109290,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1626506783}
   rotation: {x: 0.5, y: 0.6, z: 0.4}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1626506783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114674,6 +114722,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1666976201}
   rotation: {x: 0, y: 0.6, z: 0.2}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1666976201
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -119956,6 +120005,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1715911138}
   rotation: {x: 0.8, y: 0.7, z: 0.5}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1715911138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -120610,6 +120660,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1794635826}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &1794635828
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -120887,6 +120938,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1811514004}
   rotation: {x: 0, y: 0.2, z: 0.1}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1811514004
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121156,6 +121208,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1821529313}
   rotation: {x: 0, y: 0.6, z: 0.2}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &1821529312
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -121302,6 +121355,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1836077616}
   rotation: {x: 0, y: 0.2, z: 0.1}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1836077616
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121507,6 +121561,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1842790371}
   rotation: {x: 0.90000004, y: 0.90000004, z: 0.6}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1842790371
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121791,6 +121846,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1855919481}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &1855919483
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -121894,6 +121950,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1858278078}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &1858278077
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -122569,6 +122626,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1946812355}
   rotation: {x: 0, y: 0.6, z: 0.2}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!135 &1946812354
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -123187,6 +123245,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 1985251849}
   rotation: {x: 0.1, y: 0.90000004, z: 0.5}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &1985251849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128276,12 +128335,24 @@ MonoBehaviour:
   - {fileID: 1338534495074025607}
   - {fileID: 1338534495393626992}
   - {fileID: 1338534495427246926}
-  secondsAtMax: 10
-  decayAmount: 0.005
+  secondsAtMax: 1
+  decayAmount: 0.1
   decayInterval: 1
   startSpawnTimeInterval: 1
   finalSpawnTimeInterval: 0.3
   obstacleVelocity: 45
+  fogColorIndex: 0
+  fogColors:
+  - {r: 0.16862746, g: 0.2901961, b: 0.29411766, a: 1}
+  - {r: 0.17254902, g: 0.29411766, b: 0.2627451, a: 1}
+  - {r: 0.20784314, g: 0.3137255, b: 0.24705882, a: 1}
+  - {r: 0.26666668, g: 0.3019608, b: 0.21568628, a: 1}
+  - {r: 0.32156864, g: 0.32156864, b: 0.21568628, a: 1}
+  - {r: 0.36862746, g: 0.30588236, b: 0.22745098, a: 1}
+  - {r: 0.36862746, g: 0.24705882, b: 0.22352941, a: 1}
+  - {r: 0.32941177, g: 0.23529412, b: 0.25882354, a: 1}
+  - {r: 0.30980393, g: 0.25882354, b: 0.32156864, a: 1}
+  - {r: 0.25490198, g: 0.25882354, b: 0.32156864, a: 1}
 --- !u!4 &1998385423
 Transform:
   m_ObjectHideFlags: 0
@@ -128448,6 +128519,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 2013177757}
   rotation: {x: 0.2, y: 0.3, z: 0.2}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &2013177757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128782,6 +128854,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 2034565788}
   rotation: {x: 0, y: 0, z: 0}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!23 &2034565790
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -129164,6 +129237,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 2079296863}
   rotation: {x: 0.7, y: 0.3, z: 0.1}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &2079296863
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129295,6 +129369,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   rigidbody: {fileID: 2079307464}
   rotation: {x: 0.4, y: 0.2, z: 0.3}
+  rotationDir: {x: 0, y: 0, z: 0}
 --- !u!54 &2079307464
 Rigidbody:
   m_ObjectHideFlags: 0

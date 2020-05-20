@@ -14,6 +14,7 @@ public class Obstacle : MonoBehaviour
     public Player player;
     public Rigidbody rigidbody;
     public Vector3 rotation;
+    public Vector3 rotationDir;
     
     private Random _rand;
 
@@ -24,9 +25,9 @@ public class Obstacle : MonoBehaviour
     {
         _rand = new Random();
         rotation = new Vector3(
-            _rand.Next(0, 10),
-            _rand.Next(0, 10),
-            _rand.Next(0, 10)) * rotateSpeed;
+            _rand.Next(0, 10) * rotationDir.x,
+            _rand.Next(0, 10) * rotationDir.y,
+            _rand.Next(0, 10) * rotationDir.z) * rotateSpeed;
     }
     
     public void FixedUpdate()
