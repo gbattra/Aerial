@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.20705768, g: 0.31132078, b: 0.24528751, a: 0}
+  m_FogColor: {r: 0.36862746, g: 0.30588236, b: 0.22745098, a: 0}
   m_FogMode: 3
   m_FogDensity: 0.035
   m_LinearFogStart: 0
@@ -100965,17 +100965,17 @@ MonoBehaviour:
   - {fileID: -3192318642710194118, guid: c72d8fe16e5ec20499fbdf56b62f7f86, type: 3}
   - {fileID: -324995053563396307, guid: 5c308064728308543b7b98b815e68fde, type: 3}
   distanceFromPlayer: 125
-  obstacleScaleMin: 0.5
-  obstacleScaleMax: 1
-  spawnBounds: {x: 50, y: 25, z: 0}
-  spawnInnerBounds: {x: 10, y: 10, z: 0}
-  spawnCount: 1
+  obstacleScaleMin: 0.1
+  obstacleScaleMax: 0.2
+  spawnBounds: {x: 50, y: 25, z: 10}
+  spawnInnerBounds: {x: 10, y: 10, z: 10}
+  spawnCount: 2
   randomSeed: 65
   decayAmount: 0
   decayInterval: 0
-  startSpawnTimeInterval: 2
-  finalSpawnTimeInterval: 2
-  currentSpawnTimeInterval: 2
+  startSpawnTimeInterval: 0.5
+  finalSpawnTimeInterval: 0.5
+  currentSpawnTimeInterval: 0.5
   obstacleVelocity: 30
 --- !u!4 &1361702115
 Transform:
@@ -128335,8 +128335,8 @@ MonoBehaviour:
   - {fileID: 1338534495074025607}
   - {fileID: 1338534495393626992}
   - {fileID: 1338534495427246926}
-  secondsAtMax: 1
-  decayAmount: 0.1
+  secondsAtMax: 10
+  decayAmount: 0.01
   decayInterval: 1
   startSpawnTimeInterval: 1
   finalSpawnTimeInterval: 0.3
@@ -128345,7 +128345,7 @@ MonoBehaviour:
   fogColors:
   - {r: 0.16862746, g: 0.2901961, b: 0.29411766, a: 1}
   - {r: 0.17254902, g: 0.29411766, b: 0.2627451, a: 1}
-  - {r: 0.20784314, g: 0.3137255, b: 0.24705882, a: 1}
+  - {r: 0.22352941, g: 0.34117648, b: 0.26666668, a: 1}
   - {r: 0.26666668, g: 0.3019608, b: 0.21568628, a: 1}
   - {r: 0.32156864, g: 0.32156864, b: 0.21568628, a: 1}
   - {r: 0.36862746, g: 0.30588236, b: 0.22745098, a: 1}
