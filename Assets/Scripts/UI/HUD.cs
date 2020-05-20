@@ -28,9 +28,14 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI levelNumber;
     public TextMeshProUGUI timeElapsed;
     public TextMeshProUGUI score;
+    public TextMeshProUGUI levelAnnouncement;
+
+    private int currentLevelNumber;
+    private float timeLevelClearAnnounced;
 
     public void Start()
     {
+        currentLevelNumber = levelManager.levelNumber;
         healthRadialBar.fillAmount = 1f;
         healthRadialBarText.text = $"{(int) (healthRadialBar.fillAmount * 100)}%";
 
@@ -86,5 +91,15 @@ public class HUD : MonoBehaviour
         levelNumber.text = $"{levelManager.levelNumber}";
         timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
         score.text = $"{player.score}";
+
+        if (levelManager.levelNumber > currentLevelNumber)
+        {
+            currentLevelNumber++;
+            levelAnnouncement.text = "LEVEL CLEAR";
+            timeLevelClearAnnounced = Time.time;
+        }
+
+        if (Time.time - timeLevelClearAnnounced > 3f)
+            levelAnnouncement.text = "";
     }
 }
