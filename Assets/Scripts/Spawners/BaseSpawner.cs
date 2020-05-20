@@ -12,6 +12,7 @@ public class BaseSpawner : MonoBehaviour
     public float obstacleScaleMin;
     public float obstacleScaleMax;
     public Vector3 spawnBounds;
+    public Vector3 spawnInnerBounds;
     public int spawnCount;
     public int randomSeed;
     
@@ -81,7 +82,10 @@ public class BaseSpawner : MonoBehaviour
     private void SpawnObstacle()
     {
         var obstacle = obstacles[rand.Next(obstacles.Count)];
-        var position = RandomSpawnPosition();
+        var position = Vector3.zero;
+        do
+            position = RandomSpawnPosition();
+        while (!SpawnPositionValid(position));
         var clone = Instantiate(
             obstacle,
             position,
@@ -91,6 +95,14 @@ public class BaseSpawner : MonoBehaviour
         clone.player = player;
         clone.velocity = obstacleVelocity;
         clone.points = 1f;
+    }
+
+    public bool SpawnPositionValid(Vector3 position)
+    {
+        var validX = position.x > spawnInnerBounds.x || position.x < -spawnInnerBounds.x;
+        var validY = position.y > spawnInnerBounds.y || position.y < -spawnInnerBounds.y;
+
+        return validX && validY;
     }
 
     private Vector3 RandomSpawnPosition()

@@ -43,7 +43,7 @@ public class DodgeMove : MonoBehaviour
         rigidbody.velocity = new Vector3(dodge.x, dodge.y, rigidbody.velocity.z);
         
         var roll = transform.forward * (-Controller.leftStickHorizontal * rollTorque);
-        var pitch = transform.right * (Controller.leftStickVertical * pitchTorque);
+        var pitch = transform.right * (-Controller.leftStickVertical * pitchTorque);
         var torque = pitch + roll;
         rigidbody.AddRelativeTorque(torque);
     }
