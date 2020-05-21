@@ -9,6 +9,7 @@ TagManager:
   - Drone-Wingtip
   - Drone-Body
   - Drone-Colliders
+  - Obstacle
   layers:
   - Default
   - TransparentFX

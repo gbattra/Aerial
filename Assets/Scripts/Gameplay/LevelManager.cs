@@ -9,6 +9,7 @@ using Debug = UnityEngine.Debug;
 public class LevelManager : MonoBehaviour
 {
     public Player player;
+    public Vehicle vehicle;
     public List<BaseSpawner> spawners;
     public float secondsAtMax;
     
@@ -74,6 +75,13 @@ public class LevelManager : MonoBehaviour
         if (!(countdownSecondsRemaining <= 0)) return;
         Debug.Log("New Level Started");
 
+        foreach (var obstacle in GameObject.FindGameObjectsWithTag("Obstacle"))
+        {
+            Destroy(obstacle);
+        }
+        
+        vehicle.healthUpAbility.AddHealthUp(1);
+        vehicle.shieldAbility.AddShield(1);
         isCountingDown = false;
         levelNumber++;
         fogColorIndex = fogColorIndex < fogColors.Count - 1 ? fogColorIndex + 1 : 0;

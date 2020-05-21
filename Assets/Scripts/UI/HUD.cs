@@ -18,9 +18,6 @@ public class HUD : MonoBehaviour
     public UIProgressBar minigunCharge;
     public UIProgressBar boostCharge;
 
-    public List<GameObject> shields;
-    public List<GameObject> healthUps;
-    
     public Text healthRadialBarText;
     public Text minigunChargeText;
     public Text boostChargeText;
@@ -29,6 +26,8 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI timeElapsed;
     public TextMeshProUGUI score;
     public TextMeshProUGUI levelAnnouncement;
+    public TextMeshProUGUI shieldCount;
+    public TextMeshProUGUI healthUpCount;
 
     private int currentLevelNumber;
     private float timeLevelClearAnnounced;
@@ -36,6 +35,7 @@ public class HUD : MonoBehaviour
 
     public void Start()
     {
+        levelAnnouncement.text = "";
         currentLevelNumber = levelManager.levelNumber;
         healthRadialBar.fillAmount = 1f;
         healthRadialBarText.text = $"{(int) (healthRadialBar.fillAmount * 100)}%";
@@ -45,19 +45,14 @@ public class HUD : MonoBehaviour
 
         boostCharge.fillAmount = 1f;
         boostChargeText.text = $"{(int) (boostCharge.fillAmount * 100)}%";
-
-        shields[0].SetActive(true);
-        shields[1].SetActive(true);
-        shields[2].SetActive(true);
-        
-        healthUps[0].SetActive(true);
-        healthUps[1].SetActive(true);
-        healthUps[2].SetActive(true);
         
         levelProgressRadial.UpdateStatus(1f, 1f);
         levelNumber.text = $"{levelManager.levelNumber}";
         timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
         score.text = $"{player.score}";
+
+        shieldCount.text = $"{vehicle.shieldAbility.shieldCount}";
+        healthUpCount.text = $"{vehicle.healthUpAbility.healthUpCount}";
     }
 
     public void LateUpdate()
@@ -71,27 +66,13 @@ public class HUD : MonoBehaviour
         boostCharge.fillAmount = vehicle.boost.charge;
         boostChargeText.text = $"{(int) (vehicle.boost.charge * 100)}%";
 
-        shields[0].SetActive(false);
-        shields[1].SetActive(false);
-        shields[2].SetActive(false);
-        healthUps[0].SetActive(false);
-        healthUps[1].SetActive(false);
-        healthUps[2].SetActive(false);
-        
-        for (var i = 0; i < vehicle.shieldAbility.shieldCount; i++)
-        {
-            shields[i].SetActive(true);
-        }
-        
-        for (var i = 0; i < vehicle.healthUpAbility.healthUpCount; i++)
-        {
-            healthUps[i].SetActive(true);
-        }
-        
         levelProgressRadial.UpdateStatus(levelManager.percentProgress, 1f);
         levelNumber.text = $"{levelManager.levelNumber}";
         timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
         score.text = $"{player.score}";
+
+        shieldCount.text = $"{vehicle.shieldAbility.shieldCount}";
+        healthUpCount.text = $"{vehicle.healthUpAbility.healthUpCount}";
 
         if (levelManager.isCountingDown)
         {

@@ -26,7 +26,7 @@ public class ShieldAbility : MonoBehaviour
     {
         if (!_isShielding && Controller.y && shieldCount > 0)
         {
-            _shieldCount = Mathf.Clamp(_shieldCount - 1, 0, 3);
+            _shieldCount = Mathf.Clamp(_shieldCount - 1, 0, shieldCount);
             shield.gameObject.SetActive(true);
             _isShielding = true;
             shieldStartTime = Time.time;
@@ -43,6 +43,6 @@ public class ShieldAbility : MonoBehaviour
 
     public void AddShield(int count)
     {
-        _shieldCount = Mathf.Clamp(_shieldCount + count, 0, 3);
+        _shieldCount = Mathf.Clamp(_shieldCount + count, 0, shieldCount + count);
     }
 }

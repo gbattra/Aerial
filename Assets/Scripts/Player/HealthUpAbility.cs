@@ -24,7 +24,7 @@ public class HealthUpAbility : MonoBehaviour
     {
         if (!isHealing && Controller.x && healthUpCount > 0)
         {
-            _healthUpCount = Mathf.Clamp(_healthUpCount - 1, 0, 3);
+            _healthUpCount = Mathf.Clamp(healthUpCount - 1, 0, healthUpCount);
             _isHealing = true;
             healingStartTime = Time.time;
             vehicle.IncreaseHealth(.25f);
@@ -41,6 +41,6 @@ public class HealthUpAbility : MonoBehaviour
 
     public void AddHealthUp(int count)
     {
-        _healthUpCount = Mathf.Clamp(_healthUpCount + count, 0, 3);
+        _healthUpCount = Mathf.Clamp(healthUpCount + count, 0, healthUpCount + count);
     }
 }

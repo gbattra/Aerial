@@ -36,6 +36,15 @@ public class Vehicle : MonoBehaviour
         _health = 1f;
     }
 
+    public void Update()
+    {
+        if (player.score > 0 && player.score % 50 == 0)
+        {
+            healthUpAbility.AddHealthUp(1);
+            shieldAbility.AddShield(1);
+        }
+    }
+
     public void FixedUpdate()
     {
         forwardSpeed = rigidbody.velocity.magnitude;
