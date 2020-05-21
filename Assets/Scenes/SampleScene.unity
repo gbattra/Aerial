@@ -127800,12 +127800,14 @@ MonoBehaviour:
   - {fileID: 1338534495074025607}
   - {fileID: 1338534495393626992}
   - {fileID: 1338534495427246926}
-  secondsAtMax: 1
-  decayAmount: 0.1
+  secondsAtMax: 10
+  decayAmount: 0.01
   decayInterval: 1
   startSpawnTimeInterval: 1
   finalSpawnTimeInterval: 0.3
   obstacleVelocity: 45
+  levelSpawnTimeDecay: 0.001
+  levelVelocityIncrease: 1
   clearedLevel: 0
   fogColorIndex: 0
   fogColors:

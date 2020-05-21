@@ -15,13 +15,16 @@ public class LevelManager : MonoBehaviour
     private int currentLevel;
     private bool spawnersMaxed => spawners.All(spawner => spawner.isMaxed);
     private float countdownStartTime;
-    private bool isCountingDown;
+    public bool isCountingDown { get; private set; }
+    public float countdownSecondsRemaining { get; private set; }
     
     public float decayAmount;
     public float decayInterval;
     public float startSpawnTimeInterval;
     public float finalSpawnTimeInterval;
     public float obstacleVelocity;
+    public float levelSpawnTimeDecay;
+    public float levelVelocityIncrease;
 
     public bool clearedLevel;
 
@@ -42,9 +45,9 @@ public class LevelManager : MonoBehaviour
             spawner.player = player;
             spawner.ResetSpawner(
                 startSpawnTimeInterval,
+                finalSpawnTimeInterval,
                 decayAmount,
                 decayInterval,
-                finalSpawnTimeInterval,
                 obstacleVelocity);
         }
     }
@@ -67,8 +70,8 @@ public class LevelManager : MonoBehaviour
             isCountingDown = true;
             countdownStartTime = Time.time;
         }
-        var secondsLeft = secondsAtMax - (Time.time - countdownStartTime);
-        if (!(secondsLeft <= 0)) return;
+        countdownSecondsRemaining = secondsAtMax - (Time.time - countdownStartTime);
+        if (!(countdownSecondsRemaining <= 0)) return;
         Debug.Log("New Level Started");
 
         isCountingDown = false;
@@ -77,11 +80,15 @@ public class LevelManager : MonoBehaviour
         RenderSettings.fogColor = fogColors[fogColorIndex];
         foreach (var spawner in spawners)
         {
+            startSpawnTimeInterval -= levelSpawnTimeDecay;
+            finalSpawnTimeInterval -= levelSpawnTimeDecay;
+            obstacleVelocity += levelVelocityIncrease;
+            secondsAtMax += 1;
             spawner.ResetSpawner(
                 startSpawnTimeInterval,
+                finalSpawnTimeInterval,
                 decayAmount,
                 decayInterval,
-                finalSpawnTimeInterval,
                 obstacleVelocity);
         }
     }

@@ -66,9 +66,9 @@ public class BaseSpawner : MonoBehaviour
 
     public void ResetSpawner(
         float _startSpawnTimeInterval,
+        float _finalSpawnTimeInterval,
         float _decayAmount,
         float _decayInterval,
-        float _finalSpawnTimeInterval,
         float _obstacleVelocity)
     {
         decayAmount = _decayAmount;

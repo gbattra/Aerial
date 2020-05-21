@@ -92,6 +92,12 @@ public class HUD : MonoBehaviour
         timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
         score.text = $"{player.score}";
 
+        if (levelManager.isCountingDown)
+        {
+            levelProgressRadial.UpdateStatus(
+                levelManager.countdownSecondsRemaining, levelManager.secondsAtMax);
+        }
+
         if (levelManager.levelNumber > currentLevelNumber)
         {
             currentLevelNumber++;
