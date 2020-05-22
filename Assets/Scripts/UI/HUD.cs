@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using DuloGames.UI;
+﻿using DuloGames.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,7 +18,8 @@ public class HUD : MonoBehaviour
     public Text minigunChargeText;
     public Text boostChargeText;
 
-    public TextMeshProUGUI levelNumber;
+    public TextMeshProUGUI levelNumberSingle;
+    public TextMeshProUGUI levelNumberDouble;
     public TextMeshProUGUI timeElapsed;
     public TextMeshProUGUI score;
     public TextMeshProUGUI levelAnnouncement;
@@ -47,7 +44,8 @@ public class HUD : MonoBehaviour
         boostChargeText.text = $"{(int) (boostCharge.fillAmount * 100)}%";
         
         levelProgressRadial.UpdateStatus(1f, 1f);
-        levelNumber.text = $"{levelManager.levelNumber}";
+        levelNumberSingle.text = levelManager.levelNumber < 10 ? $"{levelManager.levelNumber}" : "";
+        levelNumberDouble.text = levelManager.levelNumber > 10 ? $"{levelManager.levelNumber}" : "";
         timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
         score.text = $"{player.score}";
 
@@ -67,7 +65,8 @@ public class HUD : MonoBehaviour
         boostChargeText.text = $"{(int) (vehicle.boost.charge * 100)}%";
 
         levelProgressRadial.UpdateStatus(levelManager.percentProgress, 1f);
-        levelNumber.text = $"{levelManager.levelNumber}";
+        levelNumberSingle.text = levelManager.levelNumber < 10 ? $"{levelManager.levelNumber}" : "";
+        levelNumberDouble.text = levelManager.levelNumber >= 10 ? $"{levelManager.levelNumber}" : "";
         timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
         score.text = $"{player.score}";
 

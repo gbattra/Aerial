@@ -30,19 +30,11 @@ public class Vehicle : MonoBehaviour
     public float resetRotationSpeed;
     public float rotationSpeed;
 
+    private bool powerUpsGiven;
 
     public void Start()
     {
         _health = 1f;
-    }
-
-    public void Update()
-    {
-        if (player.score > 0 && player.score % 50 == 0)
-        {
-            healthUpAbility.AddHealthUp(1);
-            shieldAbility.AddShield(1);
-        }
     }
 
     public void FixedUpdate()
@@ -53,6 +45,16 @@ public class Vehicle : MonoBehaviour
 
         HandleForces();
         HandleRotations();
+        
+        if (player.score > 0 && player.score % 100 == 0 && !powerUpsGiven)
+        {
+            powerUpsGiven = true;
+            healthUpAbility.AddHealthUp(1);
+            shieldAbility.AddShield(1);
+        }
+
+        if (player.score % 100 != 0)
+            powerUpsGiven = false;
     }
 
     public void HandleImpact(float damage)
@@ -69,20 +71,13 @@ public class Vehicle : MonoBehaviour
 
     private void HandleRotations()
     {
-        if (pivotMove.isPivoting)
+        if (pivotMove.isPivoting || Controller.noInputs)
             return;
         transform.rotation = ComputeRotation();
     }
 
     private Quaternion ComputeRotation()
     {
-        if (Controller.noInputs)
-        {
-            return Quaternion.Lerp(
-                transform.rotation, 
-                Quaternion.Euler(Vector3.zero),
-                resetRotationSpeed * Time.deltaTime);
-        }
         var yaw = maxYaw * Controller.rightStickHorizontal;
         var aimPitch = maxYaw * -Controller.rightStickVertical;
         var roll = (maxRoll + (boost.isBoosting ? boost.rollBuffer : 0f)) * Controller.leftStickHorizontal;

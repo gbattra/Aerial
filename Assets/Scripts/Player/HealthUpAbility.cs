@@ -17,7 +17,7 @@ public class HealthUpAbility : MonoBehaviour
 
     public void Start()
     {
-        _healthUpCount = 3;
+        _healthUpCount = 1;
     }
 
     public void Update()

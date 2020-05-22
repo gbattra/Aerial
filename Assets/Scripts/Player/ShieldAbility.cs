@@ -19,7 +19,7 @@ public class ShieldAbility : MonoBehaviour
 
     public void Start()
     {
-        _shieldCount = 3;
+        _shieldCount = 1;
     }
 
     public void Update()
