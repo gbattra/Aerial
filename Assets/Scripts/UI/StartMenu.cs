@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class StartMenu : MonoBehaviour
 {
-    public void Play()
+    public void Resume()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void Restart()
     {
         SceneManager.LoadScene("Game");
     }
 
     public void Exit()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Menu");
     }
 }
