@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boost : MonoBehaviour
 {
+    public ParticleSystem boostEffect;
     public float boostSpeed;
     public float boostThrust;
     public float boostRoll;
@@ -15,11 +16,10 @@ public class Boost : MonoBehaviour
     public bool isCharging;
     public float consumptionRate;
     public float chargeRate;
-
+    public float boostEnergy;
+    
     public float charge => _charge;
     private float _charge;
-    
-    public float boostEnergy;
 
     public void Start()
     {
@@ -30,9 +30,12 @@ public class Boost : MonoBehaviour
     {
         if (isBoosting)
         {
+            boostEffect.gameObject.SetActive(true);
             var newCharge = _charge * 100 - Time.deltaTime * consumptionRate;
             _charge = Mathf.Clamp(newCharge, 0, 100) / 100;
-        }
+        } else
+            boostEffect.gameObject.SetActive(false);
+
         if (isCharging)
         {
             var newCharge = _charge * 100 + Time.deltaTime * chargeRate;
