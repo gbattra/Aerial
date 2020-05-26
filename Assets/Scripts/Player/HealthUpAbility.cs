@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthUpAbility : MonoBehaviour
 {
     public Vehicle vehicle;
+    public ParticleSystem healAura;
     public float healingTime;
     
     public int healthUpCount => _healthUpCount;
@@ -28,6 +29,9 @@ public class HealthUpAbility : MonoBehaviour
             _isHealing = true;
             healingStartTime = Time.time;
             vehicle.IncreaseHealth(.25f);
+            
+            healAura.gameObject.SetActive(true);
+            healAura.Play();
         }
 
         _isHealing &= Time.time - healingStartTime < healingTime;
@@ -37,6 +41,7 @@ public class HealthUpAbility : MonoBehaviour
 
         _isHealing = false;
         healingStartTime = 0;
+        healAura.gameObject.SetActive(false);
     }
 
     public void AddHealthUp(int count)

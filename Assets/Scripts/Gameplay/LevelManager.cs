@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour
     public float levelSpawnTimeDecay;
     public float levelVelocityIncrease;
     public float virusSpawnPad;
-    public bool clearedLevel;
+    public float secondsIncrease;
 
     public int fogColorIndex;
     public List<Color> fogColors;
@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour
             startSpawnTimeInterval -= levelSpawnTimeDecay;
             finalSpawnTimeInterval -= levelSpawnTimeDecay;
             obstacleVelocity += levelVelocityIncrease;
-            secondsAtMax += 5;
+            secondsAtMax += secondsIncrease;
             spawner.ResetSpawner(
                 startSpawnTimeInterval,
                 finalSpawnTimeInterval,
