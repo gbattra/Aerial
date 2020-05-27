@@ -47,17 +47,11 @@ public class StartMenu : MonoBehaviour
 
     public void Restart()
     {
-        isOpen = false;
-        gameTimer.timer.Start();
-        Time.timeScale = timeScale;
         SceneManager.LoadScene("Game");
     }
 
     public void Exit()
     {
-        isOpen = false;
-        gameTimer.timer.Start();
-        Time.timeScale = timeScale;
         SceneManager.LoadScene("Menu");
     }
 }

@@ -87664,7 +87664,7 @@ MonoBehaviour:
   player: {fileID: 1200211173}
   gameTimer: {fileID: 318851194}
   levelManager: {fileID: 1998385422}
-  gameOverMenuCanvas: {fileID: 1129530940}
+  gameOverMenuCanvas: {fileID: 489622509}
 --- !u!1 &1130926999
 GameObject:
   m_ObjectHideFlags: 0
@@ -136946,7 +136946,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1200211173}
-  vehicle: {fileID: 0}
+  vehicle: {fileID: 1200211172}
+  gameTimer: {fileID: 318851194}
   obstacleSpawners:
   - {fileID: 1338534495074025607}
   - {fileID: 1338534495393626992}
@@ -149467,8 +149468,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269076543}
-        m_MethodName: Resume
+      - m_Target: {fileID: 1129530942}
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -149521,8 +149522,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269076543}
-        m_MethodName: Resume
+      - m_Target: {fileID: 1129530942}
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

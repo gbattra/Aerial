@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
@@ -12,14 +13,27 @@ public class GameOverMenu : MonoBehaviour
     private bool isOpen;
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (levelManager.gameOver && !isOpen)
         {
             isOpen = true;
-            gameTimer.timer.Stop();
-            Time.timeScale = 0;
             gameOverMenuCanvas.SetActive(true);   
         }
+        
+        if (isOpen && Controller.a)
+            Restart();
+        if (isOpen && Controller.b)
+            Exit();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

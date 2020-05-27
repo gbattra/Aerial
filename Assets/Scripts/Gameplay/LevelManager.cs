@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 {
     public Player player;
     public Vehicle vehicle;
+    public GameTimer gameTimer;
     public List<BaseSpawner> obstacleSpawners;
     public List<BaseSpawner> virusSpawners;
     public List<BaseSpawner> ambienceSpawners;
@@ -79,7 +80,13 @@ public class LevelManager : MonoBehaviour
     {
         gameOver = !(vehicle.health > 0);
         
-        if (gameOver) return;
+        if (gameOver)
+        {
+            gameTimer.timer.Stop();
+            Time.timeScale = 0;
+            return;
+        }
+        
         if (!spawnersMaxed) return;
         
         if (spawnersMaxed && !isCountingDown)
