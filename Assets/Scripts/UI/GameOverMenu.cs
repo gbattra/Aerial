@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverMenu : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameOverMenu : MonoBehaviour
     public GameTimer gameTimer;
     public LevelManager levelManager;
     public GameObject gameOverMenuCanvas;
+    public Text timeText;
+    public Text scoreText;
 
     private bool isOpen;
 
@@ -18,6 +21,8 @@ public class GameOverMenu : MonoBehaviour
         if (levelManager.gameOver && !isOpen)
         {
             isOpen = true;
+            timeText.text = $"{gameTimer.timer.Elapsed:m\\:ss}";
+            scoreText.text = $"{player.score}";
             gameOverMenuCanvas.SetActive(true);   
         }
         

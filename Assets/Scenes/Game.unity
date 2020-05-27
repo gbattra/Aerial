@@ -87665,6 +87665,8 @@ MonoBehaviour:
   gameTimer: {fileID: 318851194}
   levelManager: {fileID: 1998385422}
   gameOverMenuCanvas: {fileID: 489622509}
+  timeText: {fileID: 114000015421568629}
+  scoreText: {fileID: 114000012085038231}
 --- !u!1 &1130926999
 GameObject:
   m_ObjectHideFlags: 0
@@ -148851,7 +148853,7 @@ GameObject:
   - component: {fileID: 114000015421568629}
   - component: {fileID: 114000010045682837}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148888,7 +148890,7 @@ GameObject:
   - component: {fileID: 114000012085038231}
   - component: {fileID: 114000012347613815}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149017,7 +149019,7 @@ GameObject:
   - component: {fileID: 222000012826701943}
   - component: {fileID: 114000015380376887}
   m_Layer: 5
-  m_Name: Kills
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

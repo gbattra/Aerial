@@ -68,7 +68,7 @@ public class HUD : MonoBehaviour
         levelProgressRadial.UpdateStatus(levelManager.percentProgress, 1f);
         levelNumberSingle.text = levelManager.levelNumber < 10 ? $"{levelManager.levelNumber}" : "";
         levelNumberDouble.text = levelManager.levelNumber >= 10 ? $"{levelManager.levelNumber}" : "";
-        timeElapsed.text = gameTimer.timer.Elapsed.ToString(@"m\:ss");
+        timeElapsed.text = $"{gameTimer.timer.Elapsed:m\\:ss}";
         score.text = $"{player.score}";
 
         shieldCount.text = $"{vehicle.shieldAbility.shieldCount}";
