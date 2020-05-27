@@ -34,7 +34,7 @@ public class Vehicle : MonoBehaviour
 
     public void Start()
     {
-        _health = 1f;
+        _health = 0f;
     }
 
     public void FixedUpdate()

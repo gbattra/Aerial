@@ -15,13 +15,8 @@ public class LevelManager : MonoBehaviour
     public List<BaseSpawner> ambienceSpawners;
     
     public float secondsAtMax;
-    
-    private int currentLevel;
-    private bool spawnersMaxed => obstacleSpawners.All(spawner => spawner.isMaxed);
-    private float countdownStartTime;
     public bool isCountingDown { get; private set; }
     public float countdownSecondsRemaining { get; private set; }
-    
     public float decayAmount;
     public float decayInterval;
     public float startSpawnTimeInterval;
@@ -31,13 +26,18 @@ public class LevelManager : MonoBehaviour
     public float levelVelocityIncrease;
     public float virusSpawnPad;
     public float secondsIncrease;
-
     public int fogColorIndex;
     public List<Color> fogColors;
-
     public float percentProgress => obstacleSpawners.Average(spawner => spawner.percentProgress);
     public int levelNumber { get; private set; }
 
+    public bool gameOver { get; private set; }
+    
+    private int currentLevel;
+    private bool spawnersMaxed => obstacleSpawners.Any() &&
+                                  obstacleSpawners.All(spawner => spawner.isMaxed);
+    private float countdownStartTime;
+    
     public void Awake()
     {
         levelNumber = 1;
@@ -63,6 +63,11 @@ public class LevelManager : MonoBehaviour
                 decayInterval,
                 obstacleVelocity);
         }
+
+        foreach (var spawner in ambienceSpawners)
+        {
+            spawner.player = player;
+        }
     }
 
     public void Start()
@@ -72,27 +77,24 @@ public class LevelManager : MonoBehaviour
 
     public void Update()
     {
-        if (!spawnersMaxed)
-            return;
+        gameOver = !(vehicle.health > 0);
+        
+        if (gameOver) return;
+        if (!spawnersMaxed) return;
         
         if (spawnersMaxed && !isCountingDown)
         {
-            Debug.Log("Counting down");
-            
             isCountingDown = true;
             countdownStartTime = Time.time;
         }
         countdownSecondsRemaining = secondsAtMax - (Time.time - countdownStartTime);
         if (!(countdownSecondsRemaining <= 0)) return;
-        Debug.Log("New Level Started");
 
         foreach (var obstacle in GameObject.FindGameObjectsWithTag("Obstacle"))
         {
             Destroy(obstacle);
         }
         
-        // vehicle.healthUpAbility.AddHealthUp(1);
-        // vehicle.shieldAbility.AddShield(1);
         isCountingDown = false;
         levelNumber++;
         fogColorIndex = fogColorIndex < fogColors.Count - 1 ? fogColorIndex + 1 : 0;

@@ -8,6 +8,8 @@ public class StartMenu : MonoBehaviour
 {
     public GameObject menuCanvas;
     public GameTimer gameTimer;
+    
+    private bool isOpen;
     private float timeScale;
 
     public void Awake()
@@ -17,16 +19,27 @@ public class StartMenu : MonoBehaviour
 
     public void Update()
     {
-        if (Controller.start)
+        if (Controller.start && !isOpen)
         {
+            isOpen = true;
             gameTimer.timer.Stop();
             Time.timeScale = 0;
             menuCanvas.SetActive(true);   
         }
+
+        if (!isOpen) return;
+        
+        if (Controller.a)
+            Resume();
+        if (Controller.b)
+            Restart();
+        if (Controller.x)
+            Exit();
     }
 
     public void Resume()
     {
+        isOpen = false;
         gameTimer.timer.Start();
         Time.timeScale = timeScale;
         menuCanvas.SetActive(false);
@@ -34,6 +47,7 @@ public class StartMenu : MonoBehaviour
 
     public void Restart()
     {
+        isOpen = false;
         gameTimer.timer.Start();
         Time.timeScale = timeScale;
         SceneManager.LoadScene("Game");
@@ -41,6 +55,7 @@ public class StartMenu : MonoBehaviour
 
     public void Exit()
     {
+        isOpen = false;
         gameTimer.timer.Start();
         Time.timeScale = timeScale;
         SceneManager.LoadScene("Menu");
