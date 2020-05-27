@@ -8,6 +8,7 @@ public class HUD : MonoBehaviour
     public Vehicle vehicle;
     public Player player;
     public LevelManager levelManager;
+    public GameTimer gameTimer;
 
     public UltimateStatusBar levelProgressRadial;
     public UIBulletBar healthRadialBar;
@@ -46,7 +47,7 @@ public class HUD : MonoBehaviour
         levelProgressRadial.UpdateStatus(1f, 1f);
         levelNumberSingle.text = levelManager.levelNumber < 10 ? $"{levelManager.levelNumber}" : "";
         levelNumberDouble.text = levelManager.levelNumber > 10 ? $"{levelManager.levelNumber}" : "";
-        timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
+        timeElapsed.text = gameTimer.timer.Elapsed.ToString(@"m\:ss");
         score.text = $"{player.score}";
 
         shieldCount.text = $"{vehicle.shieldAbility.shieldCount}";
@@ -67,7 +68,7 @@ public class HUD : MonoBehaviour
         levelProgressRadial.UpdateStatus(levelManager.percentProgress, 1f);
         levelNumberSingle.text = levelManager.levelNumber < 10 ? $"{levelManager.levelNumber}" : "";
         levelNumberDouble.text = levelManager.levelNumber >= 10 ? $"{levelManager.levelNumber}" : "";
-        timeElapsed.text = levelManager.timer.Elapsed.ToString(@"m\:ss");
+        timeElapsed.text = gameTimer.timer.Elapsed.ToString(@"m\:ss");
         score.text = $"{player.score}";
 
         shieldCount.text = $"{vehicle.shieldAbility.shieldCount}";

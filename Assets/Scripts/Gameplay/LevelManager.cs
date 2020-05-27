@@ -38,9 +38,6 @@ public class LevelManager : MonoBehaviour
     public float percentProgress => obstacleSpawners.Average(spawner => spawner.percentProgress);
     public int levelNumber { get; private set; }
 
-    public Stopwatch timer => _timer;
-    private Stopwatch _timer = new Stopwatch();
-
     public void Awake()
     {
         levelNumber = 1;
@@ -70,7 +67,6 @@ public class LevelManager : MonoBehaviour
 
     public void Start()
     {
-        _timer.Start();
         RenderSettings.fogColor = fogColors[fogColorIndex];
     }
 

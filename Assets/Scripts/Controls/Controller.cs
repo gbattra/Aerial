@@ -15,6 +15,7 @@ public static class Controller
     public static bool b => Input.GetButton("B");
     public static bool y => Input.GetButtonDown("Y");
     public static bool x => Input.GetButtonDown("X");
+    public static bool start => Input.GetButtonDown("Submit");
     
     public static bool braking => leftTrigger < 0f;
 
