@@ -28,7 +28,7 @@ public class GameOverMenu : MonoBehaviour
         
         if (isOpen && Controller.a)
             Restart();
-        if (isOpen && Controller.b)
+        if (isOpen && Controller.x)
             Exit();
     }
 
