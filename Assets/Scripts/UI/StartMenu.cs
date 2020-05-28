@@ -47,11 +47,13 @@ public class StartMenu : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = timeScale;
         SceneManager.LoadScene("Game");
     }
 
     public void Exit()
     {
+        Time.timeScale = timeScale;
         SceneManager.LoadScene("Menu");
     }
 }

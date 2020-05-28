@@ -83,7 +83,6 @@ public class LevelManager : MonoBehaviour
         if (gameOver)
         {
             gameTimer.timer.Stop();
-            Time.timeScale = 0;
             return;
         }
         

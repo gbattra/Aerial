@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,12 @@ public class GameOverMenu : MonoBehaviour
     public Text scoreText;
 
     private bool isOpen;
+    private float timeScale;
+
+    public void Awake()
+    {
+        timeScale = Time.timeScale;
+    }
 
     // Update is called once per frame
     public void Update()
@@ -23,6 +30,7 @@ public class GameOverMenu : MonoBehaviour
             isOpen = true;
             timeText.text = $"{gameTimer.timer.Elapsed:m\\:ss}";
             scoreText.text = $"{player.score}";
+            Time.timeScale = 0;
             gameOverMenuCanvas.SetActive(true);   
         }
         
@@ -34,11 +42,13 @@ public class GameOverMenu : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = timeScale;
         SceneManager.LoadScene("Game");
     }
 
     public void Exit()
     {
+        Time.timeScale = timeScale;
         SceneManager.LoadScene("Menu");
     }
 }

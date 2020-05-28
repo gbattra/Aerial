@@ -57341,7 +57341,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.0092666e-36, y: 1.009742e-28, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 3e-45, z: 7.657e-42, w: 5.9e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -93566,7 +93566,7 @@ MonoBehaviour:
   maxSpeed: 100
   maxPitch: 30
   maxRoll: 40
-  maxYaw: 20
+  maxYaw: 30
   resetRotationSpeed: 2.7
   rotationSpeed: 2.87
 --- !u!114 &1200211173
@@ -136957,11 +136957,11 @@ MonoBehaviour:
   - {fileID: 1338534495427246926}
   ambienceSpawners:
   - {fileID: 824536544}
-  secondsAtMax: 30
+  secondsAtMax: 10
   decayAmount: 0.005
-  decayInterval: 0.5
+  decayInterval: 0.15
   startSpawnTimeInterval: 1
-  finalSpawnTimeInterval: 0.15
+  finalSpawnTimeInterval: 0.1
   obstacleVelocity: 40
   levelSpawnTimeDecay: 0
   levelVelocityIncrease: 0.1
