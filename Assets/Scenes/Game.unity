@@ -437,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55758416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 3.32, z: 3.01}
+  m_LocalPosition: {x: -0.01, y: 3.32, z: 8.05}
   m_LocalScale: {x: 0.57936, y: 0.57936, z: 0.57936}
   m_Children:
   - {fileID: 569116310}
@@ -35060,7 +35060,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569116309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: -5}
+  m_LocalPosition: {x: 0, y: 0.4, z: -9.8}
   m_LocalScale: {x: 0.42936, y: 0.42936, z: 0.42936}
   m_Children:
   - {fileID: 755365012}
@@ -57341,7 +57341,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 3e-45, z: 7.657e-42, w: 5.9e-44}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -111315,8 +111315,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.181
-  m_Pitch: 1
+  m_Volume: 0.113
+  m_Pitch: 3
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -111420,8 +111420,8 @@ MonoBehaviour:
   chargeRate: 20
   isFiring: 0
   isCharging: 0
-  AudioClip: {fileID: 0}
-  AudioSource: {fileID: 0}
+  AudioClip: {fileID: 8300000, guid: 4b0fadb8fc7bdaf489e9f7879d3c71bb, type: 3}
+  AudioSource: {fileID: 1498805093}
 --- !u!1 &1506787631
 GameObject:
   m_ObjectHideFlags: 0
