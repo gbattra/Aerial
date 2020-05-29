@@ -10,6 +10,9 @@ public class HUD : MonoBehaviour
     public LevelManager levelManager;
     public GameTimer gameTimer;
 
+    public AudioSource audioSource;
+    public AudioClip scoreUpAudioClip;
+
     public UltimateStatusBar levelProgressRadial;
     public UIBulletBar healthRadialBar;
     public UIProgressBar minigunCharge;
@@ -30,6 +33,7 @@ public class HUD : MonoBehaviour
     private int currentLevelNumber;
     private float timeLevelClearAnnounced;
     private bool announcingLevelClear;
+    private float currentPlayerScore;
 
     public void Start()
     {
@@ -48,7 +52,7 @@ public class HUD : MonoBehaviour
         levelNumberSingle.text = levelManager.levelNumber < 10 ? $"{levelManager.levelNumber}" : "";
         levelNumberDouble.text = levelManager.levelNumber > 10 ? $"{levelManager.levelNumber}" : "";
         timeElapsed.text = gameTimer.timer.Elapsed.ToString(@"m\:ss");
-        score.text = $"{player.score}";
+        score.text = $"{currentPlayerScore}";
 
         shieldCount.text = $"{vehicle.shieldAbility.shieldCount}";
         healthUpCount.text = $"{vehicle.healthUpAbility.healthUpCount}";
@@ -56,6 +60,11 @@ public class HUD : MonoBehaviour
 
     public void LateUpdate()
     {
+        if (currentPlayerScore < player.score)
+        {
+            audioSource.PlayOneShot(scoreUpAudioClip);
+            currentPlayerScore = player.score;
+        }
         healthRadialBar.fillAmount = vehicle.health;
         healthRadialBarText.text = $"{(int) (vehicle.health * 100)}%";
 
@@ -69,7 +78,7 @@ public class HUD : MonoBehaviour
         levelNumberSingle.text = levelManager.levelNumber < 10 ? $"{levelManager.levelNumber}" : "";
         levelNumberDouble.text = levelManager.levelNumber >= 10 ? $"{levelManager.levelNumber}" : "";
         timeElapsed.text = $"{gameTimer.timer.Elapsed:m\\:ss}";
-        score.text = $"{player.score}";
+        score.text = $"{currentPlayerScore}";
 
         shieldCount.text = $"{vehicle.shieldAbility.shieldCount}";
         healthUpCount.text = $"{vehicle.healthUpAbility.healthUpCount}";

@@ -47,6 +47,7 @@ public class LevelManager : MonoBehaviour
                                   obstacleSpawners.All(spawner => spawner.isMaxed);
     private float countdownStartTime;
     private float lastCountdownSoundTime;
+    private bool playedGameOverSound;
     
     public void Awake()
     {
@@ -103,6 +104,10 @@ public class LevelManager : MonoBehaviour
         if (gameOver)
         {
             gameTimer.timer.Stop();
+            
+            if (playedGameOverSound) return;
+            playedGameOverSound = true;
+            audioSource.PlayOneShot(gameOverAudioClip);
             return;
         }
         
