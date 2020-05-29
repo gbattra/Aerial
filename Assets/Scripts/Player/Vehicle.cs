@@ -17,6 +17,9 @@ public class Vehicle : MonoBehaviour
     public HealthUpAbility healthUpAbility;
     public Minigun minigun;
     public Rigidbody rigidbody;
+    
+    public AudioSource audioSource;
+    public AudioClip abilityGainAudioClip;
 
     public float forwardSpeed;
     public float maxSpeed;
@@ -51,6 +54,7 @@ public class Vehicle : MonoBehaviour
             powerUpsGiven = true;
             healthUpAbility.AddHealthUp(1);
             shieldAbility.AddShield(1);
+            audioSource.PlayOneShot(abilityGainAudioClip);
         }
 
         if (player.score % 100 != 0)
