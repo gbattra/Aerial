@@ -11,6 +11,14 @@ public class LevelManager : MonoBehaviour
     public Player player;
     public Vehicle vehicle;
     public GameTimer gameTimer;
+    public AudioSource audioSource;
+    public AudioClip gameOverAudioClip;
+    public AudioClip readySetAudioClip;
+    public AudioClip goAudioClip;
+    public AudioClip levelClearAudioClip;
+    public AudioClip countdownStartAudioClip;
+    public AudioClip finalCountdownAudioClip;
+    
     public List<BaseSpawner> obstacleSpawners;
     public List<BaseSpawner> virusSpawners;
     public List<BaseSpawner> ambienceSpawners;
@@ -38,6 +46,7 @@ public class LevelManager : MonoBehaviour
     private bool spawnersMaxed => obstacleSpawners.Any() &&
                                   obstacleSpawners.All(spawner => spawner.isMaxed);
     private float countdownStartTime;
+    private float lastCountdownSoundTime;
     
     public void Awake()
     {
@@ -78,6 +87,17 @@ public class LevelManager : MonoBehaviour
 
     public void Update()
     {
+        if ((countdownSecondsRemaining < 3 ||
+             countdownSecondsRemaining < 2 ||
+             countdownSecondsRemaining < 1) &&
+            isCountingDown)
+        {
+            if (!(Time.time - lastCountdownSoundTime > 1)) return;
+            
+            audioSource.PlayOneShot(finalCountdownAudioClip);
+            lastCountdownSoundTime = Time.time;
+        }
+        
         gameOver = !(vehicle.health > 0);
         
         if (gameOver)
@@ -90,6 +110,7 @@ public class LevelManager : MonoBehaviour
         
         if (spawnersMaxed && !isCountingDown)
         {
+            audioSource.PlayOneShot(countdownStartAudioClip);
             isCountingDown = true;
             countdownStartTime = Time.time;
         }
@@ -100,7 +121,7 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(obstacle);
         }
-        
+        audioSource.PlayOneShot(levelClearAudioClip);
         isCountingDown = false;
         levelNumber++;
         fogColorIndex = fogColorIndex < fogColors.Count - 1 ? fogColorIndex + 1 : 0;

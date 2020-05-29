@@ -6,13 +6,15 @@ public class DodgeMove : MonoBehaviour
 {
     public Player player;
     public Rigidbody rigidbody;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     
     public float dodgePower;
     public float dodgeTime;
     public float startDodgeTime;
     public float rollTorque;
     public float pitchTorque;
-    public float dodgeCooldown;
+    public float dodgeBuffer;
     
     private bool _isDodging;
     public bool isDodging => _isDodging;
@@ -22,10 +24,16 @@ public class DodgeMove : MonoBehaviour
 
     public void Update()
     {
-        if (!isDodging && Controller.a)
+        if (!isDodging &&
+            Controller.a &&
+            (Controller.leftStickVertical > dodgeBuffer ||
+             Controller.leftStickVertical < -dodgeBuffer ||
+             Controller.leftStickHorizontal > dodgeBuffer ||
+             Controller.leftStickHorizontal < -dodgeBuffer))
         {
             dodgeTime = startDodgeTime;
             _isDodging = true;
+            audioSource.PlayOneShot(audioClip);
         }
 
         dodgeTime = isDodging ? dodgeTime - Time.deltaTime : 0f;

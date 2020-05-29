@@ -5,6 +5,9 @@ using UnityEngine;
 public class Boost : MonoBehaviour
 {
     public ParticleSystem boostEffect;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+    
     public float boostSpeed;
     public float boostThrust;
     public float boostRoll;
@@ -50,16 +53,19 @@ public class Boost : MonoBehaviour
         {
             isCharging = true;
             isBoosting = false;
+            audioSource.Stop();
             return;
         }
 
         if (_charge <= 0f)
         {
+            audioSource.Stop();
             isBoosting = false;
             return;
         }
 
         isCharging = false;
         isBoosting = true;
+        // audioSource.PlayOneShot(audioClip);
     }
 }

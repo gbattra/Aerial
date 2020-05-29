@@ -6,6 +6,9 @@ public class HealthUpAbility : MonoBehaviour
 {
     public Vehicle vehicle;
     public ParticleSystem healAura;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+    
     public float healingTime;
     
     public int healthUpCount => _healthUpCount;
@@ -32,6 +35,7 @@ public class HealthUpAbility : MonoBehaviour
             
             healAura.gameObject.SetActive(true);
             healAura.Play();
+            audioSource.PlayOneShot(audioClip);
         }
 
         _isHealing &= Time.time - healingStartTime < healingTime;

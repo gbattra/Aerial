@@ -6,6 +6,8 @@ using UnityEngine;
 public class ShieldAbility : MonoBehaviour
 {
     public Shield shield;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     public float shieldTime;
     
     public bool isShielding => _isShielding;
@@ -30,6 +32,7 @@ public class ShieldAbility : MonoBehaviour
             shield.gameObject.SetActive(true);
             _isShielding = true;
             shieldStartTime = Time.time;
+            audioSource.PlayOneShot(audioClip);
         }
 
         _isShielding &= Time.time - shieldStartTime < shieldTime;
