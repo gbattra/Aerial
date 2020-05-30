@@ -20,7 +20,8 @@ public class Vehicle : MonoBehaviour
     
     public AudioSource audioSource;
     public AudioClip abilityGainAudioClip;
-
+    public AudioClip lowHealthAlertAudioClip;
+    
     public float forwardSpeed;
     public float maxSpeed;
     public float maxPitch;
@@ -29,7 +30,7 @@ public class Vehicle : MonoBehaviour
     
     public float health => _health;
     private float _health;
-    
+    private float previousHealthAlertTime;
     public float resetRotationSpeed;
     public float rotationSpeed;
 
@@ -38,6 +39,19 @@ public class Vehicle : MonoBehaviour
     public void Start()
     {
         _health = 1f;
+    }
+
+    public void Update()
+    {
+        if (health <= .05f && Time.time - previousHealthAlertTime > 1f)
+        {
+            audioSource.PlayOneShot(lowHealthAlertAudioClip);
+            previousHealthAlertTime = Time.time;
+        } else if (health <= .1f && Time.time - previousHealthAlertTime > 2f)
+        {
+            audioSource.PlayOneShot(lowHealthAlertAudioClip);
+            previousHealthAlertTime = Time.time;
+        }
     }
 
     public void FixedUpdate()

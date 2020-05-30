@@ -8,6 +8,9 @@ public class StartMenu : MonoBehaviour
 {
     public GameObject menuCanvas;
     public GameTimer gameTimer;
+
+    public AudioSource audioSource;
+    public AudioClip buttonSelectAudioClip;
     
     private bool isOpen;
     private float timeScale;
@@ -39,6 +42,7 @@ public class StartMenu : MonoBehaviour
 
     public void Resume()
     {
+        audioSource.PlayOneShot(buttonSelectAudioClip);
         isOpen = false;
         gameTimer.timer.Start();
         Time.timeScale = timeScale;
@@ -47,12 +51,14 @@ public class StartMenu : MonoBehaviour
 
     public void Restart()
     {
+        audioSource.PlayOneShot(buttonSelectAudioClip);
         Time.timeScale = timeScale;
         SceneManager.LoadScene("Game");
     }
 
     public void Exit()
     {
+        audioSource.PlayOneShot(buttonSelectAudioClip);
         Time.timeScale = timeScale;
         SceneManager.LoadScene("Menu");
     }

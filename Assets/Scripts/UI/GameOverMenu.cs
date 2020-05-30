@@ -14,6 +14,9 @@ public class GameOverMenu : MonoBehaviour
     public Text timeText;
     public Text scoreText;
 
+    public AudioSource audioSource;
+    public AudioClip buttonSelectAudioClip;
+
     private bool isOpen;
     private float timeScale;
 
@@ -42,12 +45,14 @@ public class GameOverMenu : MonoBehaviour
 
     public void Restart()
     {
+        audioSource.PlayOneShot(buttonSelectAudioClip);
         Time.timeScale = timeScale;
         SceneManager.LoadScene("Game");
     }
 
     public void Exit()
     {
+        audioSource.PlayOneShot(buttonSelectAudioClip);
         Time.timeScale = timeScale;
         SceneManager.LoadScene("Menu");
     }

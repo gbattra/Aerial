@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip buttonSelectAudioClip;
+    
     public void Update()
     {
         if (Controller.a)
@@ -16,11 +19,13 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
+        audioSource.PlayOneShot(buttonSelectAudioClip);
         SceneManager.LoadScene("Game");
     }
 
     public void Exit()
     {
+        audioSource.PlayOneShot(buttonSelectAudioClip);
         Application.Quit();
     }
 }
