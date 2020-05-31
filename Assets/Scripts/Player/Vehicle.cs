@@ -21,6 +21,7 @@ public class Vehicle : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip abilityGainAudioClip;
     public AudioClip lowHealthAlertAudioClip;
+    public AudioClip damageAudioClip;
     
     public float forwardSpeed;
     public float maxSpeed;
@@ -80,6 +81,7 @@ public class Vehicle : MonoBehaviour
         if (shieldAbility.isShielding)
             return;
         _health = Mathf.Clamp(health - damage, 0, 1);
+        audioSource.PlayOneShot(damageAudioClip);
     }
 
     public void IncreaseHealth(float amount)

@@ -6,7 +6,6 @@ public class Boost : MonoBehaviour
 {
     public ParticleSystem boostEffect;
     public AudioSource audioSource;
-    public AudioClip audioClip;
     
     public float boostSpeed;
     public float boostThrust;
@@ -59,13 +58,17 @@ public class Boost : MonoBehaviour
 
         if (_charge <= 0f)
         {
+            audioSource.loop = true;
             audioSource.Stop();
             isBoosting = false;
             return;
         }
+        
+        if (Controller.b && !isBoosting)
+            audioSource.Play();
+        
 
         isCharging = false;
         isBoosting = true;
-        // audioSource.PlayOneShot(audioClip);
     }
 }

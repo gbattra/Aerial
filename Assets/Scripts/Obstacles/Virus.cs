@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,5 +9,10 @@ public class Virus : Obstacle
     {
         player.AddToScore(points);
         Destroy(gameObject);
+    }
+
+    public void OnDestroy()
+    {
+        Instantiate(hitEffect, transform.position, transform.rotation);
     }
 }

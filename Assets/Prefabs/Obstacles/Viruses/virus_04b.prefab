@@ -104,6 +104,8 @@ MonoBehaviour:
   rigidbody: {fileID: 3453891234658928989}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 1, y: 1, z: 1}
+  hitEffect: {fileID: 4739386992667324758, guid: d497e45c1bea8624494ba396ea84fbfb,
+    type: 3}
 --- !u!54 &3453891234658928989
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -112,7 +114,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3452173690034355460}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 10
   m_AngularDrag: 10
   m_UseGravity: 0

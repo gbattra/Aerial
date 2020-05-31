@@ -15,6 +15,7 @@ public class Obstacle : MonoBehaviour
     public Rigidbody rigidbody;
     public Vector3 rotation;
     public Vector3 rotationDir;
+    public ParticleSystem hitEffect;
     
     private Random _rand;
 

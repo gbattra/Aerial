@@ -1,4 +1,5 @@
-﻿using DuloGames.UI;
+﻿using System.Linq;
+using DuloGames.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -85,6 +86,7 @@ public class HUD : MonoBehaviour
 
         if (levelManager.isCountingDown)
         {
+            levelProgressRadial.UltimateStatusList.First().statusImage.color = Color.red;
             levelProgressRadial.UpdateStatus(
                 levelManager.countdownSecondsRemaining, levelManager.secondsAtMax);
             if (levelManager.countdownSecondsRemaining < 3)
@@ -95,6 +97,7 @@ public class HUD : MonoBehaviour
                 levelAnnouncement.text = "1";
         } else if (levelManager.levelNumber > currentLevelNumber)
         {
+            levelProgressRadial.UltimateStatusList.First().statusImage.color = Color.white;
             announcingLevelClear = true;
             currentLevelNumber++;
             levelAnnouncement.text = "LEVEL CLEAR";
