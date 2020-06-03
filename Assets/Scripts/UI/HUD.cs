@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using DuloGames.UI;
 using TMPro;
@@ -32,11 +33,15 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI levelAnnouncement;
     public TextMeshProUGUI shieldCount;
     public TextMeshProUGUI healthUpCount;
+    public TextMeshProUGUI newHighScoreAnnouncement;
+
+    public Color highScoreColor;
 
     private int currentLevelNumber;
     private float timeLevelClearAnnounced;
     private bool announcingLevelClear;
     private float currentPlayerScore;
+    private bool announcedNewHighScore;
     
 
     public void Start()
@@ -64,6 +69,8 @@ public class HUD : MonoBehaviour
 
     public void LateUpdate()
     {
+        if (levelManager.newHighScore && !announcedNewHighScore)
+            StartCoroutine(AnnounceNewHighScore());
         if (currentPlayerScore < player.score)
         {
             audioSource.PlayOneShot(scoreUpAudioClip);
@@ -103,7 +110,7 @@ public class HUD : MonoBehaviour
             levelProgressRadial.UltimateStatusList.First().statusImage.color = Color.white;
             announcingLevelClear = true;
             currentLevelNumber++;
-            levelAnnouncement.text = "LEVEL CLEAR";
+            levelAnnouncement.text = "LEVEL CLEAR!";
             timeLevelClearAnnounced = Time.time;
         }
 
@@ -112,5 +119,15 @@ public class HUD : MonoBehaviour
             announcingLevelClear = false;
             levelAnnouncement.text = "";
         }
+    }
+
+    private IEnumerator AnnounceNewHighScore()
+    {
+        score.color = highScoreColor;
+        announcedNewHighScore = true;
+        newHighScoreAnnouncement.text = "HIGH SCORE!";
+        yield return new WaitForSeconds(2);
+        newHighScoreAnnouncement.text = "";
+        yield return null;
     }
 }

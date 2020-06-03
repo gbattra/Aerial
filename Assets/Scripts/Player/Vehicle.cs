@@ -39,7 +39,7 @@ public class Vehicle : MonoBehaviour
 
     public void Start()
     {
-        _health = 1f;
+        _health = .01f;
     }
 
     public void Update()

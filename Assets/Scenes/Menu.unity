@@ -255,6 +255,10 @@ MonoBehaviour:
   rigidbody: {fileID: 3141406}
   rotation: {x: 0, y: 0.6, z: 0.2}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &3141405
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5801,6 +5805,10 @@ MonoBehaviour:
   rigidbody: {fileID: 95881088}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &95881090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10848,6 +10856,10 @@ MonoBehaviour:
   rigidbody: {fileID: 115848558}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &115848560
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15898,6 +15910,7 @@ MonoBehaviour:
   audioSource: {fileID: 161588683}
   buttonSelectAudioClip: {fileID: 8300000, guid: fb16cd3b8e336f446b1c6effb44d05bd,
     type: 3}
+  highScoreText: {fileID: 1587347543}
 --- !u!114 &161588679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16470,6 +16483,10 @@ MonoBehaviour:
   rigidbody: {fileID: 186416165}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &186416167
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21598,6 +21615,10 @@ MonoBehaviour:
   rigidbody: {fileID: 226345790}
   rotation: {x: 0.4, y: 0.2, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &226345790
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21730,6 +21751,10 @@ MonoBehaviour:
   rigidbody: {fileID: 252630078}
   rotation: {x: 0.1, y: 0.90000004, z: 0.5}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &252630078
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21956,6 +21981,10 @@ MonoBehaviour:
   rigidbody: {fileID: 276745279}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &276745281
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22168,6 +22197,10 @@ MonoBehaviour:
   rigidbody: {fileID: 286014121}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &286014123
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22286,6 +22319,10 @@ MonoBehaviour:
   rigidbody: {fileID: 301136750}
   rotation: {x: 0.1, y: 0, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &301136750
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22404,6 +22441,10 @@ MonoBehaviour:
   rigidbody: {fileID: 302736421}
   rotation: {x: 0.1, y: 0, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &302736420
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22724,6 +22765,10 @@ MonoBehaviour:
   rigidbody: {fileID: 379716874}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &379716876
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32479,6 +32524,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   abilityGainAudioClip: {fileID: 0}
   lowHealthAlertAudioClip: {fileID: 0}
+  damageAudioClip: {fileID: 0}
   forwardSpeed: 1.7516826
   maxSpeed: 100
   maxPitch: 30
@@ -32569,7 +32615,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostEffect: {fileID: 396246889}
   audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
   boostSpeed: 100
   boostThrust: 2000
   boostRoll: 5000
@@ -32876,6 +32921,10 @@ MonoBehaviour:
   rigidbody: {fileID: 444435217}
   rotation: {x: 0.5, y: 0.8, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &444435217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33074,6 +33123,10 @@ MonoBehaviour:
   rigidbody: {fileID: 452664477}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &452664476
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -33365,6 +33418,10 @@ MonoBehaviour:
   rigidbody: {fileID: 520357483}
   rotation: {x: 0.8, y: 0.7, z: 0.5}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &520357483
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33483,6 +33540,10 @@ MonoBehaviour:
   rigidbody: {fileID: 527318145}
   rotation: {x: 0.7, y: 0.3, z: 0.1}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &527318144
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -33709,6 +33770,10 @@ MonoBehaviour:
   rigidbody: {fileID: 543540246}
   rotation: {x: 0.1, y: 0.90000004, z: 0.5}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &543540246
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39001,7 +39066,7 @@ MonoBehaviour:
   m_text: KILL THE VIRUS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -39014,8 +39079,8 @@ MonoBehaviour:
   m_fontColorGradient:
     topLeft: {r: 0.8666667, g: 0.26666668, b: 0.26666668, a: 1}
     topRight: {r: 0.8666667, g: 0.26666668, b: 0.26666668, a: 1}
-    bottomLeft: {r: 0.94509804, g: 0.6745098, b: 0.12941177, a: 1}
-    bottomRight: {r: 0.94509804, g: 0.6745098, b: 0.12941177, a: 1}
+    bottomLeft: {r: 0.94509804, g: 0.6745098, b: 0.12941177, a: 0}
+    bottomRight: {r: 0.94509804, g: 0.6745098, b: 0.12941177, a: 0}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -39311,6 +39376,10 @@ MonoBehaviour:
   rigidbody: {fileID: 691731416}
   rotation: {x: 0.7, y: 0.3, z: 0.1}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &691731415
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -39458,6 +39527,10 @@ MonoBehaviour:
   rigidbody: {fileID: 692273525}
   rotation: {x: 0.8, y: 0.7, z: 0.5}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &692273525
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39590,6 +39663,10 @@ MonoBehaviour:
   rigidbody: {fileID: 692565374}
   rotation: {x: 0, y: 0.2, z: 0.1}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &692565374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39722,6 +39799,10 @@ MonoBehaviour:
   rigidbody: {fileID: 695114074}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &695114074
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44767,6 +44848,10 @@ MonoBehaviour:
   rigidbody: {fileID: 713293368}
   rotation: {x: 0.4, y: 0.2, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &713293368
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44978,6 +45063,10 @@ MonoBehaviour:
   rigidbody: {fileID: 720668071}
   rotation: {x: 0, y: 0.2, z: 0.1}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &720668071
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45110,6 +45199,10 @@ MonoBehaviour:
   rigidbody: {fileID: 737430064}
   rotation: {x: 0.1, y: 0.90000004, z: 0.5}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &737430064
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45257,6 +45350,10 @@ MonoBehaviour:
   rigidbody: {fileID: 749677780}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &749677782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45741,6 +45838,10 @@ MonoBehaviour:
   rigidbody: {fileID: 842223324}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &842223326
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46018,6 +46119,10 @@ MonoBehaviour:
   rigidbody: {fileID: 876999003}
   rotation: {x: 0.2, y: 0.3, z: 0.2}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &876999003
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46465,6 +46570,10 @@ MonoBehaviour:
   rigidbody: {fileID: 914193636}
   rotation: {x: 0.1, y: 0.8, z: 0.5}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &914193635
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -46773,6 +46882,10 @@ MonoBehaviour:
   rigidbody: {fileID: 962585114}
   rotation: {x: 0.5, y: 0.6, z: 0.4}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &962585114
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46891,6 +47004,10 @@ MonoBehaviour:
   rigidbody: {fileID: 964838156}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &964838155
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -47491,6 +47608,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1080858276}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1080858278
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47776,6 +47897,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1115557801}
   rotation: {x: 0.5, y: 0.8, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1115557801
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47923,6 +48048,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1126095834}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1126095836
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48199,6 +48328,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1185525864}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1185525864
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -48346,6 +48479,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1204241997}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1204241999
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48479,6 +48616,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1212090480}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1212090482
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48840,6 +48981,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1263105837}
   rotation: {x: 0, y: 0.90000004, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1263105837
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49099,6 +49244,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1311268580}
   rotation: {x: 0, y: 0.6, z: 0.2}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1311268580
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49246,6 +49395,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1313535192}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1313535194
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49350,6 +49503,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1330682040}
   rotation: {x: 0, y: 0.6, z: 0.2}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &1330682039
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -49576,6 +49733,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1354190547}
   rotation: {x: 0.1, y: 0.8, z: 0.5}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1354190547
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49945,6 +50106,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1411753492}
   rotation: {x: 0.5, y: 0.6, z: 0.4}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1411753492
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50143,6 +50308,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1436939228}
   rotation: {x: 0, y: 0.2, z: 0.1}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1436939228
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50668,12 +50837,12 @@ MonoBehaviour:
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 1
-  m_colorMode: 2
+  m_colorMode: 0
   m_fontColorGradient:
-    topLeft: {r: 0.8666667, g: 0.78039217, b: 0.26666668, a: 1}
-    topRight: {r: 0.8666667, g: 0.78039217, b: 0.26666668, a: 1}
-    bottomLeft: {r: 0.8666667, g: 0.94509804, b: 0.12941177, a: 1}
-    bottomRight: {r: 0.8666667, g: 0.94509804, b: 0.12941177, a: 1}
+    topLeft: {r: 1, g: 0.9490196, b: 0.654902, a: 1}
+    topRight: {r: 1, g: 0.9490196, b: 0.654902, a: 1}
+    bottomLeft: {r: 1, g: 0.9490196, b: 0.654902, a: 1}
+    bottomRight: {r: 1, g: 0.9490196, b: 0.654902, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -50811,6 +50980,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1600571844}
   rotation: {x: 0, y: 0.6, z: 0.2}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &1600571843
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -50957,6 +51130,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1600749149}
   rotation: {x: 0, y: 0.90000004, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1600749149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51212,6 +51389,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1617951212}
   rotation: {x: 0.7, y: 0.3, z: 0.1}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1617951212
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51488,6 +51669,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1642912372}
   rotation: {x: 0.8, y: 0.7, z: 0.5}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &1642912371
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -51634,6 +51819,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1646188448}
   rotation: {x: 0.1, y: 0.90000004, z: 0.5}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1646188448
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51860,6 +52049,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1671006669}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1671006671
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52072,6 +52265,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1691986582}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1691986584
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52333,6 +52530,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1707647132}
   rotation: {x: 0, y: 0.90000004, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &1707647131
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -52642,6 +52843,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1723304939}
   rotation: {x: 0, y: 0.2, z: 0.1}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &1723304938
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -53010,6 +53215,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1757332007}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1757332009
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53383,6 +53592,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1831010721}
   rotation: {x: 0.90000004, y: 0.4, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1831010721
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -53530,6 +53743,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1847640756}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1847640758
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53647,6 +53864,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1859755218}
   rotation: {x: 0.90000004, y: 0.90000004, z: 0.6}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1859755218
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54027,6 +54248,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1892987246}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &1892987248
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58899,6 +59124,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1924716011}
   rotation: {x: 0.2, y: 0.3, z: 0.2}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1924716011
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -59175,6 +59404,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1940215590}
   rotation: {x: 0.6, y: 0, z: 0.8}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &1940215589
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59420,6 +59653,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1951740902}
   rotation: {x: 0, y: 0.6, z: 0.2}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1951740902
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -59552,6 +59789,10 @@ MonoBehaviour:
   rigidbody: {fileID: 1959672349}
   rotation: {x: 0, y: 0.90000004, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &1959672349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60391,6 +60632,10 @@ MonoBehaviour:
   rigidbody: {fileID: 2052384059}
   rotation: {x: 0, y: 0, z: 0}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!23 &2052384061
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60588,6 +60833,10 @@ MonoBehaviour:
   rigidbody: {fileID: 2061684729}
   rotation: {x: 0.90000004, y: 0.90000004, z: 0.6}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!54 &2061684729
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -65615,6 +65864,10 @@ MonoBehaviour:
   rigidbody: {fileID: 2129550225}
   rotation: {x: 0.1, y: 0, z: 0.3}
   rotationDir: {x: 0, y: 0, z: 0}
+  hitEffect: {fileID: 0}
+  audioSource: {fileID: 0}
+  ambientSound: {fileID: 0}
+  onDestroySound: {fileID: 0}
 --- !u!135 &2129550224
 SphereCollider:
   m_ObjectHideFlags: 0

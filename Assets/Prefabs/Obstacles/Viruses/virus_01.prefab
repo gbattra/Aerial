@@ -138,7 +138,6 @@ MonoBehaviour:
   audioSource: {fileID: -6596075556726832844}
   ambientSound: {fileID: 0}
   onDestroySound: {fileID: 0}
-  renderer: {fileID: 5958807697906072360}
 --- !u!82 &-6596075556726832844
 AudioSource:
   m_ObjectHideFlags: 0
@@ -149,7 +148,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fa7d1a9ee70c28e479bfccb5b3bd6722, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -158,11 +157,11 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 165
-  DopplerLevel: 1
+  DopplerLevel: 0.97
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 405.96
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -195,7 +194,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

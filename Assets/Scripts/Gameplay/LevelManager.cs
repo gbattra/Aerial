@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     
     public float secondsAtMax;
     public bool isCountingDown { get; private set; }
+    public bool newHighScore;
     public float countdownSecondsRemaining { get; private set; }
     public float decayAmount;
     public float decayInterval;
@@ -47,10 +48,14 @@ public class LevelManager : MonoBehaviour
                                   obstacleSpawners.All(spawner => spawner.isMaxed);
     private float countdownStartTime;
     private float lastCountdownSoundTime;
+    private float highScore;
+    public bool hasHighScore;
     private bool playedGameOverSound;
     
     public void Awake()
     {
+        highScore = PlayerPrefs.GetInt("high-score");
+        hasHighScore = highScore > 0;
         levelNumber = 1;
         foreach (var spawner in obstacleSpawners)
         {
@@ -88,6 +93,9 @@ public class LevelManager : MonoBehaviour
 
     public void Update()
     {
+        if (player.score > highScore && hasHighScore)
+            newHighScore = true;
+        
         if ((countdownSecondsRemaining < 3 ||
              countdownSecondsRemaining < 2 ||
              countdownSecondsRemaining < 1) &&
@@ -104,7 +112,8 @@ public class LevelManager : MonoBehaviour
         if (gameOver)
         {
             gameTimer.timer.Stop();
-            
+            if (newHighScore)
+                PlayerPrefs.SetInt("high-score", (int) player.score);
             if (playedGameOverSound) return;
             playedGameOverSound = true;
             audioSource.PlayOneShot(gameOverAudioClip);
