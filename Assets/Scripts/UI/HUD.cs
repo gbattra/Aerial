@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using DuloGames.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class HUD : MonoBehaviour
 {
@@ -35,6 +37,7 @@ public class HUD : MonoBehaviour
     private float timeLevelClearAnnounced;
     private bool announcingLevelClear;
     private float currentPlayerScore;
+    
 
     public void Start()
     {

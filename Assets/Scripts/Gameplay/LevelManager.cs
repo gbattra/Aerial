@@ -124,6 +124,9 @@ public class LevelManager : MonoBehaviour
 
         foreach (var obstacle in GameObject.FindGameObjectsWithTag("Obstacle"))
         {
+            var virus = obstacle.GetComponent<Virus>();
+            if (virus != null)
+                player.AddToScore(virus.points);
             Destroy(obstacle);
         }
         audioSource.PlayOneShot(levelClearAudioClip);
@@ -135,7 +138,7 @@ public class LevelManager : MonoBehaviour
         {
             startSpawnTimeInterval -= levelSpawnTimeDecay;
             finalSpawnTimeInterval -= levelSpawnTimeDecay;
-            obstacleVelocity += levelVelocityIncrease;
+            obstacleVelocity *= levelVelocityIncrease;
             secondsAtMax += secondsIncrease;
             spawner.ResetSpawner(
                 startSpawnTimeInterval,
