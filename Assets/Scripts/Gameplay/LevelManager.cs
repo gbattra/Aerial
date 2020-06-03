@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     public AudioClip levelClearAudioClip;
     public AudioClip countdownStartAudioClip;
     public AudioClip finalCountdownAudioClip;
+    public AudioClip newHighScoreSound;
     
     public List<BaseSpawner> obstacleSpawners;
     public List<BaseSpawner> virusSpawners;
@@ -93,8 +94,11 @@ public class LevelManager : MonoBehaviour
 
     public void Update()
     {
-        if (player.score > highScore && hasHighScore)
+        if (player.score > highScore && hasHighScore && !newHighScore)
+        {
             newHighScore = true;
+            audioSource.PlayOneShot(newHighScoreSound);
+        }
         
         if ((countdownSecondsRemaining < 3 ||
              countdownSecondsRemaining < 2 ||
