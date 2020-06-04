@@ -39,7 +39,7 @@ public class Vehicle : MonoBehaviour
 
     public void Start()
     {
-        _health = .15f;
+        _health = 1f;
     }
 
     public void Update()
@@ -64,7 +64,7 @@ public class Vehicle : MonoBehaviour
         HandleForces();
         HandleRotations();
         
-        if (player.score > 0 && player.score % 100 == 0 && !powerUpsGiven)
+        if (player.score > 0 && player.score % 200 == 0 && !powerUpsGiven)
         {
             powerUpsGiven = true;
             healthUpAbility.AddHealthUp(1);
