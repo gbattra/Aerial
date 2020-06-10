@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
         if (Controller.a)
             Play();
         if (Controller.b)
-            Exit();
+            Tutorial();
     }
 
     public void Play()
@@ -31,9 +31,9 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void Exit()
+    public void Tutorial()
     {
         audioSource.PlayOneShot(buttonSelectAudioClip);
-        Application.Quit();
+        SceneManager.LoadScene("Tutorial");
     }
 }

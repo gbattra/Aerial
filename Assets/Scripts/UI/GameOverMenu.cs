@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,8 +12,8 @@ public class GameOverMenu : MonoBehaviour
     public GameTimer gameTimer;
     public LevelManager levelManager;
     public GameObject gameOverMenuCanvas;
-    public Text timeText;
-    public Text scoreText;
+    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI scoreText;
 
     public AudioSource audioSource;
     public AudioClip buttonSelectAudioClip;
