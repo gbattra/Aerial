@@ -8,7 +8,7 @@ public class HealthUpAbility : MonoBehaviour
     public ParticleSystem healAura;
     public AudioSource audioSource;
     public AudioClip audioClip;
-    
+    public float healthUpAmount;
     public float healingTime;
     
     public int healthUpCount => _healthUpCount;
@@ -31,7 +31,7 @@ public class HealthUpAbility : MonoBehaviour
             _healthUpCount = Mathf.Clamp(healthUpCount - 1, 0, healthUpCount);
             _isHealing = true;
             healingStartTime = Time.time;
-            vehicle.IncreaseHealth(.25f);
+            vehicle.IncreaseHealth(healthUpAmount);
             
             healAura.gameObject.SetActive(true);
             healAura.Play();

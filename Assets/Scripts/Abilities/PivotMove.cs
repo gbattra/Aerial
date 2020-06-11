@@ -9,8 +9,10 @@ public class PivotMove : MonoBehaviour
     public float power;
     public float pivotTime;
     public Rigidbody rigidbody;
-
     public bool isPivoting => _isPivoting;
+    public AudioSource audioSource;
+    public AudioClip pivotSound;
+    
     private bool _isPivoting;
     private int pivotDirection;
     private float pivotStartTime;
@@ -28,6 +30,7 @@ public class PivotMove : MonoBehaviour
             _isPivoting = true;
             pivotStartTime = Time.time;
             pivotDirection = leftBumper ? LEFT : RIGHT;
+            audioSource.PlayOneShot(pivotSound);
         }
         
         _isPivoting &= Time.time - pivotStartTime < pivotTime;

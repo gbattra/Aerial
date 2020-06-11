@@ -64,7 +64,7 @@ public class Vehicle : MonoBehaviour
         HandleForces();
         HandleRotations();
         
-        if (player.score > 0 && player.score % 200 == 0 && !powerUpsGiven)
+        if (player.score > 0 && player.score % 50 == 0 && !powerUpsGiven)
         {
             powerUpsGiven = true;
             healthUpAbility.AddHealthUp(1);
