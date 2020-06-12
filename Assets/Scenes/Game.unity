@@ -3539,7 +3539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zOffset: 22
-  player: {fileID: 0}
+  player: {fileID: 1734897303}
 --- !u!1 &824536543
 GameObject:
   m_ObjectHideFlags: 0
@@ -4328,7 +4328,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -11.317818}
+  m_BoundingSphereOverride: {x: 4.994e-42, y: 5.9e-44, z: -1, w: 4e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5296,7 +5296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zOffset: 22
-  player: {fileID: 0}
+  player: {fileID: 1734897303}
 --- !u!1 &1269713907
 GameObject:
   m_ObjectHideFlags: 0
@@ -7139,6 +7139,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7965901352136248191, guid: c298767fc5a45d34893ad564d3602561,
+        type: 3}
+      propertyPath: power
+      value: 1e+10
+      objectReference: {fileID: 0}
     - target: {fileID: 7965901352733727853, guid: c298767fc5a45d34893ad564d3602561,
         type: 3}
       propertyPath: m_Name
@@ -8238,7 +8243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zOffset: 22
-  player: {fileID: 0}
+  player: {fileID: 1734897303}
 --- !u!1 &1997055128
 GameObject:
   m_ObjectHideFlags: 0
@@ -11352,7 +11357,7 @@ PrefabInstance:
     - target: {fileID: 617714693148769383, guid: 44096493b1c5afb4e85985935505275f,
         type: 3}
       propertyPath: obstacleScaleMax
-      value: 3.25
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 617714693148769383, guid: 44096493b1c5afb4e85985935505275f,
         type: 3}
@@ -11399,17 +11404,17 @@ PrefabInstance:
     - target: {fileID: 617714693148769383, guid: 44096493b1c5afb4e85985935505275f,
         type: 3}
       propertyPath: spawnBounds.x
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 617714693148769383, guid: 44096493b1c5afb4e85985935505275f,
         type: 3}
       propertyPath: spawnBounds.y
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 617714693148769383, guid: 44096493b1c5afb4e85985935505275f,
         type: 3}
       propertyPath: spawnBounds.z
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 617714693148769387, guid: 44096493b1c5afb4e85985935505275f,
         type: 3}
@@ -11851,7 +11856,7 @@ PrefabInstance:
     - target: {fileID: 3770119072840768423, guid: 8cb8f180e148c784c8a9f33153e2689c,
         type: 3}
       propertyPath: obstacleScaleMax
-      value: 2.25
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 3770119072840768423, guid: 8cb8f180e148c784c8a9f33153e2689c,
         type: 3}
@@ -11904,17 +11909,17 @@ PrefabInstance:
     - target: {fileID: 3770119072840768423, guid: 8cb8f180e148c784c8a9f33153e2689c,
         type: 3}
       propertyPath: spawnBounds.x
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3770119072840768423, guid: 8cb8f180e148c784c8a9f33153e2689c,
         type: 3}
       propertyPath: spawnBounds.y
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3770119072840768423, guid: 8cb8f180e148c784c8a9f33153e2689c,
         type: 3}
       propertyPath: spawnBounds.z
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3770119072840768427, guid: 8cb8f180e148c784c8a9f33153e2689c,
         type: 3}
@@ -12240,17 +12245,17 @@ PrefabInstance:
     - target: {fileID: 8209054099058518514, guid: 8251016d09e5daa459a598337f5cf02c,
         type: 3}
       propertyPath: spawnBounds.x
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8209054099058518514, guid: 8251016d09e5daa459a598337f5cf02c,
         type: 3}
       propertyPath: spawnBounds.y
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8209054099058518514, guid: 8251016d09e5daa459a598337f5cf02c,
         type: 3}
       propertyPath: spawnBounds.z
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8209054099058518514, guid: 8251016d09e5daa459a598337f5cf02c,
         type: 3}

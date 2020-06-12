@@ -64,7 +64,7 @@ public class Vehicle : MonoBehaviour
         HandleForces();
         HandleRotations();
         
-        if (player.score > 0 && player.score % 50 == 0 && !powerUpsGiven)
+        if (player.score > 0 && player.score % 25 == 0 && !powerUpsGiven)
         {
             powerUpsGiven = true;
             healthUpAbility.AddHealthUp(1);
@@ -72,7 +72,7 @@ public class Vehicle : MonoBehaviour
             audioSource.PlayOneShot(abilityGainAudioClip);
         }
 
-        if (player.score % 100 != 0)
+        if (player.score % 25 != 0)
             powerUpsGiven = false;
     }
 
